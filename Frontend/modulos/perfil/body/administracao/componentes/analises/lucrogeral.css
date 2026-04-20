@@ -1,0 +1,290 @@
+/* ===============================
+   CONTAINER PRINCIPAL
+=============================== */
+.lucro-geral-container {
+    display: flex;
+    flex-direction: column;
+    margin: 30px;
+    gap: 18px;
+}
+
+/* ===============================
+   CARD DE MÉTRICA PRINCIPAL
+=============================== */
+.lucro-card {
+    background: #020617;
+    border: 1px solid #1e293b;
+    border-radius: 14px;
+    padding: 14px 18px;
+    width: fit-content;
+    min-width: 220px;
+    box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.02);
+}
+
+.lucro-card span {
+    font-size: 12px;
+    color: #94a3b8;
+}
+
+.lucro-card strong {
+    display: block;
+    margin-top: 6px;
+    font-size: 18px;
+    font-weight: 700;
+    color: #22c55e;
+}
+
+/* ===============================
+   FILTRO DE LIMITE
+=============================== */
+.lucro-geral-filtro {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.lucro-geral-filtro label {
+    font-size: 13px;
+    color: #cbd5f5;
+}
+
+.lucro-geral-filtro input {
+    width: 90px;
+    padding: 8px 10px;
+    border-radius: 10px;
+    border: 1px solid #1e293b;
+    background: #f3f4f6;
+    color: #000;
+    font-size: 13px;
+    outline: none;
+    transition:
+        border-color 0.2s ease,
+        box-shadow 0.2s ease;
+}
+
+.lucro-geral-filtro input:focus {
+    border-color: #22c55e;
+    box-shadow: 0 0 0 2px rgba(34, 197, 94, 0.25);
+}
+
+/* ===============================
+   ÁREA DE RANKINGS
+=============================== */
+.lucro-ranking {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 18px;
+}
+
+@media (max-width: 720px) {
+    .lucro-ranking {
+        grid-template-columns: 1fr;
+    }
+}
+
+.lucro-ranking-bloco {
+    background: #020617;
+    border: 1px solid #1e293b;
+    border-radius: 14px;
+    padding: 14px 16px;
+}
+
+.lucro-ranking-bloco h5 {
+    margin-bottom: 12px;
+    font-size: 14px;
+    font-weight: 700;
+    color: #f8fafc;
+}
+
+/* ===============================
+   ITENS DO RANKING
+=============================== */
+.lucro-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 8px 6px;
+    font-size: 13px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.04);
+}
+
+.lucro-item:last-child {
+    border-bottom: none;
+}
+
+.lucro-item span {
+    font-weight: 600;
+}
+
+/* Maior margem */
+.lucro-item.maior {
+    color: #22c55e;
+}
+
+/* Menor margem */
+.lucro-item.menor {
+    color: #ef4444;
+}
+
+.lucro-alerta {
+    background: #3f1d0b;
+    border: 1px solid #f97316;
+    color: #fed7aa;
+    padding: 10px 14px;
+    border-radius: 10px;
+    font-size: 13px;
+    cursor: pointer;
+    width: fit-content;
+}
+
+/* ===============================
+   FILTROS NOVOS (CATEGORIA / NOME / LIMITE)
+=============================== */
+.lucro-geral-filtros {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 16px;
+    padding: 16px;
+    background: #020617;
+    border: 1px solid #1e293b;
+    border-radius: 14px;
+}
+
+.lucro-geral-filtros>div {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+}
+
+.lucro-geral-filtros label {
+    font-size: 12px;
+    font-weight: 600;
+    color: #94a3b8;
+}
+
+/* ===============================
+   INPUTS DOS FILTROS
+=============================== */
+.lucro-geral-filtros input {
+    height: 38px;
+    padding: 0 12px;
+    border-radius: 10px;
+    border: 1px solid #1e293b;
+    background: #020617;
+    color: #f8fafc;
+    font-size: 13px;
+    outline: none;
+    transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.lucro-geral-filtros input::placeholder {
+    color: #64748b;
+}
+
+.lucro-geral-filtros input:focus {
+    border-color: #22c55e;
+    box-shadow: 0 0 0 2px rgba(34, 197, 94, 0.25);
+}
+
+/* ===============================
+   INPUT NUMBER AJUSTE
+=============================== */
+
+/* ===============================
+   RESPONSIVO DOS FILTROS
+=============================== */
+@media (max-width: 768px) {
+    .lucro-geral-filtros {
+        padding: 14px;
+        gap: 14px;
+    }
+
+    .lucro-geral-filtros input {
+        height: 36px;
+        font-size: 12px;
+    }
+}
+
+/* =========================
+   TABLET
+========================= */
+@media (max-width: 1024px) {
+
+    .lucro-geral-container {
+        margin: 20px;
+        gap: 16px;
+    }
+
+    .lucro-card {
+        min-width: 200px;
+    }
+
+    .lucro-geral-filtro {
+        flex-wrap: wrap;
+        gap: 10px;
+    }
+}
+
+/* =========================
+   MOBILE
+========================= */
+@media (max-width: 768px) {
+
+    .lucro-geral-container {
+        margin: 16px;
+        gap: 14px;
+    }
+
+    .lucro-card {
+        width: 100%;
+        min-width: unset;
+    }
+
+    .lucro-geral-filtro {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 8px;
+    }
+
+    .lucro-geral-filtro input {
+        width: 100%;
+    }
+
+    .lucro-alerta {
+        width: 100%;
+        text-align: center;
+    }
+
+    .lucro-ranking-bloco {
+        padding: 12px 14px;
+    }
+
+    .lucro-ranking-bloco h5 {
+        font-size: 13px;
+    }
+}
+
+/* =========================
+   MOBILE PEQUENO
+========================= */
+@media (max-width: 420px) {
+
+    .lucro-geral-container {
+        margin: 12px;
+        gap: 12px;
+    }
+
+    .lucro-card strong {
+        font-size: 16px;
+    }
+
+    .lucro-item {
+        font-size: 12px;
+        padding: 6px 4px;
+    }
+
+    .lucro-alerta {
+        font-size: 12px;
+        padding: 9px 12px;
+    }
+}

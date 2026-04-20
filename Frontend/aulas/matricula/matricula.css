@@ -1,0 +1,161 @@
+/* ================= CONTAINER ================= */
+
+.matricula_container {
+    min-height: 100vh;
+    padding: 40px 20px;
+
+    background:
+        radial-gradient(circle at 20% 0%, rgba(59, 130, 246, 0.15), transparent 40%),
+        radial-gradient(circle at 80% 10%, rgba(37, 99, 235, 0.12), transparent 40%);
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* ================= HEADER ================= */
+
+.matricula_header {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.matricula_header h1 {
+    font-size: 28px;
+    font-weight: 800;
+
+    background: linear-gradient(90deg, #60a5fa, #2563eb);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.matricula_header p {
+    color: #94a3b8;
+    font-size: 14px;
+    margin-top: 5px;
+}
+
+/* ================= TABS ================= */
+
+.matricula_tabs {
+    display: flex;
+    gap: 10px;
+
+    background: rgba(2, 6, 23, 0.7);
+    padding: 6px;
+    border-radius: 14px;
+
+    backdrop-filter: blur(10px);
+
+    margin-bottom: 25px;
+}
+
+/* botão */
+.matricula_tabs button {
+    padding: 12px 20px;
+
+    border: none;
+    border-radius: 10px;
+
+    background: transparent;
+    color: #cbd5f5;
+
+    font-weight: 600;
+    cursor: pointer;
+
+    transition: all 0.25s ease;
+}
+
+/* hover */
+.matricula_tabs button:hover {
+    background: rgba(255, 255, 255, 0.05);
+}
+
+/* ativo */
+.matricula_tabs button.ativo {
+    background: linear-gradient(135deg, #2563eb, #1d4ed8);
+    color: white;
+
+    box-shadow:
+        0 4px 15px rgba(37, 99, 235, 0.4);
+}
+
+/* ================= CONTEÚDO ================= */
+
+.matricula_conteudo {
+    width: 100%;
+    max-width: 1100px;
+
+    padding: 20px;
+
+    border-radius: 20px;
+
+    background: rgba(2, 6, 23, 0.85);
+
+    border: 1px solid rgba(255, 255, 255, 0.05);
+
+    box-shadow:
+        0 10px 40px rgba(0, 0, 0, 0.6);
+}
+
+/* ================= RESPONSIVO ================= */
+
+@media (max-width: 768px) {
+
+    .matricula_tabs {
+        flex-direction: column;
+        width: 100%;
+    }
+
+    .matricula_tabs button {
+        width: 100%;
+        text-align: center;
+    }
+}
+
+/* LOGIN */
+
+.matricula_loginContainer {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(135deg, #020617, #0f172a);
+}
+
+.matricula_loginBox {
+    width: 100%;
+    max-width: 350px;
+    padding: 30px;
+    border-radius: 16px;
+    background: rgba(15, 23, 42, 0.9);
+    text-align: center;
+}
+
+.matricula_input {
+    width: 100%;
+    padding: 12px;
+    margin-top: 15px;
+    border-radius: 10px;
+    border: 1px solid #334155;
+    background: #020617;
+    color: white;
+}
+
+.matricula_button {
+    width: 100%;
+    margin-top: 15px;
+    padding: 12px;
+    border-radius: 10px;
+    border: none;
+    background: #2563eb;
+    color: white;
+    cursor: pointer;
+}
+
+.matricula_erro {
+    color: #ef4444;
+    font-size: 13px;
+    display: block;
+    margin-top: 10px;
+}

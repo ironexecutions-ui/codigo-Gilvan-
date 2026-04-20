@@ -1,0 +1,306 @@
+/* ===============================
+   CONTAINER PRINCIPAL
+=============================== */
+
+.lojas-container {
+    max-width: 1200px;
+    margin: 90px auto;
+    padding: 48px 36px;
+
+    background:
+        radial-gradient(1200px 420px at top center,
+            rgba(37, 99, 235, 0.08),
+            transparent 60%),
+        linear-gradient(180deg,
+            #020617 0%,
+            #01030a 100%);
+
+    border-radius: 24px;
+
+    box-shadow:
+        0 40px 80px rgba(0, 0, 0, 0.6),
+        inset 0 1px 0 rgba(255, 255, 255, 0.04);
+
+    color: #e5e7eb;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+    position: relative;
+    overflow: hidden;
+}
+
+
+/* ===============================
+   TÍTULO
+=============================== */
+
+.lojas-container h2 {
+    text-align: center;
+    font-size: 34px;
+    font-weight: 700;
+    letter-spacing: 0.3px;
+    margin-bottom: 36px;
+    color: #f8fafc;
+}
+
+
+/* ===============================
+   LISTA COM SCROLL
+=============================== */
+
+.lojas-lista {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.lojas-scroll {
+    max-height: 380px;
+    overflow-y: auto;
+    padding-right: 12px;
+}
+
+/* Scroll customizado */
+.lojas-scroll::-webkit-scrollbar {
+    width: 8px;
+}
+
+.lojas-scroll::-webkit-scrollbar-track {
+    background: transparent;
+}
+
+.lojas-scroll::-webkit-scrollbar-thumb {
+    background: linear-gradient(180deg,
+            #2563eb,
+            #1e40af);
+    border-radius: 8px;
+}
+
+
+/* ===============================
+   ITEM DE LOJA
+=============================== */
+
+.loja-item {
+    display: flex;
+    align-items: center;
+    gap: 18px;
+    padding: 10px 13px;
+    margin: 14px;
+
+    background: linear-gradient(180deg,
+            #0b1220 0%,
+            #020617 100%);
+
+    border: 1px solid #1e293b;
+    border-radius: 16px;
+
+    box-shadow:
+        0 20px 40px rgba(0, 0, 0, 0.45),
+        inset 0 1px 0 rgba(255, 255, 255, 0.03);
+
+    transition:
+        transform 0.25s ease,
+        box-shadow 0.25s ease,
+        border-color 0.25s ease;
+}
+
+.loja-item:hover {
+    transform: translateY(-4px);
+    border-color: #2563eb;
+    box-shadow:
+        0 30px 60px rgba(0, 0, 0, 0.6),
+        inset 0 1px 0 rgba(255, 255, 255, 0.05);
+}
+
+
+/* ===============================
+   FOTO / LOGO DA LOJA
+=============================== */
+
+.loja-foto {
+    width: 64px;
+    height: 64px;
+    border-radius: 14px;
+    object-fit: cover;
+    background: #020617;
+    border: 1px solid #1e293b;
+    flex-shrink: 0;
+}
+
+
+/* ===============================
+   INFORMAÇÕES DA LOJA
+=============================== */
+
+.loja-info {
+    font-size: 16px;
+    font-weight: 600;
+    color: #f1f5f9;
+    letter-spacing: 0.2px;
+}
+
+
+/* ===============================
+   AVALIAÇÃO
+=============================== */
+
+.avaliacao-estrelas {
+    margin-left: auto;
+    display: flex;
+    align-items: center;
+    gap: 3px;
+}
+
+.estrela {
+    font-size: 18px;
+}
+
+.estrela.cheia {
+    color: #facc15;
+}
+
+.estrela.meia {
+    color: #fde047;
+    opacity: 0.6;
+}
+
+.estrela.vazia {
+    color: #475569;
+}
+
+.sem-avaliacao {
+    font-size: 13px;
+    color: #94a3b8;
+    margin-left: auto;
+}
+
+
+/* ===============================
+   ESTADO VAZIO
+=============================== */
+
+.lojas-container p {
+    text-align: center;
+    font-size: 15px;
+    color: #94a3b8;
+    padding: 20px 0;
+}
+
+/* ===============================
+   RESPONSIVO DESKTOP MENOR
+=============================== */
+@media (max-width: 1024px) {
+    .lojas-container {
+        margin: 70px 24px;
+        padding: 40px 28px;
+    }
+
+    .lojas-scroll {
+        max-height: 340px;
+    }
+}
+
+/* ===============================
+   RESPONSIVO TABLET
+=============================== */
+@media (max-width: 768px) {
+    .lojas-container {
+        margin: 60px 18px;
+        padding: 32px 22px;
+        border-radius: 20px;
+    }
+
+    .lojas-container h2 {
+        font-size: 26px;
+        margin-bottom: 28px;
+    }
+
+    .lojas-scroll {
+        max-height: 320px;
+        padding-right: 8px;
+    }
+
+    .loja-item {
+        gap: 14px;
+        margin: 12px;
+        padding: 10px 12px;
+    }
+
+    .loja-foto {
+        width: 56px;
+        height: 56px;
+    }
+
+    .loja-info {
+        font-size: 15px;
+    }
+}
+
+/* ===============================
+   RESPONSIVO CELULAR
+=============================== */
+@media (max-width: 600px) {
+    .lojas-container {
+        margin: 40px 12px;
+        padding: 26px 16px;
+        border-radius: 16px;
+    }
+
+    .lojas-container h2 {
+        font-size: 22px;
+        margin-bottom: 22px;
+    }
+
+    .lojas-scroll {
+        max-height: 300px;
+    }
+
+    .loja-item {
+        margin: 10px 6px;
+        padding: 10px;
+        gap: 12px;
+    }
+
+    .loja-foto {
+        width: 48px;
+        height: 48px;
+        border-radius: 10px;
+    }
+
+    .loja-info {
+        font-size: 14px;
+    }
+
+    .avaliacao-estrelas {
+        gap: 2px;
+    }
+
+    .estrela {
+        font-size: 16px;
+    }
+
+    .sem-avaliacao {
+        font-size: 12px;
+    }
+}
+
+/* ===============================
+   CELULARES MUITO PEQUENOS
+=============================== */
+@media (max-width: 360px) {
+    .lojas-container {
+        padding: 22px 14px;
+    }
+
+    .lojas-container h2 {
+        font-size: 20px;
+    }
+
+    .loja-item {
+        gap: 10px;
+        padding: 8px;
+    }
+
+    .loja-info {
+        font-size: 13px;
+    }
+}

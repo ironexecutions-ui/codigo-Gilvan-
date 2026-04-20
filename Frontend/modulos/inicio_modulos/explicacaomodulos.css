@@ -1,0 +1,644 @@
+/* ===============================
+   CONTAINER GERAL
+=============================== */
+.explicacao-container-pub {
+    max-width: 1200px;
+    margin: 90px auto;
+    padding: 56px 36px;
+
+    background:
+        radial-gradient(1200px 400px at top center,
+            rgba(37, 99, 235, 0.10),
+            transparent 60%),
+        linear-gradient(180deg,
+            #020617 0%,
+            #01030a 100%);
+
+    border-radius: 22px;
+
+    box-shadow:
+        0 40px 80px rgba(0, 0, 0, 0.6),
+        inset 0 1px 0 rgba(255, 255, 255, 0.04);
+
+    color: #e5e7eb;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+    position: relative;
+    overflow: hidden;
+}
+
+
+/* ===============================
+   TÍTULO
+=============================== */
+
+.explicacao-container-pub h2 {
+    text-align: center;
+    font-size: 36px;
+    font-weight: 700;
+    letter-spacing: 0.3px;
+    margin-bottom: 36px;
+    color: #f8fafc;
+}
+
+
+/* ===============================
+   TEXTOS EXPLICATIVOS
+=============================== */
+
+.explicacao-texto-pub {
+    max-width: 920px;
+    margin: 0 auto 26px auto;
+    font-size: 16px;
+    line-height: 1.75;
+    color: #c7d2fe;
+    text-align: center;
+}
+
+.negrito-azul {
+    color: #60a5fa;
+    font-weight: 600;
+}
+
+
+/* ===============================
+   BLOCO DE MÓDULOS
+=============================== */
+
+.explicacao-bloco-pub {
+    margin-top: 56px;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 30px;
+}
+
+
+/* ===============================
+   CARD DE MÓDULO
+=============================== */
+
+.modulo-card-pub {
+    position: relative;
+    background: linear-gradient(180deg,
+            #0b1220 0%,
+            #020617 100%);
+    border-radius: 20px;
+    padding: 28px 26px 30px 26px;
+    border: 1px solid #1e293b;
+    box-shadow:
+        0 30px 60px rgba(0, 0, 0, 0.45),
+        inset 0 1px 0 rgba(255, 255, 255, 0.03);
+    display: flex;
+    flex-direction: column;
+    transition:
+        transform 0.25s ease,
+        box-shadow 0.25s ease,
+        border-color 0.25s ease;
+}
+
+.modulo-card-pub:hover {
+    transform: translateY(-8px);
+    border-color: #2563eb;
+    box-shadow:
+        0 40px 80px rgba(0, 0, 0, 0.6),
+        inset 0 1px 0 rgba(255, 255, 255, 0.05);
+}
+
+
+/* ===============================
+   DESTAQUE SUPERIOR DO CARD
+=============================== */
+
+.modulo-card-pub::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 20px;
+    right: 20px;
+    height: 1px;
+    background: linear-gradient(90deg,
+            transparent,
+            rgba(96, 165, 250, 0.6),
+            transparent);
+}
+
+
+/* ===============================
+   NOME DO MÓDULO
+=============================== */
+
+.modulo-card-pub h3 {
+    font-size: 21px;
+    font-weight: 600;
+    margin-bottom: 16px;
+    color: #f1f5f9;
+    letter-spacing: 0.2px;
+}
+
+
+/* ===============================
+   DESCRIÇÃO DO MÓDULO
+=============================== */
+
+.modulo-card-pub p {
+    font-size: 14.6px;
+    line-height: 1.65;
+    color: #cbd5e1;
+    margin-bottom: 20px;
+}
+
+
+/* ===============================
+   SEPARADOR INTERNO
+=============================== */
+
+.modulo-card-pub p::after {
+    content: "";
+    display: block;
+    margin-top: 18px;
+    height: 1px;
+
+}
+
+
+/* ===============================
+   PREÇO
+=============================== */
+
+.preco-info-pub {
+    margin-top: auto;
+    font-size: 14px;
+    font-weight: 600;
+    color: #22c55e;
+    background: linear-gradient(180deg,
+            rgba(34, 197, 94, 0.12),
+            rgba(34, 197, 94, 0.04));
+    border: 1px solid rgba(34, 197, 94, 0.3);
+    padding: 12px 14px;
+    border-radius: 12px;
+    text-align: center;
+    letter-spacing: 0.2px;
+}
+
+
+/* ===============================
+   ESTADO DE CARREGAMENTO
+=============================== */
+
+.carregando-pub {
+    grid-column: 1 / -1;
+    text-align: center;
+    font-size: 15px;
+    color: #94a3b8;
+    padding: 30px 0;
+}
+
+
+/* ===============================
+   SOMBRA DE FUNDO DECORATIVA
+=============================== */
+
+.explicacao-container-pub::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background:
+        radial-gradient(circle at top center,
+            rgba(37, 99, 235, 0.08),
+            transparent 60%);
+    pointer-events: none;
+}
+
+/* ===============================
+   RESET BÁSICO
+=============================== */
+
+
+/* ===============================
+   CONTAINER GERAL
+=============================== */
+.explicacao-container-pub {
+    max-width: 1200px;
+    margin: 90px auto;
+    padding: 56px 36px;
+
+    background:
+        radial-gradient(1200px 400px at top center,
+            rgba(37, 99, 235, 0.10),
+            transparent 60%),
+        linear-gradient(180deg,
+            #020617 0%,
+            #01030a 100%);
+
+    border-radius: 22px;
+
+    box-shadow:
+        0 40px 80px rgba(0, 0, 0, 0.6),
+        inset 0 1px 0 rgba(255, 255, 255, 0.04);
+
+    color: #e5e7eb;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+    position: relative;
+    overflow: hidden;
+}
+
+/* ===============================
+   TÍTULO
+=============================== */
+.explicacao-container-pub h2 {
+    text-align: center;
+    font-size: clamp(24px, 4vw, 36px);
+    font-weight: 700;
+    letter-spacing: 0.3px;
+    margin-bottom: 36px;
+    color: #f8fafc;
+}
+
+/* ===============================
+   TEXTOS EXPLICATIVOS
+=============================== */
+.explicacao-texto-pub {
+    max-width: 920px;
+    margin: 0 auto 26px auto;
+    font-size: clamp(14px, 2.5vw, 16px);
+    line-height: 1.75;
+    color: #c7d2fe;
+    text-align: center;
+    padding: 0 6px;
+}
+
+.negrito-azul {
+    color: #60a5fa;
+    font-weight: 600;
+}
+
+/* ===============================
+   BLOCO DE MÓDULOS
+=============================== */
+.explicacao-bloco-pub {
+    margin-top: 56px;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 30px;
+}
+
+/* ===============================
+   CARD DE MÓDULO
+=============================== */
+.modulo-card-pub {
+    position: relative;
+    background: linear-gradient(180deg,
+            #0b1220 0%,
+            #020617 100%);
+    border-radius: 20px;
+    padding: 28px 26px 30px 26px;
+    border: 1px solid #1e293b;
+
+    box-shadow:
+        0 30px 60px rgba(0, 0, 0, 0.45),
+        inset 0 1px 0 rgba(255, 255, 255, 0.03);
+
+    display: flex;
+    flex-direction: column;
+    transition:
+        transform 0.25s ease,
+        box-shadow 0.25s ease,
+        border-color 0.25s ease;
+}
+
+.modulo-card-pub:hover {
+    transform: translateY(-8px);
+    border-color: #2563eb;
+    box-shadow:
+        0 40px 80px rgba(0, 0, 0, 0.6),
+        inset 0 1px 0 rgba(255, 255, 255, 0.05);
+}
+
+/* ===============================
+   DESTAQUE SUPERIOR DO CARD
+=============================== */
+.modulo-card-pub::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 20px;
+    right: 20px;
+    height: 1px;
+    background: linear-gradient(90deg,
+            transparent,
+            rgba(96, 165, 250, 0.6),
+            transparent);
+}
+
+/* ===============================
+   NOME DO MÓDULO
+=============================== */
+.modulo-card-pub h3 {
+    font-size: clamp(18px, 3vw, 21px);
+    font-weight: 600;
+    margin-bottom: 14px;
+    color: #f1f5f9;
+    letter-spacing: 0.2px;
+}
+
+/* ===============================
+   DESCRIÇÃO DO MÓDULO
+=============================== */
+.modulo-card-pub p {
+    font-size: clamp(13.5px, 2.4vw, 14.6px);
+    line-height: 1.65;
+    color: #cbd5e1;
+    margin-bottom: 18px;
+}
+
+/* ===============================
+   PREÇO
+=============================== */
+.preco-info-pub {
+    margin-top: auto;
+    font-size: clamp(13px, 2.5vw, 14px);
+    font-weight: 600;
+    color: #22c55e;
+    background: linear-gradient(180deg,
+            rgba(34, 197, 94, 0.12),
+            rgba(34, 197, 94, 0.04));
+    border: 1px solid rgba(34, 197, 94, 0.3);
+    padding: 12px 14px;
+    border-radius: 12px;
+    text-align: center;
+    letter-spacing: 0.2px;
+}
+
+/* ===============================
+   CARREGAMENTO
+=============================== */
+.carregando-pub {
+    grid-column: 1 / -1;
+    text-align: center;
+    font-size: 15px;
+    color: #94a3b8;
+    padding: 30px 0;
+}
+
+/* ===============================
+   RESPONSIVO TABLET
+=============================== */
+@media (max-width: 900px) {
+    .explicacao-container-pub {
+        margin: 70px 16px;
+        padding: 40px 26px;
+    }
+
+    .explicacao-bloco-pub {
+        gap: 22px;
+    }
+}
+
+/* ===============================
+   RESPONSIVO CELULAR
+=============================== */
+@media (max-width: 600px) {
+    .explicacao-container-pub {
+        margin: 50px 12px;
+        padding: 32px 18px;
+        border-radius: 18px;
+    }
+
+    .explicacao-texto-pub {
+        line-height: 1.65;
+    }
+
+    .modulo-card-pub {
+        padding: 22px 20px 24px 20px;
+    }
+
+    .modulo-card-pub:hover {
+        transform: none;
+    }
+}
+
+/* ===============================
+   TELAS MUITO PEQUENAS
+=============================== */
+@media (max-width: 360px) {
+    .explicacao-container-pub {
+        padding: 26px 14px;
+    }
+
+    .explicacao-container-pub h2 {
+        margin-bottom: 24px;
+    }
+
+    .explicacao-bloco-pub {
+        gap: 18px;
+    }
+}
+
+/* ===============================
+   FUNDO DECORATIVO
+=============================== */
+.explicacao-container-pub::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background:
+        radial-gradient(circle at top center,
+            rgba(37, 99, 235, 0.08),
+            transparent 60%);
+    pointer-events: none;
+}
+
+/* ===============================================
+   RESET LOCAL
+=============================================== */
+.explicacao-container-pub *,
+.explicacao-container-pub *::before,
+.explicacao-container-pub *::after {
+    box-sizing: border-box;
+}
+
+/* ===============================================
+   CONTAINER PRINCIPAL
+=============================================== */
+.explicacao-container-pub {
+    width: min(92%, 1280px);
+    margin: clamp(50px, 8vw, 110px) auto;
+    padding: clamp(28px, 4vw, 64px);
+
+    background:
+        radial-gradient(900px 400px at top center,
+            rgba(37, 99, 235, 0.08),
+            transparent 60%),
+        linear-gradient(180deg, #020617, #01030a);
+
+    border-radius: clamp(18px, 3vw, 26px);
+
+    box-shadow:
+        0 40px 90px rgba(0, 0, 0, 0.65),
+        inset 0 1px 0 rgba(255, 255, 255, 0.05);
+
+    color: #e5e7eb;
+    position: relative;
+    overflow: hidden;
+}
+
+/* ===============================================
+   TÍTULO
+=============================================== */
+.explicacao-container-pub h2 {
+    text-align: center;
+    font-size: clamp(22px, 3.5vw, 40px);
+    font-weight: 700;
+    margin-bottom: clamp(24px, 4vw, 48px);
+    color: #f8fafc;
+    letter-spacing: 0.4px;
+}
+
+/* ===============================================
+   BLOCO DE TEXTOS
+=============================================== */
+.explicacao-texto-pub {
+    max-width: 960px;
+    margin: 0 auto clamp(18px, 3vw, 30px);
+    font-size: clamp(14px, 1.2vw, 17px);
+    line-height: 1.8;
+    color: #c7d2fe;
+    text-align: center;
+}
+
+.negrito-azul {
+    color: #60a5fa;
+    font-weight: 600;
+}
+
+/* ===============================================
+   GRID DE MÓDULOS
+=============================================== */
+.explicacao-bloco-pub {
+    margin-top: clamp(40px, 5vw, 70px);
+    display: grid;
+    gap: clamp(18px, 2.5vw, 36px);
+
+    grid-template-columns: repeat(auto-fit,
+            minmax(clamp(260px, 30vw, 320px), 1fr));
+}
+
+/* ===============================================
+   CARD
+=============================================== */
+.modulo-card-pub {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+
+    background: linear-gradient(180deg, #0b1220, #020617);
+    border-radius: clamp(16px, 2vw, 22px);
+    padding: clamp(20px, 2.5vw, 30px);
+
+    border: 1px solid #1e293b;
+
+    transition:
+        transform 0.3s ease,
+        border-color 0.3s ease,
+        box-shadow 0.3s ease;
+
+    box-shadow:
+        0 25px 60px rgba(0, 0, 0, 0.5),
+        inset 0 1px 0 rgba(255, 255, 255, 0.03);
+}
+
+.modulo-card-pub:hover {
+    transform: translateY(-10px);
+    border-color: #2563eb;
+    box-shadow:
+        0 45px 90px rgba(0, 0, 0, 0.7),
+        inset 0 1px 0 rgba(255, 255, 255, 0.06);
+}
+
+/* Linha superior decorativa */
+.modulo-card-pub::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 20px;
+    right: 20px;
+    height: 1px;
+    background: linear-gradient(90deg,
+            transparent,
+            rgba(96, 165, 250, 0.6),
+            transparent);
+}
+
+/* ===============================================
+   TÍTULO DO MÓDULO
+=============================================== */
+.modulo-card-pub h3 {
+    font-size: clamp(17px, 2vw, 22px);
+    font-weight: 600;
+    margin-bottom: clamp(10px, 1.5vw, 16px);
+    color: #f1f5f9;
+}
+
+/* ===============================================
+   TEXTO DO MÓDULO
+=============================================== */
+.modulo-card-pub p {
+    font-size: clamp(13.5px, 1vw, 15px);
+    line-height: 1.7;
+    color: #cbd5e1;
+    margin-bottom: clamp(14px, 2vw, 22px);
+}
+
+/* ===============================================
+   BLOCO DE PREÇO
+=============================================== */
+.preco-info-pub {
+    margin-top: auto;
+    font-size: clamp(13px, 1vw, 15px);
+    font-weight: 600;
+    text-align: center;
+
+    padding: clamp(10px, 1.5vw, 14px);
+    border-radius: clamp(10px, 1vw, 14px);
+
+    background: linear-gradient(180deg,
+            rgba(34, 197, 94, 0.14),
+            rgba(34, 197, 94, 0.06));
+
+    border: 1px solid rgba(34, 197, 94, 0.35);
+    color: #22c55e;
+}
+
+/* ===============================================
+   CARREGAMENTO
+=============================================== */
+.carregando-pub {
+    grid-column: 1 / -1;
+    text-align: center;
+    padding: 30px 0;
+    font-size: 15px;
+    color: #94a3b8;
+}
+
+/* ===============================================
+   TELAS ULTRA LARGAS
+=============================================== */
+@media (min-width: 1600px) {
+    .explicacao-bloco-pub {
+        grid-template-columns: repeat(4, 1fr);
+    }
+}
+
+/* ===============================================
+   MOBILE
+=============================================== */
+@media (max-width: 640px) {
+
+    .modulo-card-pub:hover {
+        transform: none;
+    }
+
+    .explicacao-texto-pub {
+        text-align: left;
+    }
+}

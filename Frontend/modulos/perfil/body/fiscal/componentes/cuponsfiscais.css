@@ -1,0 +1,129 @@
+/* ===============================
+   CONTAINER GERAL
+=============================== */
+.cupons-fiscais {
+    background: #020617;
+    border: 1px solid #1e293b;
+    border-radius: 16px;
+    padding: 20px;
+    color: #e5e7eb;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+}
+
+/* ===============================
+   TÍTULO
+=============================== */
+.cupons-fiscais h4 {
+    margin-bottom: 16px;
+    font-size: 18px;
+    font-weight: 600;
+    letter-spacing: 0.3px;
+}
+
+/* ===============================
+   TABELA
+=============================== */
+.cupons-fiscais table {
+    width: 100%;
+    border-collapse: collapse;
+    background: #020617;
+    border-radius: 12px;
+    overflow: hidden;
+}
+
+/* ===============================
+   CABEÇALHO
+=============================== */
+.cupons-fiscais thead {
+    background: #020617;
+    border-bottom: 1px solid #1e293b;
+}
+
+.cupons-fiscais thead th {
+    padding: 12px;
+    font-size: 12px;
+    text-transform: uppercase;
+    letter-spacing: 0.4px;
+    color: #9ca3af;
+    text-align: left;
+}
+
+/* ===============================
+   LINHAS
+=============================== */
+.cupons-fiscais tbody tr {
+    border-bottom: 1px solid #1e293b;
+    transition: background 0.2s ease;
+}
+
+.cupons-fiscais tbody tr:hover {
+    background: rgba(34, 197, 94, 0.05);
+}
+
+/* ===============================
+   CÉLULAS
+=============================== */
+.cupons-fiscais td {
+    padding: 12px;
+    font-size: 13px;
+    color: #e5e7eb;
+}
+
+/* ===============================
+   STATUS
+=============================== */
+.cupons-fiscais td:nth-child(3) {
+    font-weight: 600;
+}
+
+.cupons-fiscais td:nth-child(3):has(span.autorizada),
+.cupons-fiscais .status-autorizada {
+    color: #22c55e;
+}
+
+.cupons-fiscais .status-rejeitada {
+    color: #ef4444;
+}
+
+.cupons-fiscais .status-cancelada {
+    color: #f59e0b;
+}
+
+/* ===============================
+   BOTÃO
+=============================== */
+.cupons-fiscais button {
+    background: linear-gradient(180deg, #020617, #020617);
+    border: 1px solid #1e293b;
+    color: #e5e7eb;
+    border-radius: 12px;
+    padding: 6px 14px;
+    font-size: 12px;
+    font-weight: 600;
+    cursor: pointer;
+    transition:
+        border-color 0.2s ease,
+        color 0.2s ease,
+        box-shadow 0.2s ease,
+        transform 0.1s ease;
+}
+
+.cupons-fiscais button:hover {
+    border-color: #22c55e;
+    color: #22c55e;
+    box-shadow: 0 6px 18px rgba(34, 197, 94, 0.25);
+    transform: translateY(-1px);
+}
+
+.cupons-fiscais button:active {
+    transform: translateY(0);
+    box-shadow: none;
+}
+
+/* ===============================
+   LOADING
+=============================== */
+.cupons-fiscais-loading {
+    color: #9ca3af;
+    font-size: 14px;
+}

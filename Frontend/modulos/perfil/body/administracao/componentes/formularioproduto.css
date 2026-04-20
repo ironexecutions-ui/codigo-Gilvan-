@@ -1,0 +1,315 @@
+/* =========================
+   CONTAINER PRINCIPAL
+========================= */
+.form-produto {
+    background: linear-gradient(180deg, #020975, #0a027c);
+    color: #020617;
+    padding: 34px;
+    border-radius: 26px;
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+    box-shadow:
+        0 18px 40px rgba(0, 0, 0, 0.15),
+        inset 0 1px 0 rgba(255, 255, 255, 0.6);
+    animation: fadeUp 0.35s ease;
+}
+
+/* =========================
+   TOPO
+========================= */
+.topo-form {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+}
+
+.topo-form h4 {
+    font-size: 20px;
+    font-weight: 800;
+    letter-spacing: 0.3px;
+    color: #f8f9fa;
+}
+
+.topo-form button {
+    background: rgba(255, 255, 255, 0.7);
+    border: 1px solid #0e0e0e;
+    color: #020617;
+    padding: 9px 18px;
+    border-radius: 14px;
+    cursor: pointer;
+    font-size: 13px;
+    font-weight: 600;
+    transition: all 0.25s ease;
+}
+
+.topo-form button:hover {
+    border-color: #38bdf8;
+    color: #0284c7;
+    box-shadow: 0 8px 22px rgba(56, 189, 248, 0.25);
+}
+
+/* =========================
+   SELETOR DE TIPO
+========================= */
+.tipos {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 14px;
+}
+
+.tipos button {
+    background: linear-gradient(180deg, #ffffff, #f1f5f9);
+    border: 1px solid #051ad6;
+    color: #04011a;
+    padding: 14px;
+    border-radius: 18px;
+    cursor: pointer;
+    font-weight: 700;
+    font-size: 14px;
+    transition: all 0.25s ease;
+}
+
+.tipos button:hover {
+    border-color: #94a3b8;
+    background: #ffffff;
+}
+
+.tipos button.ativo {
+    border-color: #38bdf8;
+    color: #fcfcfc;
+    font-size: 20px;
+    margin-bottom: -5px;
+    background: linear-gradient(180deg, #0572bb, #064068);
+    box-shadow:
+        0 10px 26px rgba(56, 189, 248, 0.25),
+        inset 0 0 0 1px rgba(56, 189, 248, 0.35);
+}
+
+/* =========================
+   GRID DE CAMPOS
+========================= */
+.grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    gap: 18px;
+}
+
+.grid input {
+    padding: 14px 16px;
+    border-radius: 16px;
+    border: 1px solid #cbd5e1;
+    background: linear-gradient(180deg, #ffffff, #f8fafc);
+    color: #020617;
+    font-size: 14px;
+    transition: all 0.25s ease;
+}
+
+.grid input::placeholder {
+    color: #64748b;
+}
+
+.grid input:focus {
+    outline: none;
+    border-color: #38bdf8;
+    box-shadow:
+        0 0 0 3px rgba(56, 189, 248, 0.25),
+        inset 0 1px 2px rgba(0, 0, 0, 0.12);
+}
+
+
+
+/* =========================
+   AÇÕES
+========================= */
+.acoes {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 18px;
+    gap: 14px;
+    flex-wrap: wrap;
+}
+
+/* =========================
+   BOTÃO DISPONÍVEL
+========================= */
+.disponivel {
+    border-radius: 18px;
+    padding: 12px 22px;
+    font-weight: 800;
+    font-size: 13px;
+    cursor: pointer;
+    max-width: 30%;
+    border: 1px solid;
+    transition: all 0.25s ease;
+    letter-spacing: 0.3px;
+}
+
+.disponivel.on {
+    border-color: #000000;
+    background-color: #0beb5d !important;
+    color: #070707;
+    box-shadow: 0 6px 18px rgba(34, 197, 94, 0.35);
+}
+
+.disponivel.off {
+    border-color: #f87171;
+    color: #000000;
+    background: linear-gradient(180deg, #eb0505, #c90303);
+    box-shadow: 0 6px 18px rgba(248, 113, 113, 0.35);
+}
+
+/* =========================
+   BOTÃO SALVAR
+========================= */
+.salvar {
+    background: linear-gradient(180deg, #020617, #020617);
+    border: 1px solid #020617;
+    color: #ffffff;
+    padding: 14px 30px;
+    border-radius: 22px;
+    font-weight: 900;
+    font-size: 14px;
+    max-width: 30%;
+    cursor: pointer;
+    letter-spacing: 0.4px;
+    transition: all 0.25s ease;
+}
+
+.salvar:hover {
+    background: linear-gradient(180deg, #020617, #020617);
+    box-shadow:
+        0 14px 36px rgba(2, 6, 23, 0.45),
+        inset 0 0 0 1px rgba(255, 255, 255, 0.15);
+    transform: translateY(-1px);
+}
+
+.salvar:active {
+    transform: translateY(0);
+    box-shadow: none;
+}
+
+/* =========================
+   ANIMAÇÃO
+========================= */
+@keyframes fadeUp {
+    from {
+        opacity: 0;
+        transform: translateY(8px) scale(0.98);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+    }
+}
+
+/* =========================
+   TABLET
+========================= */
+@media (max-width: 1024px) {
+
+    .form-produto {
+        padding: 26px;
+        border-radius: 22px;
+    }
+
+    .tipos {
+        gap: 12px;
+    }
+
+    .grid {
+        grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    }
+
+    .acoes {
+        gap: 12px;
+    }
+
+    .disponivel,
+    .salvar {
+        max-width: 45%;
+    }
+}
+
+/* =========================
+   MOBILE
+========================= */
+@media (max-width: 768px) {
+
+    .form-produto {
+        padding: 20px;
+        border-radius: 18px;
+    }
+
+    .topo-form {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 10px;
+    }
+
+    .topo-form button {
+        width: 100%;
+        text-align: center;
+    }
+
+    .tipos {
+        grid-template-columns: 1fr;
+    }
+
+    .tipos button {
+        font-size: 15px;
+        padding: 14px;
+    }
+
+    .grid {
+        grid-template-columns: 1fr;
+        gap: 14px;
+    }
+
+    .acoes {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .disponivel,
+    .salvar {
+        max-width: 100%;
+        width: 100%;
+        text-align: center;
+    }
+}
+
+/* =========================
+   MOBILE PEQUENO
+========================= */
+@media (max-width: 420px) {
+
+    .form-produto {
+        padding: 16px;
+        border-radius: 16px;
+    }
+
+    .topo-form h4 {
+        font-size: 16px;
+        text-align: center;
+        width: 100%;
+    }
+
+    .tipos button {
+        font-size: 14px;
+        padding: 12px;
+    }
+
+    .grid input {
+        font-size: 13px;
+        padding: 12px 14px;
+    }
+
+    .disponivel,
+    .salvar {
+        font-size: 13px;
+        padding: 12px;
+    }
+}

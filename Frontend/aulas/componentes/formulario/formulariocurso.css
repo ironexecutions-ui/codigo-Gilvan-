@@ -1,0 +1,198 @@
+/* ================= CONTAINER ================= */
+
+.formularioCadastro_container {
+    position: relative;
+
+    padding: 120px 20px;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    background: linear-gradient(180deg,
+            #020617 0%,
+            #020617 40%,
+            #020617ee 100%);
+
+    overflow: hidden;
+}
+
+/* EFEITO DE LUZ DE FUNDO */
+
+.formularioCadastro_container::before {
+    content: "";
+
+    position: absolute;
+    top: -150px;
+    left: 50%;
+    transform: translateX(-50%);
+
+    width: 500px;
+    height: 500px;
+
+    background: radial-gradient(circle,
+            rgba(59, 130, 246, 0.25),
+            transparent 70%);
+
+    filter: blur(120px);
+    z-index: 0;
+}
+
+/* ================= TÍTULO ================= */
+
+.formularioCadastro_titulo {
+    font-size: 36px;
+    font-weight: 800;
+
+    color: #f8fafc;
+
+    margin-bottom: 40px;
+
+    z-index: 1;
+
+    letter-spacing: -0.5px;
+}
+
+/* ================= FORM ================= */
+
+.formularioCadastro_form {
+    width: 100%;
+    max-width: 420px;
+
+    padding: 40px 30px;
+
+    border-radius: 20px;
+
+    background: rgba(15, 23, 42, 0.65);
+    backdrop-filter: blur(18px);
+
+    border: 1px solid rgba(255, 255, 255, 0.06);
+
+    box-shadow:
+        0 20px 60px rgba(0, 0, 0, 0.6),
+        inset 0 1px 0 rgba(255, 255, 255, 0.05);
+
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+
+    z-index: 1;
+
+    transition: transform 0.3s ease;
+}
+
+.formularioCadastro_form:hover {
+    transform: translateY(-4px);
+}
+
+/* ================= INPUT ================= */
+
+.formularioCadastro_input {
+    width: 100%;
+
+    padding: 14px 16px;
+
+    border-radius: 12px;
+
+    border: 1px solid rgba(255, 255, 255, 0.08);
+
+    background: rgba(2, 6, 23, 0.6);
+
+    color: #f1f5f9;
+    font-size: 14px;
+
+    outline: none;
+
+    transition: all 0.25s ease;
+}
+
+/* PLACEHOLDER */
+
+.formularioCadastro_input::placeholder {
+    color: #64748b;
+}
+
+/* HOVER */
+
+.formularioCadastro_input:hover {
+    border-color: rgba(59, 130, 246, 0.4);
+}
+
+/* FOCUS */
+
+.formularioCadastro_input:focus {
+    border-color: #3b82f6;
+
+    box-shadow:
+        0 0 0 2px rgba(59, 130, 246, 0.25),
+        0 0 15px rgba(59, 130, 246, 0.2);
+
+    background: rgba(2, 6, 23, 0.85);
+}
+
+/* ================= BOTÃO ================= */
+
+.formularioCadastro_botao {
+    margin-top: 10px;
+
+    padding: 14px;
+
+    border-radius: 12px;
+
+    border: none;
+
+    font-size: 15px;
+    font-weight: 700;
+
+    color: #fff;
+
+    cursor: pointer;
+
+    background: linear-gradient(135deg,
+            #3b82f6,
+            #2563eb);
+
+    box-shadow:
+        0 10px 25px rgba(59, 130, 246, 0.35),
+        inset 0 1px 0 rgba(255, 255, 255, 0.2);
+
+    transition: all 0.25s ease;
+}
+
+/* HOVER BOTÃO */
+
+.formularioCadastro_botao:hover {
+    transform: translateY(-2px);
+
+    box-shadow:
+        0 15px 35px rgba(59, 130, 246, 0.45),
+        inset 0 1px 0 rgba(255, 255, 255, 0.25);
+}
+
+/* CLICK BOTÃO */
+
+.formularioCadastro_botao:active {
+    transform: scale(0.97);
+}
+
+/* ================= RESPONSIVO ================= */
+
+@media (max-width: 500px) {
+
+    .formularioCadastro_titulo {
+        font-size: 28px;
+        text-align: center;
+    }
+
+    .formularioCadastro_form {
+        padding: 30px 20px;
+    }
+
+    .formularioCadastro_input {
+        font-size: 13px;
+    }
+
+    .formularioCadastro_botao {
+        font-size: 14px;
+    }
+}

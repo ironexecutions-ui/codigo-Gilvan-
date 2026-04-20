@@ -1,0 +1,198 @@
+.prod-container {
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+    padding: 22px;
+    background: #003adb41;
+    margin: -13px;
+    height: 95vh;
+    max-height: 95vh;
+    border-radius: 30px;
+    overflow: hidden;
+    border: #051885 solid 1px;
+}
+
+/* LINHAS (agora dividem a tela em 2 partes iguais) */
+.linha-superior,
+.linha-inferior {
+    display: flex;
+    gap: 13px;
+
+    height: 50%;
+    max-height: 70%;
+    overflow: hidden;
+}
+
+.buscar-wrapper {
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+}
+
+.buscar-wrapper>*:first-child {
+    flex: 0;
+}
+
+.buscar-wrapper>*:last-child {
+    flex: 1;
+}
+
+.linha-superior {
+    height: 70% !important;
+}
+
+/* CARTÕES */
+.prod-card {
+    border-radius: 30px;
+    padding: 18px;
+    color: #f0f0f0;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+
+}
+
+.prod-card>* {
+    overflow-y: auto;
+}
+
+/* Caixas específicas */
+.buscar {
+    flex: 0.9;
+    height: fit-content;
+}
+
+.itens {
+    flex: 2;
+}
+
+.atual {
+    flex: 2;
+}
+
+.total {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+.prod-container.tema-claro {
+    background: linear-gradient(180deg, #d8e0eb, #e9eff6);
+    border-radius: 20px;
+    color: #1a1a1a;
+}
+
+.bloqueio-mobile {
+    height: 100vh;
+    background: #010e33;
+    color: #ffffff;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 24px;
+}
+
+.bloqueio-mobile h1 {
+    font-size: 28px;
+    margin-bottom: 12px;
+}
+
+.bloqueio-mobile p {
+    font-size: 16px;
+    opacity: 0.85;
+    max-width: 400px;
+}
+
+/* ===============================
+   DESKTOP MÉDIO
+   (1366x768, notebooks comuns)
+=============================== */
+@media (max-width: 1366px) {
+    .prod-container {
+        padding: 18px;
+        gap: 14px;
+        height: 94vh;
+        max-height: 94vh;
+    }
+
+    .linha-superior,
+    .linha-inferior {
+        gap: 10px;
+    }
+
+    .prod-card {
+        padding: 16px;
+        border-radius: 26px;
+    }
+}
+
+/* ===============================
+   DESKTOP MENOR
+   (1280x720 até limite do bloqueio)
+=============================== */
+@media (max-width: 1200px) {
+    .prod-container {
+        padding: 14px;
+        gap: 12px;
+        border-radius: 24px;
+    }
+
+    .linha-superior {
+        height: 68% !important;
+    }
+
+    .linha-superior,
+    .linha-inferior {
+        gap: 10px;
+    }
+
+    .prod-card {
+        padding: 14px;
+        border-radius: 22px;
+    }
+
+    .buscar-wrapper {
+        gap: 12px;
+    }
+}
+
+/* ===============================
+   AJUSTE DE ALTURA
+   (telas baixas, ex: 1366x700)
+=============================== */
+@media (max-height: 800px) {
+    .prod-container {
+        height: 93vh;
+        max-height: 93vh;
+    }
+
+    .linha-superior {
+        height: 66% !important;
+    }
+
+    .prod-card>* {
+        overflow-y: auto;
+    }
+}
+
+/* ===============================
+   TELAS MUITO BAIXAS
+=============================== */
+@media (max-height: 700px) {
+    .prod-container {
+        height: 92vh;
+        max-height: 92vh;
+    }
+
+    .linha-superior {
+        height: 64% !important;
+    }
+
+    .prod-card {
+        padding: 12px;
+    }
+}

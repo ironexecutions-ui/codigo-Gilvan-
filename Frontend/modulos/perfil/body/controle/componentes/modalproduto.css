@@ -1,0 +1,360 @@
+/* ===========================
+   OVERLAY
+=========================== */
+.mp-overlay {
+    position: fixed;
+    inset: 0;
+    background: rgba(244, 244, 245, 0.363);
+    backdrop-filter: blur(6px);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 9999;
+}
+
+/* ===========================
+   MODAL
+=========================== */
+.mp-modal {
+    position: relative;
+    width: 100%;
+    max-width: 920px;
+    max-height: 92vh;
+    background: linear-gradient(180deg, #0b1220, #050914);
+    border-radius: 18px;
+    box-shadow:
+        0 30px 80px rgba(0, 0, 0, 0.65),
+        inset 0 1px 0 rgba(255, 255, 255, 0.04);
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    animation: mpFade 0.25s ease;
+}
+
+/* Barra dourada vertical */
+.mp-modal::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 6px;
+    height: 100%;
+    background: linear-gradient(180deg,
+            #5c4415,
+            #caa74a,
+            #f5d36b,
+            #caa74a,
+            #5c4415);
+}
+
+@keyframes mpFade {
+    from {
+        opacity: 0;
+        transform: translateY(12px) scale(0.97);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+    }
+}
+
+/* ===========================
+   HEADER
+=========================== */
+.mp-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 22px 26px;
+    border-bottom: 1px solid #1e293b;
+}
+
+.mp-header h2 {
+    font-size: 18px;
+    font-weight: 600;
+    color: #e5e7eb;
+}
+
+.mp-header button {
+    background: none;
+    border: none;
+    color: #9ca3af;
+    font-size: 20px;
+    cursor: pointer;
+}
+
+.mp-header button:hover {
+    color: #ef4444;
+}
+
+/* ===========================
+   TIPOS
+=========================== */
+.mp-tipos {
+    display: flex;
+    gap: 10px;
+    padding: 16px 26px;
+    border-bottom: 1px solid #1e293b;
+}
+
+.mp-tipos button {
+    flex: 1;
+    padding: 10px;
+    border-radius: 10px;
+    border: 1px solid #1e293b;
+    background: #020617;
+    color: #9ca3af;
+    cursor: pointer;
+    transition: all 0.25s ease;
+}
+
+.mp-tipos button:hover {
+    border-color: #334155;
+    color: #e5e7eb;
+}
+
+.mp-tipos button.ativo {
+    background: linear-gradient(135deg, #2563eb, #1d4ed8);
+    border-color: #2563eb;
+    color: #ffffff;
+}
+
+/* ===========================
+   FORM
+=========================== */
+.mp-formm {
+    padding: 30px 34px;
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 26px 30px;
+    overflow-y: auto;
+    justify-items: center;
+
+    /* Firefox */
+    scrollbar-width: thin;
+    scrollbar-color: #d4af37 #0f172a;
+}
+
+/* ===============================
+   SCROLLBAR CHROME / EDGE
+=============================== */
+.mp-formm::-webkit-scrollbar {
+    width: 10px;
+}
+
+.mp-formm::-webkit-scrollbar-track {
+    background: linear-gradient(180deg, #020617, #0f172a);
+    border-radius: 10px;
+}
+
+.mp-formm::-webkit-scrollbar-thumb {
+    background: linear-gradient(180deg,
+            #f5e08e,
+            #d4af37,
+            #b8962e);
+    border-radius: 10px;
+    border: 2px solid #0f172a;
+}
+
+.mp-formm::-webkit-scrollbar-thumb:hover {
+    background: linear-gradient(180deg,
+            #ffe9a3,
+            #e6c558,
+            #caa437);
+}
+
+
+/* Inputs e labels ocupam as duas colunas */
+.mp-formm label,
+.mp-formm input {
+    grid-column: span 2;
+}
+
+/* Centralização real */
+.mp-formm {
+    justify-items: center;
+}
+
+.mp-formm input {
+    max-width: 360px;
+    text-align: center;
+}
+
+/* Números continuam corretos */
+.mp-formm input[type="number"] {
+    text-align: right;
+    padding-right: 18px;
+}
+
+/* ===========================
+   LABEL
+=========================== */
+.mp-formm label {
+    grid-column: span 2;
+    font-size: 12px;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+    text-transform: uppercase;
+    color: #94a3b8;
+    text-align: center;
+}
+
+/* ===========================
+   INPUT
+=========================== */
+.mp-formm input {
+    width: 100%;
+    max-width: 360px;
+    padding: 14px 16px;
+    border-radius: 12px;
+    border: 1px solid #1e293b;
+    background: linear-gradient(180deg, #020617, #01040d);
+    color: #e5e7eb;
+    font-size: 14px;
+    outline: none;
+    transition: border 0.2s, box-shadow 0.2s;
+}
+
+/* Texto central */
+.mp-formm input {
+    text-align: center;
+}
+
+/* Numéricos à direita */
+.mp-formm input[type="number"] {
+    text-align: right;
+    padding-right: 18px;
+}
+
+/* Focus */
+.mp-formm input:focus {
+    border-color: #2563eb;
+    box-shadow: 0 0 0 2px rgba(37, 99, 235, 0.25);
+}
+
+/* ===========================
+   DISPONÍVEL
+=========================== */
+.mp-disponivel {
+    grid-column: span 2;
+    padding: 12px;
+    border-radius: 12px;
+    text-align: center;
+    font-weight: 600;
+    cursor: pointer;
+}
+
+.mp-disponivel.on {
+    background: linear-gradient(135deg, #16a34a, #22c55e);
+    color: #022c22;
+}
+
+.mp-disponivel.off {
+    background: linear-gradient(135deg, #7c2d12, #dc2626);
+    color: #fee2e2;
+}
+
+/* ===========================
+   IMAGEM PRINCIPAL
+=========================== */
+.mp-imagem-drop {
+    grid-column: span 2;
+    height: 190px;
+    width: 220px;
+    border-radius: 14px;
+    border: 2px dashed #1e293b;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #9ca3af;
+    cursor: pointer;
+    background: #020617;
+}
+
+.mp-imagem-drop img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
+
+/* ===========================
+   IMAGENS EXTRAS
+=========================== */
+.mp-imagens-extras {
+    grid-column: span 2;
+    grid-template-columns: repeat(auto-fill, minmax(90px, 1fr));
+    gap: 12px;
+}
+
+.mp-imagens-extras img {
+    width: 100%;
+    height: 90px;
+    margin: 10px;
+    object-fit: cover;
+    border-radius: 10px;
+    border: 1px solid #1e293b;
+}
+
+.mp-imagem-extra-drop {
+    height: 90px;
+    border-radius: 10px;
+    border: 2px dashed #1e293b;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 28px;
+    color: #64748b;
+    cursor: pointer;
+}
+
+/* ===========================
+   FOOTER
+=========================== */
+.mp-footer {
+    padding: 20px 26px;
+    border-top: 1px solid #1e293b;
+    display: flex;
+    justify-content: flex-end;
+}
+
+.mp-footer button {
+    padding: 12px 26px;
+    border-radius: 12px;
+    border: none;
+    background: linear-gradient(135deg, #2563eb, #1d4ed8);
+    color: #ffffff;
+    font-weight: 600;
+    cursor: pointer;
+}
+
+.mp-imagem-wrapper {
+    position: relative;
+    display: inline-block;
+}
+
+.mp-imagem-wrapper img {
+    width: 90px;
+    height: 90px;
+    object-fit: cover;
+    border-radius: 8px;
+}
+
+.mp-remover-img {
+    position: absolute;
+    top: 4px;
+    right: 4px;
+    background: rgba(0, 0, 0, 0.75);
+    color: #fff;
+    border: none;
+    border-radius: 50%;
+    width: 24px;
+    height: 24px;
+    cursor: pointer;
+    display: none;
+    font-size: 14px;
+}
+
+.mp-imagem-wrapper:hover .mp-remover-img {
+    display: block;
+}

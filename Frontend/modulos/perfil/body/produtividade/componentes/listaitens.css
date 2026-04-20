@@ -1,0 +1,424 @@
+/* ===============================
+   CONTAINER PRINCIPAL
+=============================== */
+.lista-itens-box {
+    background: linear-gradient(180deg, #c9c8c8, #cecece);
+    border: 2px solid #d4af37;
+    border-radius: 16px;
+    padding: 16px;
+
+    color: #f2f2f2;
+
+    display: flex;
+    flex-direction: column;
+    box-shadow:
+        0 14px 36px rgba(0, 0, 0, 0.65),
+        inset 0 1px 0 rgba(255, 255, 255, 0.04);
+}
+
+@keyframes itemEntrada {
+    from {
+        opacity: 0;
+        transform: translateY(6px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* ===============================
+   ESTADO VAZIO
+=============================== */
+.lista-vazio {
+    font-size: 19px;
+    color: #000000 !important;
+    opacity: 0.7;
+    padding: 6px 2px;
+}
+
+/* ===============================
+   CONTEÚDO COM SCROLL
+=============================== */
+.lista-itens-conteudo {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    height: fit-content !important;
+    max-width: 100%;
+    height: 100%;
+    overflow-y: auto;
+    padding-right: 6px;
+}
+
+/* ===============================
+   SCROLL PERSONALIZADO
+=============================== */
+.lista-itens-conteudo::-webkit-scrollbar {
+    width: 6px;
+}
+
+.lista-itens-conteudo::-webkit-scrollbar-thumb {
+    background: #d4af37;
+    border-radius: 10px;
+}
+
+.lista-itens-conteudo::-webkit-scrollbar-track {
+    background: #162639;
+}
+
+/* ===============================
+   LINHA DO ITEM
+=============================== */
+.item-linha {
+    background: linear-gradient(180deg, #162639, #132235);
+    padding: 10px 12px;
+
+    border-radius: 12px;
+    border-left: 4px solid #d4af37;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    animation: itemEntrada 0.28s ease-out;
+
+    transition:
+        background 0.25s ease,
+        box-shadow 0.25s ease,
+        transform 0.2s ease;
+}
+
+
+
+/* ===============================
+   NOME DO ITEM
+=============================== */
+.item-nome {
+    font-size: 19px;
+    font-weight: 500;
+    color: #f2f2f2;
+}
+
+/* Unidade */
+.item-und {
+    font-size: 11px;
+    opacity: 0.7;
+}
+
+/* ===============================
+   CONTROLES
+=============================== */
+.item-controles {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+}
+
+/* Quantidade */
+.item-qtd {
+    min-width: 22px;
+    text-align: center;
+
+    font-size: 18px;
+    font-weight: 600;
+    color: #f2f2f2;
+}
+
+/* ===============================
+   BOTÕES + E -
+=============================== */
+.btn-mais,
+.btn-menos {
+    width: 26px;
+    height: 26px;
+
+    border-radius: 6px;
+    border: none;
+
+    background: #3381e7 !important;
+    color: hsl(0, 0%, 97%) !important;
+    font-weight: bolder !important;
+    font-size: 19px;
+    font-weight: 700;
+    line-height: 1;
+
+    cursor: pointer;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    box-shadow:
+        inset 0 1px 0 rgba(255, 255, 255, 0.08),
+        0 2px 6px rgba(0, 0, 0, 0.4);
+
+    transition:
+        background-color 0.2s ease,
+        transform 0.15s ease,
+        box-shadow 0.2s ease;
+}
+
+.btn-mais:hover,
+.btn-menos:hover {
+    background: #1d324a !important;
+    transform: translateY(-1px);
+}
+
+.btn-mais:active,
+.btn-menos:active {
+    transform: translateY(0);
+    box-shadow:
+        inset 0 2px 4px rgba(0, 0, 0, 0.6);
+}
+
+/* ===============================
+   BOTÃO REMOVER
+=============================== */
+.btn-remover {
+    width: 26px;
+    height: 26px;
+
+    border-radius: 6px;
+    border: none;
+
+    background: #c40f36;
+    color: #ffb4b4;
+
+    font-size: 19px;
+    font-weight: 700;
+
+    cursor: pointer;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    box-shadow:
+        inset 0 1px 0 rgba(255, 255, 255, 0.06),
+        0 2px 6px rgba(0, 0, 0, 0.4);
+
+    transition:
+        background-color 0.2s ease,
+        color 0.2s ease,
+        transform 0.15s ease;
+}
+
+.btn-remover:hover {
+    background: #4a1d1d;
+    color: #ffdada;
+    transform: translateY(-1px);
+}
+
+.btn-remover:active {
+    transform: translateY(0);
+}
+
+/* ===============================
+   PREÇO
+=============================== */
+.item-preco {
+    font-size: 23px;
+    font-weight: 600;
+    color: #d4af37;
+}
+
+/* ===============================
+   TEMA CLARO
+=============================== */
+
+.lista-itens-box.tema-claro {
+    background: linear-gradient(180deg, #ffffff, #f2f2f2);
+    border: 2px solid #c9a437;
+    color: #1a1a1a;
+
+    box-shadow:
+        0 12px 30px rgba(0, 0, 0, 0.15),
+        inset 0 1px 0 rgba(0, 0, 0, 0.04);
+}
+
+/* vazio */
+.lista-itens-box.tema-claro .lista-vazio {
+    color: #131313;
+}
+
+/* scroll */
+.lista-itens-box.tema-claro .lista-itens-conteudo::-webkit-scrollbar-thumb {
+    background: #c9a437;
+}
+
+.lista-itens-box.tema-claro .lista-itens-conteudo::-webkit-scrollbar-track {
+    background: #e5e5e5;
+}
+
+/* item */
+.lista-itens-box.tema-claro .item-linha {
+    background: #ffffff;
+    border: #c9a437 solid 1px;
+    border-left: 4px solid #c9a437;
+}
+
+.lista-itens-box.tema-claro .item-linha:hover {
+    background: #eaeaea;
+}
+
+/* textos */
+.lista-itens-box.tema-claro .item-nome {
+    color: #1a1a1a;
+}
+
+.lista-itens-box.tema-claro .item-und {
+    color: #777;
+}
+
+.lista-itens-box.tema-claro .item-qtd {
+    color: #1a1a1a;
+}
+
+/* botões + e - */
+.lista-itens-box.tema-claro .btn-mais,
+.lista-itens-box.tema-claro .btn-menos {
+    background: #ffffff;
+    color: #0a0a0a;
+
+    box-shadow:
+        inset 0 1px 0 rgba(0, 0, 0, 0.08),
+        0 2px 6px rgba(0, 0, 0, 0.2);
+}
+
+.lista-itens-box.tema-claro .btn-mais:hover,
+.lista-itens-box.tema-claro .btn-menos:hover {
+    background: #f0f0f0;
+}
+
+/* remover */
+.lista-itens-box.tema-claro .btn-remover {
+    background: #ffecec;
+    color: #b32020;
+}
+
+.lista-itens-box.tema-claro .btn-remover:hover {
+    background: #ffd6d6;
+    color: #8f1a1a;
+}
+
+/* preço */
+.lista-itens-box.tema-claro .item-preco {
+    color: #000000;
+}
+
+/* ===============================
+   DESKTOP MENOR
+=============================== */
+@media (max-width: 1024px) {
+    .lista-itens-box {
+        padding: 14px;
+    }
+
+    .lista-itens-conteudo {
+        gap: 8px;
+    }
+
+    .item-preco {
+        font-size: 13.5px;
+    }
+}
+
+/* ===============================
+   TABLET
+=============================== */
+@media (max-width: 768px) {
+    .lista-itens-box {
+        padding: 12px;
+        border-radius: 14px;
+    }
+
+    .item-linha {
+        padding: 9px 10px;
+        gap: 10px;
+    }
+
+    .item-nome {
+        font-size: 12.5px;
+    }
+
+    .item-qtd {
+        font-size: 12.5px;
+        min-width: 20px;
+    }
+
+    .btn-mais,
+    .btn-menos,
+    .btn-remover {
+        width: 24px;
+        height: 24px;
+        font-size: 14px;
+    }
+
+    .item-preco {
+        font-size: 13px;
+    }
+}
+
+/* ===============================
+   CELULAR
+=============================== */
+@media (max-width: 600px) {
+    .lista-itens-box {
+        padding: 10px;
+    }
+
+    .lista-itens-conteudo {
+        gap: 6px;
+        padding-right: 4px;
+    }
+
+    .item-linha {
+        flex-wrap: wrap;
+        row-gap: 6px;
+    }
+
+    .item-nome {
+        width: 100%;
+        font-size: 12.5px;
+    }
+
+    .item-controles {
+        gap: 5px;
+    }
+
+    .item-preco {
+        margin-left: auto;
+        font-size: 12.5px;
+    }
+}
+
+/* ===============================
+   CELULARES MUITO PEQUENOS
+=============================== */
+@media (max-width: 360px) {
+    .lista-itens-box {
+        padding: 8px;
+    }
+
+    .item-linha {
+        padding: 8px;
+    }
+
+    .item-nome {
+        font-size: 12px;
+    }
+
+    .btn-mais,
+    .btn-menos,
+    .btn-remover {
+        width: 22px;
+        height: 22px;
+        font-size: 13px;
+    }
+
+    .item-preco {
+        font-size: 12px;
+    }
+}

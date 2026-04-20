@@ -1,0 +1,308 @@
+/* ===============================
+   CONTAINER PRINCIPAL
+=============================== */
+
+.buscar-box {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    max-height: 100% !important;
+    position: relative;
+    z-index: 20;
+    font-family: "Montserrat", sans-serif;
+}
+
+/* ===============================
+   TÍTULO
+=============================== */
+
+.buscar-titulo {
+    font-size: 27px;
+    font-weight: 600;
+    color: #1f2937;
+    text-align: center;
+    margin-bottom: 4px;
+}
+
+/* ===============================
+   INPUT
+=============================== */
+
+.buscar-input {
+    width: 100%;
+    padding: 12px 14px;
+    border-radius: 8px;
+    font-size: 15px;
+    border: 1.5px solid #d1d5db;
+    background: #ffffff;
+    color: #111827 !important;
+    outline: none;
+    transition: border 0.2s ease, box-shadow 0.2s ease;
+}
+
+.buscar-input::placeholder {
+    color: #6b7280;
+}
+
+.buscar-input:focus {
+    border-color: #c9a437;
+    box-shadow: 0 0 0 3px rgba(201, 164, 55, 0.25);
+}
+
+/* ===============================
+   LOADER
+=============================== */
+
+.loader {
+    position: absolute;
+    right: 14px;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.spinner {
+    width: 18px;
+    height: 18px;
+    border-radius: 50%;
+    border: 3px solid #c9a437;
+    border-top-color: transparent;
+    animation: spin 0.6s linear infinite;
+}
+
+@keyframes spin {
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+/* ===============================
+   DROPDOWN DE SUGESTÕES
+=============================== */
+
+.sugestoes-box {
+    position: absolute;
+    z-index: 999999;
+    background: #ffffff;
+    border-radius: 10px;
+    border: 1px solid #e5e7eb;
+    max-height: 240px;
+    overflow-y: auto;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.12);
+}
+
+/* ===============================
+   ITEM
+=============================== */
+
+.sug-item {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 10px 12px;
+    cursor: pointer;
+    transition: background 0.15s ease, transform 0.1s ease;
+}
+
+.sug-item:hover {
+    background: rgba(201, 164, 55, 0.12);
+}
+
+.sug-item.ativo {
+    background: rgba(201, 164, 55, 0.18);
+    box-shadow: inset 3px 0 0 #c9a437;
+}
+
+/* ===============================
+   IMAGEM
+=============================== */
+
+.sug-img {
+    width: 42px;
+    height: 42px;
+    border-radius: 8px;
+    object-fit: cover;
+    background: #f3f4f6;
+    border: 1px solid #d1d5db;
+}
+
+/* ===============================
+   TEXTO
+=============================== */
+
+.sug-info {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+}
+
+.sug-nome {
+    font-size: 14px;
+    font-weight: 600;
+    color: #111827;
+}
+
+.sug-sub {
+    font-size: 12.5px;
+    color: #6b7280;
+}
+
+/* ===============================
+   SCROLLBAR MODERNA
+=============================== */
+
+.sugestoes-box::-webkit-scrollbar {
+    width: 6px;
+}
+
+.sugestoes-box::-webkit-scrollbar-track {
+    background: transparent;
+}
+
+.sugestoes-box::-webkit-scrollbar-thumb {
+    background: #d1d5db;
+    border-radius: 4px;
+}
+
+.sugestoes-box::-webkit-scrollbar-thumb:hover {
+    background: #9ca3af;
+}
+
+/* ===============================
+   AJUSTES DE SEGURANÇA
+=============================== */
+
+.buscar-box,
+.buscar-container,
+.prod-card {
+    overflow: visible !important;
+    position: relative;
+}
+
+/* ===============================
+   DESKTOP MENOR
+=============================== */
+@media (max-width: 1024px) {
+    .buscar-box {
+        gap: 8px;
+    }
+
+    .buscar-input {
+        font-size: 14.5px;
+        padding: 11px 13px;
+    }
+
+    .sugestoes-box {
+        max-height: 220px;
+    }
+}
+
+/* ===============================
+   TABLET
+=============================== */
+@media (max-width: 768px) {
+    .buscar-titulo {
+        font-size: 16px;
+    }
+
+    .buscar-input {
+        font-size: 14px;
+        padding: 10px 12px;
+    }
+
+    .sugestoes-box {
+        max-height: 200px;
+        border-radius: 8px;
+    }
+
+    .sug-item {
+        padding: 9px 10px;
+        gap: 10px;
+    }
+
+    .sug-img {
+        width: 38px;
+        height: 38px;
+    }
+
+    .sug-nome {
+        font-size: 13.5px;
+    }
+
+    .sug-sub {
+        font-size: 12px;
+    }
+}
+
+/* ===============================
+   CELULAR
+=============================== */
+@media (max-width: 600px) {
+    .buscar-titulo {
+        font-size: 15px;
+        text-align: left;
+    }
+
+    .buscar-input {
+        font-size: 13.5px;
+        padding: 10px;
+    }
+
+    .loader {
+        right: 10px;
+    }
+
+    .sugestoes-box {
+        max-height: 180px;
+        font-size: 13px;
+    }
+
+    .sug-item {
+        padding: 8px 9px;
+        gap: 8px;
+    }
+
+    .sug-img {
+        width: 34px;
+        height: 34px;
+    }
+
+    .sug-nome {
+        font-size: 13px;
+    }
+
+    .sug-sub {
+        font-size: 11.5px;
+    }
+}
+
+/* ===============================
+   CELULARES MUITO PEQUENOS
+=============================== */
+@media (max-width: 360px) {
+    .buscar-input {
+        font-size: 13px;
+        padding: 9px;
+    }
+
+    .sugestoes-box {
+        max-height: 160px;
+    }
+
+    .sug-item {
+        padding: 7px;
+    }
+
+    .sug-img {
+        width: 30px;
+        height: 30px;
+    }
+
+    .sug-nome {
+        font-size: 12.5px;
+    }
+
+    .sug-sub {
+        font-size: 11px;
+    }
+}

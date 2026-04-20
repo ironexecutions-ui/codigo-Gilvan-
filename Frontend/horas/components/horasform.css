@@ -1,0 +1,261 @@
+/* =========================
+   CARD FORMULÁRIO
+========================= */
+.hrs-form-card {
+    background: linear-gradient(180deg, #f8fafc, #f1f5f9);
+    border-radius: 20px;
+    padding: 28px;
+    box-shadow:
+        0 18px 40px rgba(0, 0, 0, 0.18),
+        inset 0 1px 0 rgba(255, 255, 255, 0.7);
+    animation: hrsFormFade 0.35s ease forwards;
+}
+
+/* =========================
+   ANIMAÇÃO
+========================= */
+@keyframes hrsFormFade {
+    from {
+        opacity: 0;
+        transform: translateY(16px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* =========================
+   TÍTULO
+========================= */
+.hrs-form-title {
+    font-size: 20px;
+    font-weight: 900;
+    margin-bottom: 24px;
+    color: #020617;
+    letter-spacing: -0.4px;
+}
+
+/* =========================
+   GRID
+========================= */
+.hrs-form-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 18px;
+}
+
+/* =========================
+   CAMPOS
+========================= */
+.hrs-form-field {
+    display: flex;
+    flex-direction: column;
+}
+
+.hrs-form-label {
+    font-size: 12px;
+    font-weight: 800;
+    margin-bottom: 6px;
+    color: #475569;
+    letter-spacing: 0.4px;
+}
+
+/* =========================
+   INPUT / SELECT
+========================= */
+.hrs-form-input {
+    height: 44px;
+    border-radius: 12px;
+    border: 1px solid #c7d2fe;
+    padding: 0 14px;
+    font-size: 14px;
+    font-weight: 500;
+    color: #020617;
+    outline: none;
+    background: #ffffff;
+    transition:
+        border-color 0.2s ease,
+        box-shadow 0.2s ease,
+        transform 0.15s ease;
+}
+
+.hrs-form-input:hover {
+    transform: translateY(-1px);
+}
+
+.hrs-form-input:focus {
+    border-color: #2563eb;
+    box-shadow:
+        0 0 0 3px rgba(37, 99, 235, 0.18);
+}
+
+/* =========================
+   TEXTAREA
+========================= */
+.hrs-form-textarea {
+    margin-top: 18px;
+}
+
+.hrs-form-textarea-input {
+    min-height: 140px;
+    resize: vertical;
+    border-radius: 14px;
+    border: 1px solid #c7d2fe;
+    padding: 14px;
+    font-size: 14px;
+    font-weight: 500;
+    color: #020617;
+    outline: none;
+    background: #ffffff;
+    line-height: 1.6;
+    transition:
+        border-color 0.2s ease,
+        box-shadow 0.2s ease;
+}
+
+.hrs-form-textarea-input:focus {
+    border-color: #2563eb;
+    box-shadow:
+        0 0 0 3px rgba(37, 99, 235, 0.18);
+}
+
+/* =========================
+   AÇÕES
+========================= */
+.hrs-form-actions {
+    margin-top: 26px;
+    display: flex;
+    justify-content: flex-end;
+}
+
+/* =========================
+   BOTÃO SALVAR
+========================= */
+.hrs-btn-salvar {
+    background: linear-gradient(135deg, #16a34a, #15803d);
+    color: #ffffff;
+    padding: 12px 26px;
+    border-radius: 14px;
+    font-size: 14px;
+    font-weight: 900;
+    cursor: pointer;
+    border: none;
+    letter-spacing: 0.4px;
+    box-shadow:
+        0 8px 18px rgba(22, 163, 74, 0.35);
+    transition:
+        transform 0.2s ease,
+        box-shadow 0.2s ease,
+        filter 0.2s ease;
+}
+
+.hrs-btn-salvar:hover {
+    transform: translateY(-2px);
+    filter: brightness(1.05);
+    box-shadow:
+        0 16px 32px rgba(22, 163, 74, 0.45);
+}
+
+.hrs-btn-salvar:active {
+    transform: translateY(0);
+    box-shadow:
+        0 8px 18px rgba(22, 163, 74, 0.35);
+}
+
+/* =========================
+   RESPONSIVO AVANÇADO
+========================= */
+
+/* ===== NOTEBOOK / TELAS MÉDIAS ===== */
+@media (max-width: 1200px) {
+    .hrs-form-card {
+        padding: 26px;
+    }
+
+    .hrs-form-title {
+        font-size: 19px;
+    }
+}
+
+/* ===== TABLET GRANDE ===== */
+@media (max-width: 992px) {
+    .hrs-form-card {
+        padding: 24px;
+    }
+
+    .hrs-form-grid {
+        gap: 16px;
+    }
+
+    .hrs-form-input {
+        height: 42px;
+    }
+}
+
+/* ===== TABLET / MOBILE GRANDE ===== */
+@media (max-width: 768px) {
+    .hrs-form-card {
+        padding: 22px;
+        border-radius: 18px;
+    }
+
+    .hrs-form-title {
+        font-size: 18px;
+        margin-bottom: 20px;
+        text-align: center;
+    }
+
+    .hrs-form-grid {
+        grid-template-columns: 1fr;
+        gap: 14px;
+    }
+
+    .hrs-form-actions {
+        justify-content: center;
+    }
+
+    .hrs-btn-salvar {
+        width: 100%;
+        padding: 12px 0;
+    }
+}
+
+/* ===== MOBILE ===== */
+@media (max-width: 576px) {
+    .hrs-form-card {
+        padding: 20px;
+    }
+
+    .hrs-form-label {
+        font-size: 11px;
+    }
+
+    .hrs-form-input {
+        font-size: 13px;
+        padding: 0 12px;
+    }
+
+    .hrs-form-textarea-input {
+        font-size: 13px;
+        padding: 12px;
+        min-height: 120px;
+    }
+}
+
+/* ===== MOBILE PEQUENO ===== */
+@media (max-width: 420px) {
+    .hrs-form-card {
+        padding: 18px;
+        border-radius: 16px;
+    }
+
+    .hrs-form-title {
+        font-size: 17px;
+    }
+
+    .hrs-btn-salvar {
+        font-size: 13px;
+    }
+}

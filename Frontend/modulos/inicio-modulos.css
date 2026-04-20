@@ -1,0 +1,196 @@
+.inicio-modulos-fundo {
+    min-height: 100vh;
+    padding: 40px;
+    position: relative;
+    overflow: hidden;
+    background: linear-gradient(180deg,
+            #00111f 0%,
+            #001f3a 40%,
+            #002f5e 70%,
+            #003f7a 100%);
+}
+
+/* PARTÍCULAS PROFUNDAS */
+.inicio-modulos-fundo::before {
+    content: "";
+    position: absolute;
+    inset: -120%;
+    background-image:
+        radial-gradient(1px 1px at 5% 10%, rgba(120, 200, 255, 0.35), transparent),
+        radial-gradient(1px 1px at 10% 80%, rgba(140, 210, 255, 0.3), transparent),
+        radial-gradient(1px 1px at 15% 30%, rgba(100, 180, 240, 0.25), transparent),
+        radial-gradient(1px 1px at 20% 60%, rgba(160, 220, 255, 0.35), transparent),
+        radial-gradient(1px 1px at 25% 15%, rgba(120, 200, 255, 0.3), transparent),
+        radial-gradient(1px 1px at 30% 75%, rgba(140, 210, 255, 0.25), transparent),
+        radial-gradient(1px 1px at 35% 40%, rgba(100, 180, 240, 0.35), transparent),
+        radial-gradient(1px 1px at 40% 90%, rgba(160, 220, 255, 0.3), transparent),
+        radial-gradient(1px 1px at 45% 20%, rgba(120, 200, 255, 0.25), transparent),
+        radial-gradient(1px 1px at 50% 70%, rgba(140, 210, 255, 0.35), transparent),
+        radial-gradient(1px 1px at 55% 35%, rgba(100, 180, 240, 0.3), transparent),
+        radial-gradient(1px 1px at 60% 85%, rgba(160, 220, 255, 0.25), transparent),
+        radial-gradient(1px 1px at 65% 10%, rgba(120, 200, 255, 0.35), transparent),
+        radial-gradient(1px 1px at 70% 60%, rgba(140, 210, 255, 0.3), transparent),
+        radial-gradient(1px 1px at 75% 30%, rgba(100, 180, 240, 0.25), transparent),
+        radial-gradient(1px 1px at 80% 80%, rgba(160, 220, 255, 0.35), transparent),
+        radial-gradient(1px 1px at 85% 45%, rgba(120, 200, 255, 0.3), transparent),
+        radial-gradient(1px 1px at 90% 15%, rgba(140, 210, 255, 0.25), transparent),
+        radial-gradient(1px 1px at 95% 70%, rgba(100, 180, 240, 0.35), transparent);
+    background-repeat: repeat;
+    background-size: 220px 220px;
+    animation: aguaLenta 160s linear infinite;
+    opacity: 0.55;
+    pointer-events: none;
+    z-index: 0;
+    filter: blur(0.3px);
+}
+
+/* PARTÍCULAS MAIS PRÓXIMAS */
+.inicio-modulos-fundo::after {
+    content: "";
+    position: absolute;
+    inset: -120%;
+    background-image:
+        radial-gradient(2px 2px at 10% 20%, rgba(180, 240, 255, 0.45), transparent),
+        radial-gradient(2px 2px at 20% 50%, rgba(160, 230, 255, 0.4), transparent),
+        radial-gradient(2px 2px at 30% 80%, rgba(140, 220, 255, 0.35), transparent),
+        radial-gradient(2px 2px at 40% 35%, rgba(180, 240, 255, 0.45), transparent),
+        radial-gradient(2px 2px at 50% 65%, rgba(160, 230, 255, 0.4), transparent),
+        radial-gradient(2px 2px at 60% 25%, rgba(140, 220, 255, 0.35), transparent),
+        radial-gradient(2px 2px at 70% 75%, rgba(180, 240, 255, 0.45), transparent),
+        radial-gradient(2px 2px at 80% 45%, rgba(160, 230, 255, 0.4), transparent),
+        radial-gradient(2px 2px at 90% 15%, rgba(140, 220, 255, 0.35), transparent);
+    background-repeat: repeat;
+    background-size: 320px 320px;
+    animation: aguaRapida 90s linear infinite;
+    opacity: 0.45;
+    pointer-events: none;
+    z-index: 0;
+    filter: blur(0.2px);
+}
+
+/* ANIMAÇÕES AQUÁTICAS */
+@keyframes aguaLenta {
+    from {
+        transform: translate(0, 0);
+    }
+
+    to {
+        transform: translate(-15%, -55%);
+    }
+}
+
+@keyframes aguaRapida {
+    from {
+        transform: translate(0, 0);
+    }
+
+    to {
+        transform: translate(10%, -85%);
+    }
+}
+
+/* ==========================================
+   WHATSAPP FLOAT PROFISSIONAL RESPONSIVO
+========================================== */
+
+.inicio-modulos-whatsapp-float {
+    position: fixed;
+    bottom: clamp(18px, 3vw, 32px);
+    right: clamp(18px, 3vw, 32px);
+    z-index: 9999;
+}
+
+/* BOTÃO PRINCIPAL */
+.inicio-modulos-whatsapp-button {
+    position: relative;
+    width: clamp(56px, 7vw, 78px);
+    height: clamp(56px, 7vw, 78px);
+    border-radius: 50%;
+    border: none;
+    cursor: pointer;
+
+    background: linear-gradient(145deg, #166b3a, #1f8f4e, #25D366);
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    box-shadow:
+        0 10px 25px rgba(0, 0, 0, 0.35),
+        inset 0 2px 6px rgba(255, 255, 255, 0.15);
+
+    transition: transform 0.35s ease, box-shadow 0.35s ease;
+    overflow: visible;
+}
+
+/* Hover elegante */
+.inicio-modulos-whatsapp-button:hover {
+    transform: scale(1.08);
+    box-shadow:
+        0 18px 40px rgba(0, 0, 0, 0.45),
+        inset 0 2px 6px rgba(255, 255, 255, 0.2);
+}
+
+/* ÍCONE */
+.inicio-modulos-whatsapp-icon {
+    width: clamp(26px, 3.5vw, 38px);
+    height: clamp(26px, 3.5vw, 38px);
+    filter: invert(1);
+    z-index: 2;
+}
+
+/* ==========================================
+   AROS FLUTUANTES SUAVES
+========================================== */
+
+.inicio-modulos-whatsapp-button::before,
+.inicio-modulos-whatsapp-button::after {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    border: clamp(1.5px, 0.3vw, 2.5px) solid rgba(37, 211, 102, 0.45);
+    animation: pulseRing 3s infinite cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* Segundo aro com delay */
+.inicio-modulos-whatsapp-button::after {
+    animation-delay: 1.5s;
+}
+
+/* Animação profissional */
+@keyframes pulseRing {
+    0% {
+        transform: scale(1);
+        opacity: 0.65;
+    }
+
+    70% {
+        transform: scale(1.7);
+        opacity: 0;
+    }
+
+    100% {
+        transform: scale(1.7);
+        opacity: 0;
+    }
+}
+
+/* ==========================================
+   AJUSTES ESPECÍFICOS PARA TELAS PEQUENAS
+========================================== */
+
+@media (max-width: 480px) {
+    .inicio-modulos-whatsapp-float {
+        bottom: 18px;
+        right: 18px;
+    }
+}
+
+@media (max-width: 360px) {
+    .inicio-modulos-whatsapp-float {
+        bottom: 14px;
+        right: 14px;
+    }
+}

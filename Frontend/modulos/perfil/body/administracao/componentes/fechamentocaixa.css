@@ -1,0 +1,121 @@
+.fechamento-caixa-container {
+    border-radius: 16px;
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+
+}
+
+.fechamento-caixa-container h4 {
+    font-size: 26px;
+    font-weight: 600;
+    color: #020202;
+}
+
+.fechamento-loading,
+.fechamento-vazio {
+    font-size: 13px;
+    color: #0c0c0c !important;
+}
+
+.lista-fechamentos {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.item-fechamento {
+    padding: 14px 16px;
+    border-radius: 14px;
+    border: 1px solid #1e293b;
+    cursor: pointer;
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+    transition: all 0.2s ease;
+}
+
+.item-fechamento strong {
+    font-size: 24px;
+    color: #0c0c0c;
+}
+
+.item-fechamento span {
+    font-size: 17px;
+    color: #01132e;
+}
+
+.item-fechamento:hover {
+    border-color: #fafafa;
+    background-color: #fafafa;
+    box-shadow: 0 8px 52px rgba(34, 197, 94, 0.22);
+    transform: translateY(-1px);
+}
+
+/* =========================
+   TABLET
+========================= */
+@media (max-width: 1024px) {
+
+    .fechamento-caixa-container h4 {
+        font-size: 22px;
+    }
+
+    .item-fechamento strong {
+        font-size: 20px;
+    }
+
+    .item-fechamento span {
+        font-size: 15px;
+    }
+}
+
+/* =========================
+   MOBILE
+========================= */
+@media (max-width: 768px) {
+
+    .fechamento-caixa-container {
+        gap: 12px;
+    }
+
+    .fechamento-caixa-container h4 {
+        font-size: 20px;
+    }
+
+    .item-fechamento {
+        padding: 12px 14px;
+    }
+
+    .item-fechamento strong {
+        font-size: 18px;
+    }
+
+    .item-fechamento span {
+        font-size: 14px;
+    }
+}
+
+/* =========================
+   MOBILE PEQUENO
+========================= */
+@media (max-width: 420px) {
+
+    .fechamento-caixa-container h4 {
+        font-size: 18px;
+        text-align: center;
+    }
+
+    .item-fechamento {
+        padding: 10px 12px;
+        border-radius: 12px;
+    }
+
+    .item-fechamento strong {
+        font-size: 16px;
+    }
+
+    .item-fechamento span {
+        font-size: 13px;
+    }
+}

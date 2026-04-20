@@ -1,0 +1,280 @@
+/* fundo com partículas dinâmicas */
+.load-container {
+    width: 100%;
+    height: 100vh;
+    background: radial-gradient(circle at center, #08172f, #02050b 80%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: fixed;
+    inset: 0;
+    overflow: hidden;
+    z-index: 999999;
+}
+
+/* partículas sutis */
+.load-container::before,
+.load-container::after {
+    content: "";
+    position: absolute;
+    width: 180%;
+    height: 180%;
+    top: -40%;
+    left: -40%;
+
+    opacity: 0.08;
+    animation: particleMove 45s linear infinite;
+    pointer-events: none;
+}
+
+.load-container::after {
+    opacity: 0.04;
+    animation-duration: 95s;
+}
+
+/* brilho central atrás do logo */
+.load-backlight {
+    position: absolute;
+    width: 650px;
+    height: 650px;
+    background: radial-gradient(circle, rgba(0, 128, 255, 0.55), transparent 75%);
+    filter: blur(140px);
+    animation: luzPulse 5.4s ease-in-out infinite;
+}
+
+/* centro */
+.load-center {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* container do logo */
+.load-image-wrapper {
+    position: relative;
+    width: 190px;
+    height: 190px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* anel externo camadas */
+.load-image-ring {
+    position: absolute;
+    width: 190px;
+    height: 190px;
+    border-radius: 50%;
+    border: 3px solid transparent;
+    border-top-color: rgba(0, 153, 255, 1);
+    border-left-color: rgba(255, 255, 255, 0.18);
+    border-right-color: rgba(0, 80, 255, 0.6);
+    border-bottom-color: rgba(255, 255, 255, 0.12);
+    animation: ringSpin 3.3s cubic-bezier(0.55, 0.1, 0.4, 1) infinite;
+    filter: drop-shadow(0 0 22px rgba(0, 130, 255, 0.8));
+}
+
+/* anel interno secundário */
+.load-image-ring::before {
+    content: "";
+    position: absolute;
+    width: 140px;
+    height: 140px;
+    border-radius: 50%;
+    border: 2px solid rgba(0, 153, 255, 0.65);
+    opacity: 0.4;
+    animation: ringSpinReverse 6s linear infinite;
+}
+
+/* imagem circular com escaneamento */
+.load-logo-img {
+    width: 148px;
+    height: 148px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 3px solid rgba(255, 255, 255, 0.3);
+    box-shadow:
+        0 0 20px rgba(0, 140, 255, 0.9),
+        0 0 45px rgba(0, 80, 255, 0.5);
+    animation:
+        float 3.2s ease-in-out infinite,
+        fadeUp 1.4s ease forwards;
+    position: relative;
+    overflow: hidden;
+}
+
+/* efeito de escaneamento */
+.load-logo-img::after {
+    content: "";
+    position: absolute;
+    top: -100%;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(to bottom,
+            rgba(255, 255, 255, 0.1),
+            rgba(255, 255, 255, 0.35),
+            rgba(255, 255, 255, 0.1));
+    animation: scan 3.8s ease-in-out infinite;
+}
+
+/* ondas luminosas atrás do logo */
+.load-image-wrapper::before {
+    content: "";
+    position: absolute;
+    width: 240px;
+    height: 240px;
+    border-radius: 50%;
+    background: radial-gradient(circle, rgba(0, 140, 255, 0.22), transparent);
+    filter: blur(35px);
+    animation: wavePulse 4.5s ease infinite;
+}
+
+/* nome da marca */
+.load-nome {
+    margin-top: 30px;
+    font-size: 38px;
+    font-weight: 700;
+    color: white;
+    letter-spacing: 1.5px;
+    animation: fadeUp 1.6s ease forwards;
+    text-shadow: 0 0 14px rgba(255, 255, 255, 0.2);
+}
+
+.load-nome span {
+    color: #3ea0ff;
+    margin-left: 8px;
+    text-shadow: 0 0 18px rgba(62, 160, 255, 1);
+    animation: brilhoTexto 2.8s ease-in-out infinite;
+}
+
+/* subtítulo */
+.load-texto {
+    margin-top: 10px;
+    font-size: 17px;
+    color: rgba(255, 255, 255, 0.78);
+    letter-spacing: 0.4px;
+    animation: fadeUp 1.8s ease forwards;
+}
+
+/* ANIMAÇÕES CINEMATOGRÁFICAS */
+@keyframes particleMove {
+    from {
+        transform: translateY(0);
+    }
+
+    to {
+        transform: translateY(-1200px);
+    }
+}
+
+@keyframes luzPulse {
+    0% {
+        opacity: 0.35;
+        transform: scale(1);
+    }
+
+    50% {
+        opacity: 0.95;
+        transform: scale(1.26);
+    }
+
+    100% {
+        opacity: 0.35;
+        transform: scale(1);
+    }
+}
+
+@keyframes ringSpin {
+    from {
+        transform: rotate(0deg);
+    }
+
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+@keyframes ringSpinReverse {
+    from {
+        transform: rotate(360deg);
+    }
+
+    to {
+        transform: rotate(0deg);
+    }
+}
+
+@keyframes float {
+    0% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-12px);
+    }
+
+    100% {
+        transform: translateY(0);
+    }
+}
+
+@keyframes fadeUp {
+    from {
+        opacity: 0;
+        transform: translateY(18px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes scan {
+    0% {
+        top: -120%;
+    }
+
+    50% {
+        top: 120%;
+    }
+
+    100% {
+        top: -120%;
+    }
+}
+
+@keyframes wavePulse {
+    0% {
+        transform: scale(1);
+        opacity: 0.35;
+    }
+
+    50% {
+        transform: scale(1.2);
+        opacity: 0.75;
+    }
+
+    100% {
+        transform: scale(1);
+        opacity: 0.35;
+    }
+}
+
+@keyframes brilhoTexto {
+    0% {
+        opacity: 1;
+        text-shadow: 0 0 12px #3ea0ff;
+    }
+
+    50% {
+        opacity: 0.6;
+        text-shadow: 0 0 32px #3ea0ff;
+    }
+
+    100% {
+        opacity: 1;
+        text-shadow: 0 0 12px #3ea0ff;
+    }
+}

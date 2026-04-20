@@ -1,0 +1,377 @@
+/* ===============================
+   CONTAINER GERAL
+=============================== */
+.produto-atual-box {
+    background: linear-gradient(145deg, #9c9c9c, #c2c2c2);
+    border: 1px solid rgba(255, 255, 255, 0.06);
+    border-radius: 16px;
+    padding: 22px;
+    width: 100%;
+    z-index: 1 !important;
+    color: #e4e4e4;
+    position: relative;
+
+    box-shadow:
+        0 6px 18px rgba(0, 0, 0, 0.55),
+        inset 0 0 8px rgba(255, 255, 255, 0.04);
+
+    backdrop-filter: blur(4px);
+
+    animation: produtoFadeIn 0.35s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+@keyframes produtoFadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(6px) scale(0.985);
+        filter: blur(1px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+        filter: blur(0);
+    }
+}
+
+.produto-atual-img {
+    animation: imgFocus 0.45s ease-out;
+}
+
+@keyframes imgFocus {
+    from {
+        opacity: 0;
+        transform: scale(0.96);
+    }
+
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+.produto-atual-box {
+    transition:
+        box-shadow 0.25s ease,
+        background 0.25s ease,
+        transform 0.25s ease;
+}
+
+/* ===============================
+   TÍTULO
+=============================== */
+.produto-atual-titulo {
+    font-size: 25px;
+    font-weight: bolder;
+    color: #000000 !important;
+    margin-bottom: 18px;
+}
+
+/* ===============================
+   CONTEÚDO
+=============================== */
+.produto-atual-conteudo {
+    display: grid;
+    grid-template-columns: 140px auto;
+    gap: 20px;
+    align-items: center;
+}
+
+/* ===============================
+   LADO ESQUERDO
+=============================== */
+.produto-atual-esq {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* ===============================
+   IMAGEM
+=============================== */
+.produto-atual-img {
+    width: 120px;
+    height: 120px;
+    object-fit: contain;
+
+    border-radius: 12px;
+    background: rgba(255, 255, 255, 0.08);
+    padding: 8px;
+
+    box-shadow:
+        0 4px 12px rgba(0, 0, 0, 0.35),
+        inset 0 0 6px rgba(255, 255, 255, 0.04);
+}
+
+/* ===============================
+   LADO DIREITO
+=============================== */
+.produto-atual-dir {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+/* ===============================
+   NOME
+=============================== */
+.produto-atual-nome {
+    font-size: 34px;
+    font-weight: 700;
+    color: #050505 !important;
+}
+
+/* ===============================
+   PREÇO
+=============================== */
+.produto-atual-preco {
+    font-size: 16px;
+    color: #050505 !important;
+    user-select: none;
+}
+
+.produto-atual-preco span {
+    font-size: 26px;
+    font-weight: 700;
+}
+
+/* Preço editável */
+.produto-atual-preco.clicavel {
+    cursor: pointer;
+    transition:
+        color 0.2s ease,
+        transform 0.15s ease;
+}
+
+.produto-atual-preco.clicavel:hover {
+    color: #4fe3ff;
+    transform: translateX(2px);
+}
+
+/* ===============================
+   INPUT INLINE
+=============================== */
+.preco-inline-input {
+    width: 160px;
+    padding: 8px 10px;
+
+    background: #0f1b2b;
+    color: #000000 !important;
+    border: 1px solid rgba(0, 216, 255, 0.5);
+    border-radius: 8px;
+
+    font-size: 18px;
+    font-weight: 600;
+
+    outline: none;
+
+    box-shadow:
+        0 4px 12px rgba(0, 0, 0, 0.45),
+        inset 0 0 6px rgba(255, 255, 255, 0.04);
+
+    transition:
+        border-color 0.2s ease,
+        box-shadow 0.2s ease;
+}
+
+.preco-inline-input:focus {
+    border-color: #00d8ff;
+    box-shadow:
+        0 0 0 3px rgba(0, 216, 255, 0.25),
+        inset 0 0 6px rgba(255, 255, 255, 0.06);
+}
+
+/* ===============================
+   UNIDADE / TEMPO
+=============================== */
+.produto-atual-und {
+    font-size: 14px;
+    opacity: 0.8;
+    color: #000000 !important;
+    font-weight: bolder;
+}
+
+/* ===============================
+   ESTADO VAZIO
+=============================== */
+.produto-atual-vazio {
+    font-size: 14px;
+    opacity: 0.7;
+    color: #000000 !important;
+}
+
+/* ===============================
+   ANIMAÇÃO
+=============================== */
+@keyframes aparecerProduto {
+    from {
+        opacity: 0;
+        transform: translateY(8px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+
+.preco-edicao input {
+    color: #eff2f3 !important;
+}
+
+.preco-edicao {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.btn-salvar-preco {
+    padding: 6px 14px;
+    border-radius: 10px;
+    border: solid black 2px;
+    cursor: pointer;
+    font-weight: 600;
+    background: #4caf50;
+    color: rgb(8, 8, 8) !important;
+}
+
+.btn-salvar-preco:hover {
+    background: #43a047;
+}
+
+/* ===============================
+   DESKTOP MENOR
+=============================== */
+@media (max-width: 1024px) {
+    .produto-atual-box {
+        padding: 20px;
+    }
+
+    .produto-atual-conteudo {
+        grid-template-columns: 120px auto;
+        gap: 16px;
+    }
+
+    .produto-atual-nome {
+        font-size: 30px;
+    }
+
+    .produto-atual-preco span {
+        font-size: 24px;
+    }
+}
+
+/* ===============================
+   TABLET
+=============================== */
+@media (max-width: 768px) {
+    .produto-atual-box {
+        padding: 18px;
+        border-radius: 14px;
+    }
+
+    .produto-atual-conteudo {
+        grid-template-columns: 100px auto;
+        gap: 14px;
+    }
+
+    .produto-atual-img {
+        width: 96px;
+        height: 96px;
+    }
+
+    .produto-atual-nome {
+        font-size: 26px;
+    }
+
+    .produto-atual-preco {
+        font-size: 15px;
+    }
+
+    .produto-atual-preco span {
+        font-size: 22px;
+    }
+
+    .preco-inline-input {
+        width: 140px;
+        font-size: 16px;
+    }
+}
+
+/* ===============================
+   CELULAR
+=============================== */
+@media (max-width: 600px) {
+    .produto-atual-box {
+        padding: 14px;
+    }
+
+    .produto-atual-conteudo {
+        grid-template-columns: 1fr;
+        gap: 12px;
+        text-align: center;
+    }
+
+    .produto-atual-esq {
+        justify-content: center;
+    }
+
+    .produto-atual-img {
+        width: 88px;
+        height: 88px;
+    }
+
+    .produto-atual-dir {
+        align-items: center;
+    }
+
+    .produto-atual-nome {
+        font-size: 22px;
+    }
+
+    .produto-atual-preco {
+        font-size: 14px;
+    }
+
+    .produto-atual-preco span {
+        font-size: 20px;
+    }
+
+    .preco-edicao {
+        flex-direction: column;
+        gap: 8px;
+    }
+
+    .preco-inline-input {
+        width: 100%;
+        max-width: 180px;
+        text-align: center;
+    }
+}
+
+/* ===============================
+   CELULARES MUITO PEQUENOS
+=============================== */
+@media (max-width: 360px) {
+    .produto-atual-box {
+        padding: 12px;
+    }
+
+    .produto-atual-img {
+        width: 76px;
+        height: 76px;
+    }
+
+    .produto-atual-nome {
+        font-size: 20px;
+    }
+
+    .produto-atual-preco span {
+        font-size: 18px;
+    }
+
+    .produto-atual-und {
+        font-size: 13px;
+    }
+}

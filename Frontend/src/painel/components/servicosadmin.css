@@ -1,0 +1,143 @@
+/* Caixa principal que se adapta ao espaço disponível */
+.sa-box {
+    width: 100%;
+    height: 100%;
+    padding: 25px;
+    color: white;
+    background: rgba(11, 31, 61, 0.8);
+    border-radius: 14px;
+    box-shadow: 0 0 22px rgba(0, 0, 0, 0.28);
+    display: flex;
+    flex-direction: column;
+    overflow-y: auto;
+}
+
+/* Barra de rolagem personalizada apenas dentro do painel */
+.sa-box::-webkit-scrollbar {
+    width: 10px;
+}
+
+/* Trilha */
+.sa-box::-webkit-scrollbar-track {
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 10px;
+    margin: 10px;
+}
+
+/* Barra */
+.sa-box::-webkit-scrollbar-thumb {
+    background: linear-gradient(180deg, #4cb5ff, #185fb3);
+    border-radius: 10px;
+    box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.4);
+}
+
+/* Efeito ao passar o mouse */
+.sa-box::-webkit-scrollbar-thumb:hover {
+    background: linear-gradient(180deg, #66c9ff, #1f75d6);
+}
+
+/* Título centralizado */
+.sa-titulo {
+    font-size: 26px;
+    margin-bottom: 22px;
+    font-weight: 600;
+    text-align: center;
+}
+
+/* Botões de filtro alinhados no centro */
+.sa-botoes {
+    display: flex;
+    justify-content: center;
+    gap: 14px;
+    margin-bottom: 26px;
+    flex-wrap: wrap;
+}
+
+/* Botões com tamanho adaptável */
+.sa-botoes button {
+    background: #132e5b;
+    color: white;
+    padding: 10px 20px;
+    min-width: 150px;
+    text-align: center;
+    border-radius: 8px;
+    border: none;
+    cursor: pointer;
+    font-size: 14px;
+    font-weight: 500;
+    transition: background 0.25s ease, transform 0.2s ease;
+    box-shadow: 0 0 14px rgba(0, 0, 0, 0.25);
+}
+
+.sa-botoes button:hover {
+    background: #1c4183;
+    transform: scale(1.05);
+}
+
+/* Lista ocupa todo o espaço restante */
+.sa-lista {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+}
+
+/* Card adaptável ao espaço da coluna */
+.sa-item {
+    background: rgba(15, 26, 53, 0.9);
+    padding: 18px 20px;
+    border-radius: 12px;
+    box-shadow: 0 0 18px rgba(0, 0, 0, 0.35);
+    border: 1px solid rgba(255, 255, 255, 0.06);
+    transition: transform 0.25s ease, box-shadow 0.25s ease;
+    position: relative;
+}
+
+.sa-item:hover {
+    transform: scale(1.01);
+    box-shadow: 0 0 28px rgba(0, 0, 0, 0.55);
+}
+
+.sa-item p {
+    margin-bottom: 8px;
+    font-size: 15px;
+}
+
+/* Link */
+.sa-item a {
+    color: #52b8ff;
+    font-weight: 600;
+    text-decoration: none;
+}
+
+.sa-item a:hover {
+    opacity: 0.7;
+}
+
+/* Botão de avançar estado */
+.sa-avancar {
+    margin-top: 12px;
+    background: #0ea85e;
+    border: none;
+    padding: 10px 18px;
+    border-radius: 8px;
+    cursor: pointer;
+    color: white;
+    font-size: 15px;
+    font-weight: 600;
+    transition: background 0.2s, transform 0.2s;
+    box-shadow: 0 0 14px rgba(0, 0, 0, 0.25);
+}
+
+.sa-avancar:hover {
+    background: #12c874;
+    transform: scale(1.04);
+}
+
+/* Caso vazio */
+.sa-vazio {
+    margin-top: 18px;
+    font-size: 15px;
+    color: #bbbbbb;
+    text-align: center;
+}

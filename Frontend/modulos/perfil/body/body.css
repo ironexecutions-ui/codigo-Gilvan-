@@ -1,0 +1,511 @@
+/* Título */
+.titulo-body {
+    color: #00013b !important;
+    margin-bottom: 25px;
+    margin-top: 65px;
+    font-size: 28px;
+    font-weight: 650;
+    letter-spacing: 0.6px;
+    text-shadow: 0 0 12px rgba(255, 255, 255, 0.15);
+}
+
+/* LISTA DE MÓDULOS — Sempre horizontal */
+.modulos-lista {
+    position: relative;
+    display: flex;
+    flex-direction: row;
+    gap: 18px;
+    width: 100%;
+    overflow-x: auto;
+    padding-bottom: 14px;
+    padding-top: 16px;
+    scrollbar-width: thin;
+}
+
+/* BARRA PERSONALIZADA — TRILHO AZUL PREMIUM */
+.modulos-lista::after {
+    content: "";
+    position: absolute;
+    bottom: 2px;
+    left: 0;
+    width: 100%;
+    height: 6px;
+
+    background: transparent;
+    border-radius: 12px;
+
+    pointer-events: none;
+    z-index: 1;
+}
+
+/* Scrollbar azul premium */
+.modulos-lista::-webkit-scrollbar {
+    height: 7px;
+}
+
+.modulos-lista::-webkit-scrollbar-thumb {
+    background: linear-gradient(90deg,
+            #008cff,
+            #00b7ff);
+    border-radius: 12px;
+    box-shadow:
+        0 0 12px rgba(0, 140, 255, 0.55),
+        0 0 18px rgba(0, 140, 255, 0.35);
+}
+
+.modulos-lista::-webkit-scrollbar-track {
+    background: rgba(255, 255, 255, 0.06);
+    border-radius: 12px;
+    box-shadow: inset 0 0 10px rgba(0, 0, 0, 0.45);
+}
+
+/* Card do módulo */
+.modulo-card {
+    position: relative;
+    padding: 14px 26px;
+    background: linear-gradient(135deg, #151515, #1f1f1f);
+    border-radius: 12px;
+    border: 1px solid rgba(255, 255, 255, 0.07);
+    cursor: pointer;
+    color: #e8e8e8;
+    font-size: 1.05rem;
+    white-space: nowrap;
+    transition: all 0.3s ease;
+    box-shadow: 0px 4px 14px rgba(0, 0, 0, 0.28);
+    backdrop-filter: blur(4px);
+    flex-shrink: 0;
+}
+
+/* Hover */
+.modulo-card:hover {
+    transform: translateY(-3px);
+    background: linear-gradient(135deg, #1c1c1c, #262626);
+    box-shadow:
+        0px 6px 50px rgba(0, 0, 0, 0.35),
+        0 0 12px rgba(0, 140, 255, 0.18);
+}
+
+/* Card ativo */
+.modulo-card.ativo {
+    background: linear-gradient(135deg, #005bb7, #008cff);
+    color: #ffffff;
+    box-shadow:
+        0px 6px 22px rgba(0, 140, 255, 0.38),
+        0 0 18px rgba(0, 140, 255, 0.40);
+}
+
+/* Underline profissional */
+.card-underline {
+    position: absolute;
+    bottom: -15px;
+    left: 50%;
+    transform: translateX(-50%);
+    height: 6px;
+    width: 0;
+    border-radius: 40px;
+
+    background: linear-gradient(90deg,
+            rgba(0, 170, 255, 0) 0%,
+            #00b7ff 25%,
+            #008cff 75%,
+            rgba(0, 140, 255, 0) 100%);
+
+    box-shadow:
+        0 0 12px rgba(0, 170, 255, 0.6),
+        0 0 20px rgba(0, 150, 255, 0.35),
+        inset 0 0 6px rgba(255, 255, 255, 0.12);
+
+    animation: underlineGrow 0.35s ease forwards;
+}
+
+/* Animação mais fluida */
+@keyframes underlineGrow {
+    0% {
+        width: 0;
+        opacity: 0;
+        filter: blur(2px);
+    }
+
+    50% {
+        width: 55%;
+        opacity: 1;
+        filter: blur(1.2px);
+    }
+
+    100% {
+        width: 70%;
+        opacity: 1;
+        filter: blur(0.8px);
+    }
+}
+
+/* Área do módulo */
+.area-modulo {
+    margin-top: 0px;
+    padding: 20px;
+    background: rgba(20, 20, 20, 0.55);
+    color: white;
+    border-radius: 24px;
+    min-height: 150px;
+    font-size: 17px;
+    line-height: 1.65;
+    backdrop-filter: blur(10px);
+    box-shadow:
+        0px 8px 22px rgba(0, 0, 0, 0.45),
+        inset 0px 0px 16px rgba(255, 255, 255, 0.04);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    animation: fadeIn 0.4s ease;
+}
+
+/* Fade */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(8px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.body-skeleton {
+    padding: 22px;
+    display: flex;
+    flex-direction: column;
+    background-color: #00013b;
+    border-radius: 20px;
+    gap: 26px;
+    animation: pulse 1.3s infinite ease-in-out;
+}
+
+.sk-title {
+    width: 260px;
+    height: 26px;
+    border-radius: 8px;
+    background: rgba(255, 255, 255, 0.08);
+}
+
+.sk-modulos {
+    display: flex;
+    gap: 16px;
+}
+
+.sk-card {
+    width: 160px;
+    height: 48px;
+    background: rgba(255, 255, 255, 0.08);
+    border-radius: 12px;
+}
+
+.sk-area {
+    width: 100%;
+    height: 150px;
+    background: rgba(255, 255, 255, 0.08);
+    border-radius: 20px;
+}
+
+@keyframes pulse {
+    0% {
+        opacity: .55;
+    }
+
+    50% {
+        opacity: 1;
+    }
+
+    100% {
+        opacity: .55;
+    }
+}
+
+.body-fade {
+    opacity: 0;
+    transform: translateY(10px);
+    margin-top: -40px;
+    transition: opacity .4s ease, transform .4s ease;
+}
+
+
+
+
+.body-fade.show {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.modulo-card[class*="anim-"] {
+    opacity: 0;
+    transform: translateY(8px);
+    animation: aparecer 0.4s ease forwards;
+}
+
+.anim-0 {
+    animation-delay: .05s;
+}
+
+.anim-1 {
+    animation-delay: .12s;
+}
+
+.anim-2 {
+    animation-delay: .18s;
+}
+
+.anim-3 {
+    animation-delay: .25s;
+}
+
+.anim-4 {
+    animation-delay: .32s;
+}
+
+.anim-5 {
+    animation-delay: .39s;
+}
+
+@keyframes aparecer {
+    from {
+        opacity: 0;
+        transform: translateY(8px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.fade-in-up {
+    opacity: 0;
+    transform: translateY(10px);
+    animation: fadeUp 0.35s ease forwards;
+}
+
+.fade-in-up-delay {
+    opacity: 0;
+    transform: translateY(10px);
+    animation: fadeUp 0.45s ease forwards;
+}
+
+@keyframes fadeUp {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.fade-expand {
+    animation: expandFade 0.35s ease forwards;
+}
+
+@keyframes expandFade {
+    from {
+        opacity: 0;
+        transform: scale(0.98);
+    }
+
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+.area-modulo-ativa {
+    margin-top: 20px;
+    padding: 25px;
+    border-radius: 14px;
+    box-shadow: 0 0 25px rgba(0, 0, 0, 0.25);
+}
+
+.topo-modulo {
+    cursor: pointer;
+    padding-bottom: 15px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+    text-align: center;
+}
+
+.titulo-modulo {
+    font-size: 24px;
+    color: white;
+}
+
+.clicar-voltar {
+    font-size: 14px;
+    opacity: 0.6;
+    margin-top: 4px;
+}
+
+.conteudo-modulo {
+    margin-top: -8px;
+    font-size: 16px;
+    color: #ccc;
+}
+
+.modulo-tag-flutuante {
+    position: fixed;
+    top: 10px !important;
+    right: 25px;
+
+    background: linear-gradient(135deg, #1f1f1f, #262626);
+    border: 1px solid rgba(255, 255, 255, 0.15);
+
+    padding: 10px 22px;
+    border-radius: 10px;
+
+    display: flex;
+    align-items: center;
+    gap: 12px;
+
+    color: #fff;
+    font-size: 15px;
+    cursor: pointer;
+    z-index: 999999;
+    /* Garantia máxima */
+
+    box-shadow:
+        0 4px 16px rgba(0, 0, 0, 0.45),
+        0 0 16px rgba(0, 140, 255, 0.22);
+
+    transition: all .25s ease;
+}
+
+.modulo-tag-flutuante:hover {
+    transform: translateY(-2px);
+    background: linear-gradient(135deg, #242424, #303030);
+}
+
+.modulo-tag-nome {
+    font-weight: 600;
+}
+
+.modulo-tag-voltar {
+    opacity: .7;
+    font-size: 13px;
+}
+
+/* Estado padrão, meio invisível */
+.modulo-tag-flutuante {
+    opacity: 0.35;
+    transition: opacity .4s ease;
+    animation: pulsarVisibilidade 11s infinite;
+}
+
+/* Quando passa o mouse, fica totalmente visível */
+.modulo-tag-flutuante:hover {
+    opacity: 1;
+}
+
+/* Ciclo:
+   0 a 90 por cento do tempo: meio invisível
+   90 a 100 por cento do tempo: visível
+*/
+@keyframes pulsarVisibilidade {
+    0% {
+        opacity: 0.35;
+    }
+
+    90% {
+        opacity: 0.35;
+    }
+
+    100% {
+        opacity: 2;
+    }
+}
+
+/* TELAS MUITO GRANDES */
+@media (min-width: 1500px) {
+    .modulo-tag-flutuante {
+        padding: 12px 26px;
+        font-size: 17px;
+        top: 85px;
+        right: 28px;
+    }
+
+    .modulo-tag-voltar {
+        font-size: 15px;
+    }
+}
+
+/* DESKTOP MÉDIO */
+@media (max-width: 1200px) {
+    .modulo-tag-flutuante {
+        padding: 10px 22px;
+        font-size: 11px;
+        top: 80px;
+        margin-top: -15px !important;
+
+        right: 22px;
+    }
+
+    .modulo-tag-voltar {
+        font-size: 8px;
+    }
+}
+
+/* DESKTOP PEQUENO / TABLET HORIZONTAL */
+@media (max-width: 900px) {
+    .modulo-tag-flutuante {
+        padding: 9px 20px;
+        margin-top: -20px;
+        font-size: 9px;
+        top: 72px;
+        right: 20px;
+    }
+
+    .modulo-tag-voltar {
+        font-size: 7px;
+    }
+}
+
+/* TABLET VERTICAL */
+@media (max-width: 700px) {
+    .modulo-tag-flutuante {
+        padding: 8px 18px;
+        font-size: 8px;
+        margin-top: -18px !important;
+
+        top: 70px;
+        margin-top: 2px;
+        right: 18px;
+    }
+
+    .modulo-tag-voltar {
+        font-size: 5px;
+    }
+}
+
+/* CELULAR COMUM */
+@media (max-width: 480px) {
+    .modulo-tag-flutuante {
+        padding: 7px 16px;
+        font-size: 4px;
+        gap: 10px;
+        top: 66px;
+
+        right: 14px;
+    }
+
+    .modulo-tag-voltar {
+        font-size: 3px;
+    }
+}
+
+/* CELULAR MUITO PEQUENO */
+@media (max-width: 360px) {
+    .modulo-tag-flutuante {
+        padding: 6px 14px;
+        font-size: 3px;
+        gap: 8px;
+        top: 64px;
+        margin-top: -25px !important;
+
+        right: 12px;
+    }
+
+    .modulo-tag-voltar {
+        font-size: 9px;
+    }
+}

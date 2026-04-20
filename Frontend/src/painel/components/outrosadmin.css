@@ -1,0 +1,250 @@
+/* CONTAINER PRINCIPAL */
+.oa-box {
+    width: 100%;
+    height: 100%;
+    padding: 30px;
+    background: linear-gradient(145deg, #0b1f3d, #0a1832);
+    color: white;
+    border-radius: 16px;
+
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+
+    box-shadow: 0 0 38px rgba(0, 0, 0, 0.45);
+    overflow-y: auto;
+    animation: fadein 0.4s ease;
+}
+
+@keyframes fadein {
+    from {
+        opacity: 0
+    }
+
+    to {
+        opacity: 1
+    }
+}
+
+/* TÍTULO */
+.oa-titulo {
+    font-size: 26px;
+    font-weight: 600;
+    text-align: center;
+    letter-spacing: 1px;
+    color: #ffffffdd;
+}
+
+/* ÁREA DOS BOTÕES DE MESES */
+.oa-meses {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 14px;
+    justify-content: center;
+}
+
+/* BOTÃO DE MÊS */
+.oa-mes-botao {
+    padding: 14px 22px;
+    background: rgba(20, 50, 100, 0.45);
+    backdrop-filter: blur(6px);
+
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: 12px;
+
+    color: white;
+    font-size: 15px;
+    cursor: pointer;
+
+    transition: transform 0.25s ease, background 0.25s ease, box-shadow 0.25s ease;
+}
+
+.oa-mes-botao:hover {
+    background: rgba(35, 90, 160, 0.65);
+    transform: translateY(-4px);
+    box-shadow: 0 0 14px rgba(60, 120, 200, 0.4);
+}
+
+/* TEXTO DE NENHUM GANHO */
+.oa-sem-ganhos {
+    text-align: center;
+    width: 100%;
+    opacity: 0.7;
+    font-size: 16px;
+}
+
+/* DETALHES DE MÊS */
+.oa-detalhes {
+    background: rgba(255, 255, 255, 0.05);
+    backdrop-filter: blur(8px);
+    padding: 22px;
+    border-radius: 14px;
+
+    border: 1px solid rgba(255, 255, 255, 0.08);
+
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+    animation: slideUp 0.35s ease;
+}
+
+@keyframes slideUp {
+    from {
+        opacity: 0;
+        transform: translateY(15px)
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0)
+    }
+}
+
+.oa-usuario-info {
+    font-size: 15px;
+    line-height: 1.5;
+}
+
+/* LISTA DE SERVIÇOS */
+.oa-servicos-lista {
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+}
+
+/* CARTÃO DE SERVIÇO */
+.oa-servico {
+    padding: 16px;
+    border-radius: 12px;
+
+    background: rgba(255, 255, 255, 0.06);
+    border: 1px solid rgba(255, 255, 255, 0.07);
+    backdrop-filter: blur(6px);
+
+    box-shadow: 0 0 14px rgba(0, 0, 0, 0.25);
+    transition: transform 0.2s;
+}
+
+.oa-servico:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 0 22px rgba(0, 0, 0, 0.35);
+}
+
+.oa-servico a {
+    color: #61b0ff;
+    font-weight: 500;
+    text-decoration: none;
+}
+
+.oa-servico a:hover {
+    text-decoration: underline;
+}
+
+/* BOTÃO DOS SÓCIOS */
+.oa-socios-botao {
+    align-self: center;
+    margin-top: 10px;
+
+    padding: 12px 26px;
+    background: rgba(255, 255, 255, 0.12);
+
+    border: none;
+    border-radius: 10px;
+
+    font-size: 15px;
+    cursor: pointer;
+    color: white;
+
+    transition: background 0.25s ease, transform 0.25s ease;
+}
+
+.oa-socios-botao:hover {
+    background: rgba(255, 255, 255, 0.25);
+    transform: scale(1.04);
+}
+
+/* MODAL */
+.oa-modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+
+    background: rgba(0, 0, 0, 0.55);
+    backdrop-filter: blur(4px);
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    z-index: 500;
+    animation: fadein 0.3s ease;
+}
+
+.oa-modal-conteudo {
+    width: 90%;
+    max-width: 620px;
+
+    background: rgba(15, 30, 55, 0.88);
+    border-radius: 16px;
+    padding: 28px;
+
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    box-shadow: 0 0 35px rgba(0, 0, 0, 0.35);
+
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+}
+
+/* TÍTULO DO MODAL */
+.oa-modal-titulo {
+    font-size: 22px;
+    text-align: center;
+}
+
+/* LISTA DOS SOCIOS */
+.oa-socio-bloco {
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 12px;
+
+    padding: 16px;
+    border: 1px solid rgba(255, 255, 255, 0.05);
+
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+
+    box-shadow: 0 0 14px rgba(0, 0, 0, 0.25);
+}
+
+.oa-socio-nome {
+    font-size: 17px;
+    font-weight: 500;
+}
+
+.oa-meses-socio {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+/* BOTÃO FECHAR */
+.oa-fechar {
+    padding: 12px;
+    width: 100%;
+    background: rgba(200, 40, 40, 0.75);
+
+    border: none;
+    border-radius: 10px;
+    font-size: 16px;
+    color: white;
+    cursor: pointer;
+
+    transition: background 0.25s ease;
+}
+
+.oa-fechar:hover {
+    background: rgba(255, 60, 60, 0.85);
+}

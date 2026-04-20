@@ -1,0 +1,645 @@
+/* ===============================
+   OVERLAY MODAL
+=============================== */
+.pag-overlay {
+    position: fixed;
+    inset: 0;
+    background: rgba(218, 218, 218, 0.295);
+    backdrop-filter: blur(4px);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 999999 !important;
+    animation: fadeOverlay 0.25s ease;
+}
+
+@keyframes fadeOverlay {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+/* ===============================
+   PIX QR CODE
+=============================== */
+.pix-qrcode {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin-top: 12px;
+    gap: 12px;
+}
+
+/* CONTROLE REAL DO TAMANHO */
+.pix-qrcode img {
+    width: 220px;
+    max-width: 100%;
+    height: auto;
+
+    border-radius: 12px;
+    background: #ffffff;
+    padding: 10px;
+
+    box-shadow:
+        0 10px 25px rgba(0, 0, 0, 0.45),
+        inset 0 0 0 1px rgba(0, 0, 0, 0.08);
+}
+
+/* ===============================
+   CPF / CUPOM FISCAL
+=============================== */
+
+.cpf-area {
+    margin: 14px 0;
+    padding: 12px;
+
+    border-radius: 10px;
+    background: rgba(255, 255, 255, 0.04);
+    border: 1px solid rgba(255, 255, 255, 0.12);
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.cpf-toggle {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    cursor: pointer;
+    font-size: 14px;
+    color: #e6e6e6;
+}
+
+.cpf-toggle input[type="checkbox"] {
+    width: 18px;
+    height: 18px;
+    accent-color: #d4af37;
+    /* dourado */
+    cursor: pointer;
+}
+
+.cpf-input {
+    width: 100%;
+    padding: 12px 14px;
+    font-size: 16px;
+    border-radius: 8px;
+    outline: none;
+    background: #0e1625;
+    color: #fff;
+    transition: border 0.2s ease, box-shadow 0.2s ease;
+}
+
+.cpf-input::placeholder {
+    color: #8a8a8a;
+}
+
+.cpf-input.cpf-invalido {
+    border: 2px solid #e74c3c;
+    box-shadow: 0 0 0 2px rgba(231, 76, 60, 0.15);
+}
+
+.cpf-input.cpf-valido {
+    border: 2px solid #2ecc71;
+    box-shadow: 0 0 0 2px rgba(46, 204, 113, 0.15);
+}
+
+.cpf-ajuda {
+    font-size: 12px;
+    color: #b5b5b5;
+    line-height: 1.4;
+}
+
+.cpf-ajuda span {
+    color: #d4af37;
+    font-weight: 600;
+}
+
+/* ===============================
+   CAIXA DO MODAL
+=============================== */
+.pag-box {
+    background: linear-gradient(180deg, #1a1f2b, #12161f);
+    padding: 26px;
+    border-radius: 16px;
+    width: 340px;
+
+    max-height: 80vh;
+    overflow-y: auto;
+    /* SCROLL ÚNICO */
+    overflow-x: hidden;
+
+
+    /* IMPORTANTE */
+
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+    color: #f2f2f2;
+
+    border: 1px solid rgba(212, 175, 55, 0.25);
+
+    box-shadow:
+        0 10px 30px rgba(0, 0, 0, 0.55),
+        inset 0 1px 0 rgba(255, 255, 255, 0.06);
+
+    animation: modalUp 0.3s ease;
+}
+
+/* ===============================
+   SCROLLBAR DO MODAL (ÚNICA)
+=============================== */
+
+.pag-box::-webkit-scrollbar {
+    width: 6px;
+}
+
+.pag-box::-webkit-scrollbar-track {
+    background: transparent;
+}
+
+.pag-box::-webkit-scrollbar-thumb {
+    background: linear-gradient(180deg,
+            rgba(212, 175, 55, 0.9),
+            rgba(212, 175, 55, 0.55));
+    border-radius: 6px;
+}
+
+.pag-box::-webkit-scrollbar-thumb:hover {
+    background: linear-gradient(180deg,
+            rgba(212, 175, 55, 1),
+            rgba(212, 175, 55, 0.7));
+}
+
+.pag-box {
+    scrollbar-width: thin;
+    scrollbar-color: rgba(212, 175, 55, 0.8) transparent;
+}
+
+@keyframes modalUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px) scale(0.98);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+    }
+}
+
+/* ===============================
+   BOTÃO EM ESTADO DE PROCESSO (VERMELHO)
+=============================== */
+.btn-processando {
+    background: linear-gradient(135deg, #b91c1c, #ef4444) !important;
+    color: #ffffff !important;
+    cursor: not-allowed;
+    box-shadow:
+        0 6px 18px rgba(239, 68, 68, 0.55),
+        inset 0 1px 0 rgba(255, 255, 255, 0.2);
+    animation: pulseErro 1.2s ease-in-out infinite;
+}
+
+@keyframes pulseErro {
+    0% {
+        transform: scale(1);
+        box-shadow: 0 0 0 rgba(239, 68, 68, 0.5);
+    }
+
+    50% {
+        transform: scale(1.03);
+        box-shadow: 0 0 18px rgba(239, 68, 68, 0.8);
+    }
+
+    100% {
+        transform: scale(1);
+        box-shadow: 0 0 0 rgba(239, 68, 68, 0.5);
+    }
+}
+
+.btn-processando {
+    pointer-events: none;
+}
+
+/* ===============================
+   BOTÕES DO MODAL
+=============================== */
+.pag-box button {
+    padding: 12px;
+    border-radius: 10px;
+    border: none;
+    cursor: pointer;
+    font-size: 15px;
+    font-weight: 500;
+
+    background: #202633;
+    color: #ffffff;
+
+    box-shadow:
+        0 2px 6px rgba(0, 0, 0, 0.35),
+        inset 0 1px 0 rgba(255, 255, 255, 0.12);
+
+    transition:
+        background 0.2s ease,
+        transform 0.15s ease,
+        box-shadow 0.2s ease;
+}
+
+.pag-box button:hover {
+    background: #2a3244;
+    transform: translateY(-1px);
+
+    box-shadow:
+        0 4px 12px rgba(0, 0, 0, 0.45),
+        inset 0 1px 0 rgba(255, 255, 255, 0.18);
+}
+
+/* ===============================
+   CONFIRMAR PAGAMENTO
+=============================== */
+.confirmar {
+    background: linear-gradient(135deg, #2e7d32, #43a047);
+    color: #ffffff;
+    font-weight: 600;
+}
+
+.confirmar:hover {
+    background: linear-gradient(135deg, #388e3c, #4caf50);
+}
+
+/* ===============================
+   BOTÃO VOLTAR
+=============================== */
+.voltar {
+    background: #2b2f38;
+    color: #cfcfcf;
+}
+
+.voltar:hover {
+    background: #3a3f4c;
+    color: #ffffff;
+}
+
+/* ===============================
+   INPUT DINHEIRO
+=============================== */
+.pag-box input {
+    padding: 12px;
+    border-radius: 10px;
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    background: #0f1320;
+    color: #ffffff;
+    font-size: 15px;
+
+    outline: none;
+
+    transition:
+        border-color 0.2s ease,
+        box-shadow 0.2s ease;
+}
+
+.pag-box input:focus {
+    border-color: #4caf50;
+    box-shadow: 0 0 0 2px rgba(76, 175, 80, 0.25);
+}
+
+/* ===============================
+   TEXTO DE TROCO
+=============================== */
+.pag-box p {
+    font-size: 15px;
+    color: #b9f6ca;
+    font-weight: 600;
+    margin-top: 4px;
+}
+
+.pag-sucesso {
+    text-align: center;
+    padding: 30px 20px;
+    color: #4caf50;
+}
+
+.pag-sucesso h2 {
+    margin-bottom: 10px;
+}
+
+.pag-sucesso p {
+    color: #ccc;
+    font-size: 15px;
+}
+
+/* ===============================
+   SUCESSO - ANIMAÇÃO PROFISSIONAL
+=============================== */
+
+.pag-box-sucesso {
+    background: linear-gradient(180deg, #102016, #0b1510);
+    border: 1px solid rgba(76, 175, 80, 0.4);
+}
+
+.anim-sucesso {
+    animation: sucessoEntrada 0.6s ease forwards;
+}
+
+@keyframes sucessoEntrada {
+    0% {
+        opacity: 0;
+        transform: scale(0.85) translateY(20px);
+    }
+
+    60% {
+        opacity: 1;
+        transform: scale(1.05) translateY(-4px);
+    }
+
+    100% {
+        transform: scale(1) translateY(0);
+    }
+}
+
+.sucesso-icon {
+    width: 64px;
+    height: 64px;
+    margin: 0 auto 14px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, #43a047, #66bb6a);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 34px;
+    color: white;
+
+    box-shadow:
+        0 6px 18px rgba(76, 175, 80, 0.6),
+        inset 0 2px 4px rgba(255, 255, 255, 0.35);
+
+    animation: iconPulse 1.4s ease infinite;
+}
+
+@keyframes iconPulse {
+    0% {
+        transform: scale(1);
+        box-shadow: 0 0 0 rgba(76, 175, 80, 0.6);
+    }
+
+    50% {
+        transform: scale(1.08);
+        box-shadow: 0 0 24px rgba(76, 175, 80, 0.8);
+    }
+
+    100% {
+        transform: scale(1);
+        box-shadow: 0 0 0 rgba(76, 175, 80, 0.6);
+    }
+}
+
+.overlay-fechar {
+    animation: overlaySaida 0.4s ease forwards;
+}
+
+@keyframes overlaySaida {
+    from {
+        opacity: 1;
+    }
+
+    to {
+        opacity: 0;
+    }
+}
+
+/* ===== STATUS GERAL ===== */
+.status-maquininha {
+    margin: 14px 0;
+    font-size: 14px;
+    display: flex;
+    text-align: center;
+    justify-content: center;
+}
+
+.maq-warn {
+    background: rgba(220, 38, 38, 0.08);
+    border: 1px solid rgba(220, 38, 38, 0.35);
+    color: #fecaca;
+    padding: 8px 14px;
+    border-radius: 999px;
+    font-weight: 600;
+    letter-spacing: 0.3px;
+
+    animation: maqPulse 1.6s ease-in-out infinite;
+}
+
+/* ===== ANIMAÇÃO SUAVE (PROFISSIONAL) ===== */
+@keyframes maqPulse {
+    0% {
+        opacity: 1;
+        box-shadow: 0 0 0 rgba(220, 38, 38, 0);
+    }
+
+    50% {
+        opacity: 0.55;
+        box-shadow: 0 0 12px rgba(220, 38, 38, 0.35);
+    }
+
+    100% {
+        opacity: 1;
+        box-shadow: 0 0 0 rgba(220, 38, 38, 0);
+    }
+}
+
+/* ===== CONECTADO ===== */
+.maq-ok {
+    background: rgba(22, 163, 74, 0.12);
+    border: 1px solid rgba(22, 163, 74, 0.35);
+    color: #4ade80;
+    padding: 8px 14px;
+    border-radius: 999px;
+    font-weight: 600;
+}
+
+/* ===== BOX DE ERRO (MAQUININHA NÃO CONECTADA) ===== */
+.maq-erro-box {
+    background: linear-gradient(180deg, #111827, #020617);
+    border: 1px solid #7f1d1d;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.45);
+    padding: 18px 16px;
+    border-radius: 14px;
+    max-width: 320px;
+    text-align: center;
+    animation: maqFadeIn 0.25s ease;
+}
+
+/* ===== TEXTO DO ERRO ===== */
+.maq-erro-box p {
+    color: #fecaca;
+    font-size: 15px;
+    font-weight: 500;
+    line-height: 1.4;
+    margin-bottom: 14px;
+}
+
+/* ===== BOTÃO OK ===== */
+.maq-ok-btn {
+    background: linear-gradient(135deg, #16a34a, #22c55e);
+    border: none;
+    padding: 10px 26px;
+    border-radius: 10px;
+    color: #ffffff;
+    font-size: 15px;
+    font-weight: 700;
+    letter-spacing: 0.3px;
+    cursor: pointer;
+    transition: transform 0.15s ease, box-shadow 0.15s ease, opacity 0.15s ease;
+    box-shadow: 0 6px 16px rgba(34, 197, 94, 0.35);
+}
+
+.maq-ok-btn:hover {
+    transform: translateY(-1px);
+    box-shadow: 0 10px 22px rgba(34, 197, 94, 0.45);
+    opacity: 0.95;
+}
+
+.maq-ok-btn:active {
+    transform: translateY(0);
+    box-shadow: 0 4px 10px rgba(34, 197, 94, 0.35);
+}
+
+/* ===== ANIMAÇÃO ===== */
+@keyframes maqFadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(6px) scale(0.98);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+    }
+}
+
+/* ===============================
+   DESKTOP MENOR
+=============================== */
+@media (max-width: 1024px) {
+    .pag-box {
+        width: 320px;
+        padding: 24px;
+        gap: 12px;
+    }
+
+    .pag-box button {
+        font-size: 14.5px;
+        padding: 11px;
+    }
+
+    .pag-box p {
+        font-size: 14.5px;
+    }
+}
+
+/* ===============================
+   TABLET
+=============================== */
+@media (max-width: 768px) {
+    .pag-box {
+        width: 300px;
+        padding: 22px;
+        border-radius: 14px;
+    }
+
+    .pag-box h3 {
+        font-size: 17px;
+    }
+
+    .pag-box button {
+        font-size: 14px;
+        padding: 10px;
+    }
+
+    .pag-box input {
+        font-size: 14px;
+        padding: 11px;
+    }
+
+    .maq-erro-box {
+        max-width: 280px;
+        padding: 16px 14px;
+    }
+}
+
+/* ===============================
+   CELULAR
+=============================== */
+@media (max-width: 600px) {
+    .pag-overlay {
+        padding: 12px;
+    }
+
+    .pag-box {
+        width: 100%;
+        max-width: 100%;
+        padding: 20px;
+        border-radius: 12px;
+    }
+
+    .pag-box h3 {
+        font-size: 16px;
+        text-align: center;
+    }
+
+    .pag-box button {
+        font-size: 13.5px;
+        padding: 10px;
+    }
+
+    .pag-box input {
+        font-size: 13.5px;
+        padding: 10px;
+    }
+
+    .pag-box p {
+        font-size: 13.5px;
+        text-align: center;
+    }
+
+    .status-maquininha {
+        font-size: 13px;
+    }
+}
+
+/* ===============================
+   CELULARES MUITO PEQUENOS
+=============================== */
+@media (max-width: 360px) {
+    .pag-box {
+        padding: 18px;
+    }
+
+    .pag-box h3 {
+        font-size: 15px;
+    }
+
+    .pag-box button {
+        font-size: 13px;
+        padding: 9px;
+    }
+
+    .pag-box input {
+        font-size: 13px;
+        padding: 9px;
+    }
+
+    .maq-erro-box {
+        max-width: 100%;
+    }
+
+    .sucesso-icon {
+        width: 56px;
+        height: 56px;
+        font-size: 30px;
+    }
+}

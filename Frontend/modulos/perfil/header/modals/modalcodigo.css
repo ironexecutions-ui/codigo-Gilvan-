@@ -1,0 +1,112 @@
+/* FUNDO ESCURECIDO */
+.cod-modal-fundo {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    background: rgba(0, 0, 0, 0.65);
+    backdrop-filter: blur(4px);
+
+    z-index: 999999999 !important;
+
+    animation: fundoFade 0.25s ease;
+}
+
+/* ANIMAÇÃO DO FUNDO */
+@keyframes fundoFade {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+/* CAIXA DO MODAL */
+.cod-modal-caixa {
+    position: relative;
+    width: 90%;
+    max-width: 420px;
+
+    background: #121212;
+    padding: 28px;
+    border-radius: 16px;
+
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    box-shadow:
+        0 0 25px rgba(0, 0, 0, 0.55),
+        0 0 12px rgba(255, 255, 255, 0.05);
+
+    z-index: 9999999999 !important;
+
+    animation: modalGrow 0.28s ease-out;
+}
+
+/* ANIMAÇÃO DO MODAL */
+@keyframes modalGrow {
+    from {
+        opacity: 0;
+        transform: scale(0.92) translateY(10px);
+    }
+
+    to {
+        opacity: 1;
+        transform: scale(1) translateY(0);
+    }
+}
+
+/* TÍTULO */
+.cod-titulo {
+    color: #ffffff;
+    text-align: center;
+    font-size: 24px;
+    font-weight: 600;
+    margin-bottom: 18px;
+}
+
+/* ÁREA DO CÓDIGO */
+.cod-barcode-box {
+    background: white;
+    padding: 18px;
+    border-radius: 14px;
+    margin-bottom: 22px;
+
+    display: flex;
+    justify-content: center;
+
+    box-shadow: 0 0 10px rgba(255, 255, 255, 0.05);
+}
+
+/* SVG */
+.cod-barcode-svg {
+    width: auto;
+    height: auto;
+}
+
+/* BOTÃO FECHAR */
+.cod-btn-fechar {
+    width: 100%;
+    background: #2b2b2b;
+    color: white;
+    padding: 12px;
+
+    border-radius: 10px;
+    border: 1px solid #444;
+
+    font-size: 16px;
+    cursor: pointer;
+    transition: 0.25s;
+
+    z-index: 9999999999 !important;
+}
+
+.cod-btn-fechar:hover {
+    background: #3a3a3a;
+}

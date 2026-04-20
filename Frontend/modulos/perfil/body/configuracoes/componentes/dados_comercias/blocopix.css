@@ -1,0 +1,155 @@
+/* ===============================
+   BLOCO PIX – MERCADO PAGO
+=============================== */
+
+.dc-section {
+    margin-top: 30px;
+}
+
+/* Título */
+.dc-title {
+    font-size: 18px;
+    font-weight: 700;
+    margin-bottom: 14px;
+    color: #1f2937;
+}
+
+/* Container interno */
+.dc-pix-box {
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+    max-width: 820px;
+}
+
+/* Inputs */
+.dc-pix-input {
+    width: 100%;
+    padding: 11px 12px;
+    border-radius: 10px;
+    border: 1px solid #d1d5db;
+    font-size: 14px;
+    transition: border-color 0.2s, box-shadow 0.2s;
+}
+
+.dc-pix-input:focus {
+    outline: none;
+    border-color: #2563eb;
+    box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.15);
+}
+
+/* Campos sensíveis */
+.dc-pix-input.secreto {
+    font-family: monospace;
+    letter-spacing: 0.5px;
+}
+
+/* Botão */
+.dc-pix-btn {
+    align-self: flex-start;
+    padding: 10px 18px;
+    background: #2563eb;
+    color: #ffffff;
+    border: none;
+    border-radius: 10px;
+    font-size: 14px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background 0.2s, transform 0.1s, box-shadow 0.1s;
+}
+
+.dc-pix-btn:hover {
+    background: #1d4ed8;
+}
+
+.dc-pix-btn:active {
+    transform: translateY(1px);
+}
+
+/* Aviso de segurança */
+.dc-pix-info {
+    font-size: 22px;
+    color: #6b7280;
+    max-width: 720px;
+    line-height: 1.5;
+}
+
+/* ===============================
+   PERGUNTA PIX
+=============================== */
+
+.dc-pix-question {
+    font-size: 14px;
+    font-weight: 600;
+    color: #374151;
+    margin-top: 6px;
+}
+
+/* Opções Sim / Não */
+.dc-pix-opcoes {
+    display: flex;
+    gap: 18px;
+    align-items: center;
+}
+
+/* Labels clicáveis */
+.dc-pix-opcoes label {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    font-size: 14px;
+    font-weight: 500;
+    color: #374151;
+    cursor: pointer;
+    user-select: none;
+}
+
+/* Radio button custom */
+.dc-pix-opcoes input[type="radio"] {
+    width: 16px;
+    height: 16px;
+    accent-color: #2563eb;
+    cursor: pointer;
+}
+
+/* ===============================
+   INPUTS DESABILITADOS
+=============================== */
+
+.dc-pix-input:disabled {
+    background: #f3f4f6;
+    color: #9ca3af;
+    border-color: #e5e7eb;
+    cursor: not-allowed;
+}
+
+/* ===============================
+   BOTÃO DESABILITADO
+=============================== */
+
+.dc-pix-btn:disabled {
+    background: #93c5fd;
+    cursor: not-allowed;
+    box-shadow: none;
+}
+
+/* ===============================
+   RESPONSIVO
+=============================== */
+
+@media (max-width: 480px) {
+    .dc-pix-box {
+        max-width: 100%;
+    }
+
+    .dc-pix-opcoes {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 10px;
+    }
+
+    .dc-pix-btn {
+        width: 100%;
+        text-align: center;
+    }
+}

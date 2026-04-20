@@ -1,0 +1,621 @@
+/* =========================================================
+   CONTAINER PRINCIPAL
+========================================================= */
+.rifa-preview {
+    margin-top: 48px;
+    padding: 40px;
+    background:
+        linear-gradient(180deg,
+            rgba(15, 23, 42, 0.9),
+            rgba(2, 6, 23, 0.98)),
+        radial-gradient(circle at top,
+            rgba(99, 102, 241, 0.14),
+            transparent 60%);
+    border-radius: 24px;
+    border: 1px solid rgba(148, 163, 184, 0.22);
+    box-shadow:
+        0 60px 160px rgba(0, 0, 0, 0.8),
+        inset 0 1px 0 rgba(255, 255, 255, 0.04);
+    color: #e5e7eb;
+    font-family: Inter, system-ui, -apple-system, sans-serif;
+}
+
+/* =========================================================
+   HEADER
+========================================================= */
+.rifa-preview-header {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 32px;
+    position: relative;
+}
+
+/* =========================================================
+   TÍTULO
+========================================================= */
+.rifa-preview-header h4 {
+    font-size: 28px;
+    font-weight: 800;
+    letter-spacing: -0.6px;
+    color: #f9fafb;
+    cursor: pointer;
+    padding-bottom: 8px;
+    transition:
+        opacity 0.2s ease,
+        transform 0.18s ease;
+}
+
+.rifa-preview-header h4:hover {
+    opacity: 0.9;
+    transform: translateY(-1px);
+}
+
+/* =========================================================
+   DETALHE VISUAL DO HEADER
+========================================================= */
+.rifa-preview-header::after {
+    content: "";
+    position: absolute;
+    bottom: -8px;
+    width: 72px;
+    height: 4px;
+    border-radius: 999px;
+    background: linear-gradient(90deg,
+            #6366f1,
+            #22d3ee);
+    opacity: 0.9;
+}
+
+/* =========================================================
+   EDIÇÃO DO NOME
+========================================================= */
+.rifa-edicao {
+    width: 100%;
+    max-width: 480px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    padding: 18px;
+    border-radius: 18px;
+    background:
+        linear-gradient(180deg,
+            rgba(15, 23, 42, 0.85),
+            rgba(2, 6, 23, 0.95));
+    border: 1px solid rgba(148, 163, 184, 0.22);
+    box-shadow:
+        0 18px 50px rgba(0, 0, 0, 0.55),
+        inset 0 1px 0 rgba(255, 255, 255, 0.04);
+}
+
+/* =========================================================
+   INPUT DE EDIÇÃO
+========================================================= */
+.rifa-edicao input {
+    height: 48px;
+    padding: 0 18px;
+    border-radius: 14px;
+    border: 1px solid rgba(148, 163, 184, 0.25);
+    background: linear-gradient(180deg,
+            rgba(2, 6, 23, 0.95),
+            rgba(2, 6, 23, 0.85));
+    color: #f9fafb;
+    font-size: 15px;
+    font-weight: 500;
+    transition:
+        border-color 0.2s ease,
+        box-shadow 0.2s ease,
+        background 0.2s ease,
+        transform 0.12s ease;
+}
+
+.rifa-edicao input::placeholder {
+    color: #94a3b8;
+}
+
+/* =========================================================
+   FOCO
+========================================================= */
+.rifa-edicao input:focus {
+    outline: none;
+    border-color: #6366f1;
+    background: linear-gradient(180deg,
+            rgba(2, 6, 23, 1),
+            rgba(2, 6, 23, 0.9));
+    box-shadow:
+        0 0 0 2px rgba(99, 102, 241, 0.35),
+        0 10px 28px rgba(99, 102, 241, 0.3);
+    transform: translateY(-1px);
+}
+
+/* =========================================================
+   AÇÕES DE EDIÇÃO
+========================================================= */
+.rifa-edicao-acoes {
+    display: flex;
+    gap: 14px;
+}
+
+.rifa-edicao-acoes button {
+    flex: 1;
+    height: 46px;
+    border-radius: 14px;
+    border: none;
+    font-size: 14px;
+    font-weight: 800;
+    letter-spacing: 0.3px;
+    cursor: pointer;
+    background:
+        linear-gradient(135deg, #6366f1, #4338ca),
+        radial-gradient(circle at top, rgba(255, 255, 255, 0.15), transparent 60%);
+    color: #f9fafb;
+    box-shadow:
+        0 14px 45px rgba(99, 102, 241, 0.55),
+        inset 0 1px 0 rgba(255, 255, 255, 0.12);
+    transition:
+        transform 0.18s ease,
+        box-shadow 0.18s ease,
+        filter 0.18s ease,
+        opacity 0.18s ease;
+}
+
+.rifa-edicao-acoes button:hover {
+    transform: translateY(-1px);
+    box-shadow:
+        0 22px 70px rgba(99, 102, 241, 0.75);
+    filter: brightness(1.05);
+}
+
+.rifa-edicao-acoes button:active {
+    transform: translateY(0);
+    box-shadow:
+        0 14px 40px rgba(99, 102, 241, 0.55);
+    opacity: 0.95;
+}
+
+/* =========================================================
+   BOTÃO SECUNDÁRIO
+========================================================= */
+.rifa-edicao-acoes button.secundario {
+    background: linear-gradient(180deg,
+            rgba(2, 6, 23, 0.95),
+            rgba(2, 6, 23, 0.85));
+    border: 1px solid rgba(148, 163, 184, 0.25);
+    box-shadow: none;
+    color: #94a3b8;
+}
+
+.rifa-edicao-acoes button.secundario:hover {
+    background: rgba(15, 23, 42, 0.9);
+    color: #e5e7eb;
+}
+
+/* =========================================================
+   INFO GERAL
+========================================================= */
+.rifa-info {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 18px;
+    margin-bottom: 30px;
+}
+
+/* =========================================================
+   CARD DE INFORMAÇÃO
+========================================================= */
+.rifa-info span {
+    padding: 16px;
+    border-radius: 16px;
+    background:
+        linear-gradient(180deg,
+            rgba(15, 23, 42, 0.85),
+            rgba(2, 6, 23, 0.95));
+    border: 1px solid rgba(148, 163, 184, 0.22);
+    font-size: 14px;
+    font-weight: 500;
+    line-height: 1.4;
+    box-shadow:
+        0 12px 35px rgba(0, 0, 0, 0.45),
+        inset 0 1px 0 rgba(255, 255, 255, 0.04);
+}
+
+/* =========================================================
+   CONTADORES
+========================================================= */
+.rifa-contadores {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 18px;
+    margin-bottom: 22px;
+}
+
+.rifa-contadores p {
+    padding: 16px;
+    border-radius: 16px;
+    background:
+        linear-gradient(180deg,
+            rgba(15, 23, 42, 0.85),
+            rgba(2, 6, 23, 0.95));
+    border: 1px solid rgba(148, 163, 184, 0.22);
+    font-size: 15px;
+    font-weight: 700;
+    text-align: center;
+    letter-spacing: 0.2px;
+    box-shadow:
+        0 12px 35px rgba(0, 0, 0, 0.45),
+        inset 0 1px 0 rgba(255, 255, 255, 0.04);
+}
+
+/* =========================================================
+   NÚMEROS COMPRADOS
+========================================================= */
+.rifa-numeros-admin {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(68px, 1fr));
+    gap: 14px;
+    margin: 32px 0;
+}
+
+/* =========================================================
+   BLOCO DO NÚMERO
+========================================================= */
+.rifa-numero-bloco {
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+}
+
+/* =========================================================
+   NÚMERO CLICÁVEL
+========================================================= */
+.rifa-numero-admin {
+    height: 52px;
+    border-radius: 16px;
+    background:
+        linear-gradient(135deg,
+            rgba(30, 41, 59, 0.95),
+            rgba(2, 6, 23, 0.95));
+    border: 1px solid rgba(148, 163, 184, 0.25);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 15px;
+    font-weight: 800;
+    color: #e5e7eb;
+    cursor: pointer;
+    transition:
+        background 0.18s ease,
+        transform 0.18s ease,
+        box-shadow 0.18s ease;
+}
+
+.rifa-numero-admin:hover {
+    background: linear-gradient(135deg, #6366f1, #4338ca);
+    transform: translateY(-2px);
+    box-shadow: 0 10px 30px rgba(99, 102, 241, 0.45);
+}
+
+/* =========================================================
+   DETALHES DO NÚMERO
+========================================================= */
+.rifa-numero-detalhes {
+    margin-top: 10px;
+    padding: 16px;
+    width: 280%;
+    border-radius: 16px;
+    background:
+        linear-gradient(180deg,
+            rgba(15, 23, 42, 0.95),
+            rgba(2, 6, 23, 0.98));
+    border: 1px solid rgba(148, 163, 184, 0.25);
+    font-size: 14px;
+    line-height: 1.6;
+    color: #e5e7eb;
+    box-shadow:
+        0 16px 45px rgba(0, 0, 0, 0.55),
+        inset 0 1px 0 rgba(255, 255, 255, 0.04);
+}
+
+/* =========================================================
+   LINKS
+========================================================= */
+.rifa-links {
+    text-align: center;
+    margin: 28px 0;
+}
+
+.rifa-links a {
+    color: #6366f1;
+    font-size: 15px;
+    font-weight: 700;
+    text-decoration: none;
+    transition: color 0.18s ease;
+}
+
+.rifa-links a:hover {
+    color: #22d3ee;
+}
+
+/* =========================================================
+   BOTÃO GERAR STORY
+========================================================= */
+.rifa-gerar-story {
+    width: 100%;
+    height: 54px;
+    border-radius: 18px;
+    border: none;
+    font-size: 15px;
+    font-weight: 800;
+    letter-spacing: 0.4px;
+    background:
+        linear-gradient(135deg, #22c55e, #16a34a),
+        radial-gradient(circle at top, rgba(255, 255, 255, 0.18), transparent 60%);
+    color: #052e16;
+    cursor: pointer;
+    box-shadow:
+        0 20px 65px rgba(34, 197, 94, 0.55),
+        inset 0 1px 0 rgba(255, 255, 255, 0.15);
+    transition:
+        transform 0.18s ease,
+        box-shadow 0.18s ease,
+        filter 0.18s ease,
+        opacity 0.18s ease;
+}
+
+.rifa-gerar-story:hover {
+    transform: translateY(-2px);
+    box-shadow:
+        0 32px 95px rgba(34, 197, 94, 0.75);
+    filter: brightness(1.05);
+}
+
+.rifa-gerar-story:active {
+    transform: translateY(0);
+    box-shadow:
+        0 18px 55px rgba(34, 197, 94, 0.55);
+    opacity: 0.95;
+}
+
+/* =========================================================
+   BOTÃO GERAR STORY · ESTADOS
+========================================================= */
+.rifa-gerar-story:hover {
+    transform: translateY(-2px);
+    box-shadow:
+        0 34px 100px rgba(34, 197, 94, 0.75),
+        inset 0 1px 0 rgba(255, 255, 255, 0.15);
+    filter: brightness(1.05);
+}
+
+.rifa-gerar-story.gerando {
+    opacity: 0.6;
+    cursor: not-allowed;
+    box-shadow: none;
+    filter: grayscale(0.2);
+}
+
+/* =========================================================
+   NAVEGAÇÃO ENTRE RIFAS
+========================================================= */
+.rifa-navegacao {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 42px;
+    gap: 16px;
+}
+
+/* =========================================================
+   BOTÕES DE NAVEGAÇÃO
+========================================================= */
+.rifa-navegacao .ver-mais {
+    padding: 14px 22px;
+    border-radius: 16px;
+    border: 1px solid rgba(148, 163, 184, 0.25);
+    background:
+        linear-gradient(180deg,
+            rgba(2, 6, 23, 0.95),
+            rgba(2, 6, 23, 0.85));
+    color: #e5e7eb;
+    font-size: 14px;
+    font-weight: 700;
+    letter-spacing: 0.2px;
+    cursor: pointer;
+    transition:
+        background 0.18s ease,
+        transform 0.18s ease,
+        box-shadow 0.18s ease,
+        color 0.18s ease;
+}
+
+.rifa-navegacao .ver-mais:hover {
+    background:
+        linear-gradient(180deg,
+            rgba(30, 41, 59, 0.9),
+            rgba(15, 23, 42, 0.95));
+    transform: translateY(-1px);
+    box-shadow: 0 12px 35px rgba(0, 0, 0, 0.45);
+    color: #f9fafb;
+}
+
+.rifa-navegacao .ver-mais:active {
+    transform: translateY(0);
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.35);
+}
+
+/* =========================================================
+   RESPONSIVO · TABLET
+========================================================= */
+@media (max-width: 1024px) {
+    .rifa-preview {
+        padding: 32px 26px;
+        margin-top: 36px;
+        border-radius: 22px;
+    }
+
+    .rifa-info {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .rifa-contadores {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .rifa-numeros-admin {
+        grid-template-columns: repeat(auto-fill, minmax(64px, 1fr));
+    }
+
+    .rifa-numero-detalhes {
+        width: 220%;
+    }
+}
+
+/* =========================================================
+   RESPONSIVO · MOBILE GRANDE
+========================================================= */
+@media (max-width: 768px) {
+    .rifa-preview {
+        padding: 26px 20px;
+        border-radius: 20px;
+    }
+
+    .rifa-preview-header h4 {
+        font-size: 24px;
+        text-align: center;
+    }
+
+    .rifa-edicao {
+        padding: 16px;
+    }
+
+    .rifa-edicao-acoes {
+        flex-direction: column;
+    }
+
+    .rifa-edicao-acoes button {
+        height: 48px;
+    }
+
+    .rifa-info {
+        grid-template-columns: 1fr;
+        gap: 14px;
+    }
+
+    .rifa-contadores {
+        grid-template-columns: 1fr;
+    }
+
+    .rifa-numeros-admin {
+        grid-template-columns: repeat(auto-fill, minmax(60px, 1fr));
+        gap: 12px;
+    }
+
+    .rifa-numero-admin {
+        height: 48px;
+        font-size: 14px;
+    }
+
+    .rifa-numero-detalhes {
+        width: 100%;
+        margin-top: 12px;
+    }
+
+    .rifa-navegacao {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .rifa-navegacao .ver-mais {
+        width: 100%;
+        text-align: center;
+    }
+}
+
+/* =========================================================
+   RESPONSIVO · MOBILE MÉDIO
+========================================================= */
+@media (max-width: 540px) {
+    .rifa-preview {
+        padding: 22px 16px;
+    }
+
+    .rifa-preview-header h4 {
+        font-size: 22px;
+    }
+
+    .rifa-info span {
+        font-size: 13px;
+        padding: 14px;
+    }
+
+    .rifa-contadores p {
+        font-size: 14px;
+        padding: 14px;
+    }
+
+    .rifa-numero-admin {
+        height: 44px;
+        border-radius: 14px;
+    }
+
+    .rifa-gerar-story {
+        height: 50px;
+        font-size: 14px;
+        border-radius: 16px;
+    }
+}
+
+/* =========================================================
+   RESPONSIVO · MOBILE PEQUENO
+========================================================= */
+@media (max-width: 420px) {
+    .rifa-preview {
+        padding: 18px 14px;
+        margin-top: 24px;
+    }
+
+    .rifa-preview-header h4 {
+        font-size: 20px;
+    }
+
+    .rifa-edicao {
+        padding: 14px;
+    }
+
+    .rifa-edicao input {
+        height: 44px;
+        font-size: 14px;
+    }
+
+    .rifa-numero-admin {
+        height: 42px;
+        font-size: 13px;
+    }
+
+    .rifa-gerar-story {
+        height: 48px;
+        font-size: 14px;
+    }
+}
+
+/* =========================================================
+   RESPONSIVO · TELAS MUITO ESTREITAS
+========================================================= */
+@media (max-width: 360px) {
+    .rifa-preview-header h4 {
+        font-size: 18px;
+    }
+
+    .rifa-info span {
+        font-size: 12px;
+    }
+
+    .rifa-contadores p {
+        font-size: 13px;
+    }
+
+    .rifa-gerar-story {
+        font-size: 13px;
+    }
+}

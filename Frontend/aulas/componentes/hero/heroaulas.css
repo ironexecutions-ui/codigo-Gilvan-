@@ -1,0 +1,110 @@
+.heroAulas_container {
+    width: 100%;
+    padding: 110px 20px 90px;
+
+    display: flex;
+    justify-content: center;
+
+    background: radial-gradient(circle at top,
+            rgba(59, 130, 246, 0.12),
+            transparent 60%);
+}
+
+/* conteúdo */
+.heroAulas_content {
+    max-width: 850px;
+    text-align: center;
+}
+
+/* badge */
+.heroAulas_badge {
+    display: inline-block;
+    margin-bottom: 20px;
+
+    padding: 6px 14px;
+    border-radius: 999px;
+
+    background: rgba(59, 130, 246, 0.12);
+    color: #93c5fd;
+
+    font-size: 12px;
+    font-weight: 600;
+}
+
+/* título */
+.heroAulas_titulo {
+    font-size: 44px;
+    font-weight: 800;
+    line-height: 1.2;
+
+    color: #f8fafc;
+
+    margin-bottom: 20px;
+}
+
+/* subtítulo */
+.heroAulas_subtitulo {
+    font-size: 18px;
+    color: #94a3b8;
+
+    margin-bottom: 35px;
+}
+
+/* CTA */
+.heroAulas_ctaArea {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 12px;
+}
+
+.heroAulas_botaoPrincipal {
+    background: linear-gradient(135deg, #2563eb, #1d4ed8);
+
+    padding: 15px 32px;
+    border-radius: 999px;
+
+    color: #fff;
+    font-weight: 700;
+    font-size: 15px;
+
+    text-decoration: none;
+
+    transition: 0.25s;
+}
+
+.heroAulas_botaoPrincipal:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 12px 30px rgba(37, 99, 235, 0.35);
+}
+
+.heroAulas_infoExtra {
+    font-size: 13px;
+    color: #64748b;
+}
+
+/* responsivo */
+@media (max-width: 768px) {
+    .heroAulas_titulo {
+        font-size: 30px;
+    }
+
+    .heroAulas_subtitulo {
+        font-size: 16px;
+    }
+
+    .heroAulas_botaoPrincipal {
+        width: 100%;
+        text-align: center;
+    }
+}
+
+@media (max-width: 480px) {
+    .heroAulas_container {
+        padding: 80px 16px 60px;
+    }
+
+    .heroAulas_titulo {
+        font-size: 26px;
+    }
+}

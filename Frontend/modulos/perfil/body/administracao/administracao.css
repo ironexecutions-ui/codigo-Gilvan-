@@ -1,0 +1,237 @@
+/* =========================
+   CONTAINER GERAL
+========================= */
+.administracao-container {
+    padding: 32px 36px;
+    background: radial-gradient(circle at top left,
+            #e3e3e4 0%,
+            #9798a1 85%,
+            #062199 100%) !important;
+    color: #e5e7eb;
+    min-height: 100vh;
+    font-family: "Montserrat", sans-serif;
+    box-sizing: border-box;
+}
+
+/* =========================
+   TÍTULO
+========================= */
+.administracao-container h3 {
+    font-size: 22px;
+    font-weight: 700;
+    margin-bottom: 22px;
+    color: #0a0a0a;
+    letter-spacing: 0.4px;
+    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.6);
+}
+
+/* =========================
+   BOTÕES DE ABA
+========================= */
+.administracao-botoes {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+    margin-bottom: 26px;
+}
+
+/* botão base */
+.administracao-botoes button {
+    position: relative;
+    padding: 12px 18px;
+    border-radius: 14px;
+    border: 1px solid rgba(37, 99, 235, 0.15);
+    background: linear-gradient(180deg,
+            #020617 0%,
+            #020617 100%);
+    color: #e5e7eb;
+    font-size: 14px;
+    font-weight: 600;
+    cursor: pointer;
+    letter-spacing: 0.3px;
+    overflow: hidden;
+    transition:
+        background 0.25s ease,
+        border-color 0.25s ease,
+        transform 0.15s ease,
+        box-shadow 0.25s ease;
+}
+
+/* efeito de luz */
+.administracao-botoes button::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(120deg,
+            transparent 30%,
+            rgba(255, 255, 255, 0.08),
+            transparent 70%);
+    opacity: 0;
+    transition: opacity 0.3s ease;
+
+}
+
+
+
+/* hover */
+.administracao-botoes button:hover {
+    transform: translateY(-1px);
+    border-color: #2563eb;
+    box-shadow:
+        0 6px 18px rgba(37, 99, 235, 0.25),
+        inset 0 0 0 1px rgba(255, 255, 255, 0.04);
+}
+
+.administracao-botoes button:hover::before {
+    opacity: 1;
+}
+
+/* ativo */
+.administracao-botoes button.ativo {
+    background: linear-gradient(180deg,
+            #2563eb 0%,
+            #1d4ed8 100%);
+    border-color: #2563eb;
+    box-shadow:
+        0 10px 28px rgba(37, 99, 235, 0.45),
+        inset 0 1px 0 rgba(255, 255, 255, 0.25);
+    transform: translateY(-1px);
+}
+
+/* =========================
+   ÁREA DE CONTEÚDO
+========================= */
+.administracao-conteudo {
+    position: relative;
+    border-radius: 18px;
+    padding: 26px;
+    min-height: 340px;
+
+    border: 1px solid rgba(37, 99, 235, 0.18);
+    box-shadow:
+        0 20px 50px rgba(0, 0, 0, 0.65),
+        inset 0 1px 0 rgba(255, 255, 255, 0.04);
+    animation: fadeUp 0.35s ease;
+}
+
+/* linha decorativa superior */
+.administracao-conteudo::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 24px;
+    right: 24px;
+    height: 1px;
+    background: linear-gradient(90deg,
+            transparent,
+            rgba(37, 99, 235, 0.6),
+            transparent);
+}
+
+/* =========================
+   ANIMAÇÃO
+========================= */
+@keyframes fadeUp {
+    from {
+        opacity: 0;
+        transform: translateY(6px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* =========================
+   TABLET
+========================= */
+@media (max-width: 1024px) {
+
+    .administracao-container {
+        padding: 26px 24px;
+    }
+
+    .administracao-container h3 {
+        font-size: 20px;
+        margin-bottom: 18px;
+    }
+
+    .administracao-botoes {
+        gap: 10px;
+        margin-bottom: 22px;
+    }
+
+    .administracao-botoes button {
+        padding: 10px 16px;
+        font-size: 13px;
+    }
+
+    .administracao-conteudo {
+        padding: 22px;
+    }
+}
+
+/* =========================
+   MOBILE
+========================= */
+@media (max-width: 768px) {
+
+    .administracao-container {
+        padding: 20px 16px;
+        min-height: auto;
+    }
+
+    .administracao-container h3 {
+        font-size: 18px;
+        text-align: center;
+        margin-bottom: 16px;
+    }
+
+    .administracao-botoes {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .administracao-botoes button {
+        width: 100%;
+        padding: 14px;
+        font-size: 14px;
+        border-radius: 16px;
+    }
+
+    .administracao-conteudo {
+        padding: 18px 16px;
+        border-radius: 16px;
+        min-height: auto;
+    }
+
+    .administracao-conteudo::before {
+        left: 16px;
+        right: 16px;
+    }
+}
+
+/* =========================
+   MOBILE PEQUENO
+========================= */
+@media (max-width: 420px) {
+
+    .administracao-container {
+        padding: 16px 12px;
+    }
+
+    .administracao-container h3 {
+        font-size: 16px;
+        letter-spacing: 0.2px;
+    }
+
+    .administracao-botoes button {
+        font-size: 13px;
+        padding: 12px;
+    }
+
+    .administracao-conteudo {
+        padding: 14px 12px;
+    }
+}

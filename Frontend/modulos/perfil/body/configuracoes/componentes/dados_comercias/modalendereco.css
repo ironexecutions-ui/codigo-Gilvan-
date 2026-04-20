@@ -1,0 +1,146 @@
+/* ===== MODAL ===== */
+.me-modal {
+    background: linear-gradient(180deg, #0f172a 0%, #0b1324 100%);
+    width: 100%;
+    max-width: 500px;
+    border-radius: 18px;
+    margin: auto;
+    padding: 30px 32px;
+    box-shadow:
+        0 24px 70px rgba(0, 0, 0, 0.6),
+        inset 0 1px 0 rgba(255, 255, 255, 0.03);
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+    color: #e5e7eb;
+    animation: meFadeIn 0.28s ease;
+}
+
+/* ===== ANIMAÇÃO ===== */
+@keyframes meFadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(14px) scale(0.97);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+    }
+}
+
+/* ===== TÍTULO ===== */
+.me-title {
+    font-size: 17px;
+    font-weight: 600;
+    letter-spacing: 0.3px;
+    padding-bottom: 12px;
+    border-bottom: 1px solid #1f2937;
+}
+
+/* ===== FORM ===== */
+.me-form {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 18px 20px;
+}
+
+/* ===== CAMPO ===== */
+.me-campo {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+}
+
+/* ===== LABEL ===== */
+.me-label {
+    font-size: 12px;
+    color: #9ca3af;
+    letter-spacing: 0.3px;
+}
+
+/* ===== INPUT ===== */
+.me-input {
+    background: #020617;
+    border: 1px solid #1f2937;
+    color: #e5e7eb;
+    padding: 11px 14px;
+    border-radius: 10px;
+    font-size: 14px;
+    width: 100%;
+    outline: none;
+    transition: border 0.25s ease, box-shadow 0.25s ease, background 0.25s ease;
+}
+
+.me-input:focus {
+    border-color: #3b82f6;
+    background: #020617;
+    box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.22);
+}
+
+/* ===== AÇÕES ===== */
+.me-acoes {
+    display: flex;
+    justify-content: flex-end;
+    gap: 14px;
+    padding-top: 8px;
+}
+
+/* ===== BOTÕES ===== */
+.me-btn {
+    padding: 11px 20px;
+    border-radius: 10px;
+    font-size: 14px;
+    font-weight: 500;
+    cursor: pointer;
+    border: none;
+    letter-spacing: 0.2px;
+    transition: background 0.25s ease, transform 0.15s ease, box-shadow 0.25s ease;
+}
+
+/* ===== BOTÃO PRIMÁRIO ===== */
+.me-btn-primario {
+    background: linear-gradient(180deg, #2563eb 0%, #1d4ed8 100%);
+    color: #ffffff;
+    box-shadow: 0 8px 20px rgba(37, 99, 235, 0.35);
+}
+
+.me-btn-primario:hover {
+    background: linear-gradient(180deg, #3b82f6 0%, #2563eb 100%);
+    box-shadow: 0 12px 28px rgba(37, 99, 235, 0.45);
+}
+
+.me-btn-primario:active {
+    transform: scale(0.96);
+}
+
+/* ===== BOTÃO SECUNDÁRIO ===== */
+.me-btn-secundario {
+    background: linear-gradient(180deg, #1f2937 0%, #111827 100%);
+    color: #e5e7eb;
+    border: 1px solid #374151;
+}
+
+.me-btn-secundario:hover {
+    background: linear-gradient(180deg, #374151 0%, #1f2937 100%);
+    border-color: #4b5563;
+}
+
+.me-btn-secundario:active {
+    transform: scale(0.96);
+}
+
+/* ===== RESPONSIVO ===== */
+@media (max-width: 520px) {
+    .me-form {
+        grid-template-columns: 1fr;
+    }
+
+    .me-acoes {
+        justify-content: stretch;
+    }
+
+    .me-btn {
+        width: 100%;
+    }
+}

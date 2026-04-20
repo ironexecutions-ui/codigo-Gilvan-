@@ -1,0 +1,268 @@
+{
+    "curso": "Programação Web Completa",
+    "duracao": "7 meses",
+    "meses": [
+        {
+            "mes": "Mês 1 – Fundamentos de HTML",
+            "descricao": "Construção da base estrutural da web",
+            "semanas": [
+                {
+                    "semana": "Semana 1 – Estrutura base",
+                    "objetivo_da_semana": "Entender como funciona o HTML e criar a primeira página",
+                    "resultado_da_semana": "Aluno cria uma página simples com estrutura correta",
+                    "aulas": [
+                        {
+                            "aula": "Aula 1",
+                            "duracao": "1h30",
+                            "nivel": "iniciante",
+                            "topicos": [
+                                "Funcionamento do navegador",
+                                "Estrutura HTML",
+                                "Tags principais"
+                            ],
+                            "passos_da_aula": [
+                                "Explicar como o navegador interpreta HTML",
+                                "Criar arquivo index.html do zero",
+                                "Adicionar estrutura base html, head e body",
+                                "Inserir títulos e parágrafos",
+                                "Mostrar erro comum de estrutura"
+                            ],
+                            "exercicio": "Criar uma página com título e descrição pessoal",
+                            "projeto": "Início do projeto pessoal do aluno"
+                        },
+                        {
+                            "aula": "Aula 2",
+                            "duracao": "2h",
+                            "nivel": "iniciante",
+                            "topicos": [
+                                "Listas",
+                                "Organização de conteúdo"
+                            ],
+                            "passos_da_aula": [
+                                "Criar listas ordenadas e não ordenadas",
+                                "Explicar uso real em menus",
+                                "Adicionar separadores com hr",
+                                "Organizar conteúdo visual"
+                            ],
+                            "exercicio": "Página com lista de objetivos ou hobbies",
+                            "projeto": "Expandir página inicial"
+                        }
+                    ]
+                },
+                {
+                    "semana": "Semana 2 – Navegação",
+                    "objetivo_da_semana": "Criar múltiplas páginas conectadas",
+                    "resultado_da_semana": "Aluno cria um mini site com navegação",
+                    "aulas": [
+                        {
+                            "aula": "Aula 1",
+                            "duracao": "1h30",
+                            "nivel": "iniciante",
+                            "topicos": [
+                                "Imagens",
+                                "Links"
+                            ],
+                            "passos_da_aula": [
+                                "Inserir imagens com src e alt",
+                                "Explicar caminhos de arquivos",
+                                "Criar links internos e externos",
+                                "Abrir links em nova aba"
+                            ],
+                            "exercicio": "Galeria simples com imagens clicáveis",
+                            "projeto": "Adicionar imagens ao site"
+                        },
+                        {
+                            "aula": "Aula 2",
+                            "duracao": "2h",
+                            "nivel": "iniciante",
+                            "topicos": [
+                                "Menu",
+                                "Navegação entre páginas"
+                            ],
+                            "passos_da_aula": [
+                                "Criar página sobre.html",
+                                "Criar menu com links",
+                                "Conectar páginas",
+                                "Testar navegação"
+                            ],
+                            "exercicio": "Site com 2 páginas conectadas",
+                            "projeto": "Estrutura básica de site"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "mes": "Mês 2 – CSS",
+            "descricao": "Transformar HTML em interface visual profissional",
+            "semanas": [
+                {
+                    "semana": "Semana 5 – Introdução ao CSS",
+                    "objetivo_da_semana": "Aprender a estilizar páginas",
+                    "resultado_da_semana": "Aluno estiliza completamente uma página",
+                    "aulas": [
+                        {
+                            "aula": "Aula 1",
+                            "duracao": "1h30",
+                            "nivel": "iniciante",
+                            "topicos": [
+                                "CSS externo",
+                                "Seletores"
+                            ],
+                            "passos_da_aula": [
+                                "Criar arquivo styles.css",
+                                "Linkar no HTML",
+                                "Aplicar estilos básicos",
+                                "Explicar prioridade"
+                            ],
+                            "exercicio": "Alterar cores e fontes do site",
+                            "projeto": "Início do design"
+                        },
+                        {
+                            "aula": "Aula 2",
+                            "duracao": "2h",
+                            "nivel": "iniciante",
+                            "topicos": [
+                                "Cores",
+                                "Fontes"
+                            ],
+                            "passos_da_aula": [
+                                "Aplicar paleta de cores",
+                                "Definir fontes",
+                                "Ajustar tamanhos",
+                                "Melhorar legibilidade"
+                            ],
+                            "exercicio": "Melhorar aparência da página",
+                            "projeto": "Design base"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "mes": "Mês 6 – Git e Deploy",
+            "descricao": "Controle de versão e publicação do projeto",
+            "semanas": [
+                {
+                    "semana": "Semana 21 – Git",
+                    "objetivo_da_semana": "Controlar versões do projeto",
+                    "resultado_da_semana": "Aluno versiona código localmente",
+                    "aulas": [
+                        {
+                            "aula": "Aula 1",
+                            "duracao": "1h30",
+                            "nivel": "intermediario",
+                            "topicos": [
+                                "Git init",
+                                "Commit"
+                            ],
+                            "passos_da_aula": [
+                                "Inicializar repositório",
+                                "Adicionar arquivos",
+                                "Criar commit",
+                                "Explicar histórico"
+                            ],
+                            "exercicio": "Versionar projeto atual",
+                            "projeto": "Controle do projeto"
+                        },
+                        {
+                            "aula": "Aula 2",
+                            "duracao": "2h",
+                            "nivel": "intermediario",
+                            "topicos": [
+                                "Histórico"
+                            ],
+                            "passos_da_aula": [
+                                "Ver histórico de commits",
+                                "Simular erro e voltar versão",
+                                "Explicar fluxo real"
+                            ],
+                            "exercicio": "Reverter alteração",
+                            "projeto": "Segurança do código"
+                        }
+                    ]
+                },
+                {
+                    "semana": "Semana 22 – Deploy",
+                    "objetivo_da_semana": "Colocar sistema online",
+                    "resultado_da_semana": "Aluno publica backend online",
+                    "aulas": [
+                        {
+                            "aula": "Aula 1",
+                            "duracao": "1h30",
+                            "nivel": "intermediario",
+                            "topicos": [
+                                "GitHub"
+                            ],
+                            "passos_da_aula": [
+                                "Criar repositório",
+                                "Enviar código",
+                                "Atualizar projeto"
+                            ],
+                            "exercicio": "Subir projeto no GitHub",
+                            "projeto": "Código na nuvem"
+                        },
+                        {
+                            "aula": "Aula 2",
+                            "duracao": "2h",
+                            "nivel": "intermediario",
+                            "topicos": [
+                                "Deploy"
+                            ],
+                            "passos_da_aula": [
+                                "Criar conta no Render",
+                                "Subir backend",
+                                "Testar API pública"
+                            ],
+                            "exercicio": "Testar API online",
+                            "projeto": "Sistema online"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "mes": "Mês 7 – Projeto Final",
+            "descricao": "Construção de um sistema real do zero",
+            "semanas": [
+                {
+                    "semana": "Semana 23 – Planejamento",
+                    "objetivo_da_semana": "Definir e iniciar projeto próprio",
+                    "resultado_da_semana": "Projeto estruturado",
+                    "aulas": [
+                        {
+                            "aula": "Aula 1",
+                            "duracao": "1h30",
+                            "nivel": "avancado",
+                            "topicos": [
+                                "Planejamento"
+                            ],
+                            "passos_da_aula": [
+                                "Definir ideia do projeto",
+                                "Criar estrutura de páginas",
+                                "Listar funcionalidades"
+                            ],
+                            "exercicio": "Descrever projeto",
+                            "projeto": "Planejamento completo"
+                        },
+                        {
+                            "aula": "Aula 2",
+                            "duracao": "2h",
+                            "nivel": "avancado",
+                            "topicos": [
+                                "Execução"
+                            ],
+                            "passos_da_aula": [
+                                "Criar HTML base",
+                                "Aplicar CSS inicial",
+                                "Organizar estrutura"
+                            ],
+                            "exercicio": "Criar layout inicial",
+                            "projeto": "Início do sistema"
+                        }
+                    ]
+                }
+            ]
+        }
+    ]
+}

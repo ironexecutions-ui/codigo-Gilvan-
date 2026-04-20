@@ -1,0 +1,293 @@
+/* =========================
+   CARD DETALHES
+========================= */
+.hrs-det-card {
+    background: linear-gradient(180deg, #f8fafc, #f1f5f9);
+    border-radius: 20px;
+    padding: 28px;
+    box-shadow:
+        0 18px 40px rgba(0, 0, 0, 0.18),
+        inset 0 1px 0 rgba(255, 255, 255, 0.7);
+    animation: hrsDetFade 0.35s ease forwards;
+}
+
+/* =========================
+   ANIMAÇÃO
+========================= */
+@keyframes hrsDetFade {
+    from {
+        opacity: 0;
+        transform: translateY(16px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* =========================
+   TÍTULO
+========================= */
+.hrs-det-title {
+    font-size: 20px;
+    font-weight: 900;
+    margin-bottom: 22px;
+    color: #020617;
+    letter-spacing: -0.4px;
+}
+
+/* =========================
+   LOADING
+========================= */
+.hrs-det-loading {
+    font-size: 14px;
+    font-weight: 600;
+    color: #334155;
+    opacity: 0.9;
+}
+
+/* =========================
+   ESTADO VAZIO
+========================= */
+.hrs-det-empty {
+    font-size: 14px;
+    color: #64748b;
+    font-style: italic;
+    padding: 12px 0;
+}
+
+/* =========================
+   LISTA
+========================= */
+.hrs-det-list {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+/* =========================
+   ITEM
+========================= */
+.hrs-det-item {
+    background: #ffffff;
+    border-radius: 16px;
+    padding: 18px 20px;
+    border: 1px solid #e5e7eb;
+    box-shadow:
+        0 6px 14px rgba(0, 0, 0, 0.06);
+    transition:
+        transform 0.2s ease,
+        box-shadow 0.2s ease,
+        border-color 0.2s ease;
+}
+
+.hrs-det-item:hover {
+    transform: translateY(-2px);
+    box-shadow:
+        0 14px 30px rgba(0, 0, 0, 0.12);
+    border-color: #c7d2fe;
+}
+
+/* =========================
+   HEADER ITEM
+========================= */
+.hrs-det-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+/* =========================
+   HORAS BADGE
+========================= */
+.hrs-det-horas {
+    font-size: 12px;
+    font-weight: 900;
+    padding: 6px 14px;
+    border-radius: 999px;
+    background:
+        linear-gradient(135deg, #2563eb, #1d4ed8);
+    color: #ffffff;
+    letter-spacing: 0.4px;
+    box-shadow:
+        0 6px 14px rgba(37, 99, 235, 0.35);
+}
+
+/* =========================
+   RELATO
+========================= */
+.hrs-det-relato {
+    font-size: 14px;
+    color: #334155;
+    line-height: 1.6;
+}
+
+.hrs-det-relato strong {
+    font-weight: 600;
+    color: #020617;
+}
+
+/* ===============================
+   BOTÃO APAGAR (DETALHES)
+================================ */
+.hrs-btn-apagar {
+    background: linear-gradient(135deg, #dc2626, #991b1b);
+    color: #ffffff;
+    border: none;
+    padding: 6px 12px;
+    font-size: 12px;
+    font-weight: 600;
+    border-radius: 6px;
+    cursor: pointer;
+    transition:
+        background 0.2s ease,
+        transform 0.15s ease,
+        box-shadow 0.15s ease;
+}
+
+.hrs-btn-apagar:hover {
+    filter: brightness(1.1);
+    transform: translateY(-1px);
+    box-shadow: 0 4px 10px rgba(220, 38, 38, 0.35);
+}
+
+.hrs-btn-apagar:active {
+    transform: scale(0.95);
+    box-shadow: 0 2px 6px rgba(153, 27, 27, 0.4);
+}
+
+/* Botão Enviar mensagem (WhatsApp) */
+.hrs-btn-whatsapp {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+
+    background-color: #25d366;
+    color: #ffffff;
+
+    border: none;
+    border-radius: 6px;
+
+    padding: 6px 12px;
+
+    font-size: 12px;
+    font-weight: 600;
+
+    cursor: pointer;
+    white-space: nowrap;
+
+    transition: background-color 0.2s ease, transform 0.15s ease;
+}
+
+.hrs-btn-whatsapp:hover {
+    background-color: #1ebe5d;
+    transform: translateY(-1px);
+}
+
+.hrs-btn-whatsapp:active {
+    transform: translateY(0);
+}
+
+.hrs-btn-whatsapp:focus {
+    outline: none;
+    box-shadow: 0 0 0 2px rgba(37, 211, 102, 0.35);
+}
+
+.hrs-btn-apagar:disabled {
+    opacity: 0.45;
+    cursor: not-allowed;
+    box-shadow: none;
+}
+
+/* =========================
+   RESPONSIVO AVANÇADO
+========================= */
+
+/* ===== NOTEBOOK / TELAS MÉDIAS ===== */
+@media (max-width: 1200px) {
+    .hrs-det-card {
+        padding: 26px;
+    }
+
+    .hrs-det-title {
+        font-size: 19px;
+    }
+}
+
+/* ===== TABLET GRANDE ===== */
+@media (max-width: 992px) {
+    .hrs-det-card {
+        padding: 24px;
+    }
+
+    .hrs-det-item {
+        padding: 16px 18px;
+    }
+}
+
+/* ===== TABLET / MOBILE GRANDE ===== */
+@media (max-width: 768px) {
+    .hrs-det-card {
+        padding: 22px;
+        border-radius: 18px;
+    }
+
+    .hrs-det-title {
+        font-size: 18px;
+        margin-bottom: 18px;
+        text-align: center;
+    }
+
+    .hrs-det-list {
+        gap: 14px;
+    }
+
+    .hrs-det-header {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 8px;
+    }
+
+    .hrs-det-horas {
+        align-self: flex-start;
+    }
+}
+
+/* ===== MOBILE ===== */
+@media (max-width: 576px) {
+    .hrs-det-card {
+        padding: 20px;
+    }
+
+    .hrs-det-item {
+        padding: 14px 16px;
+    }
+
+    .hrs-det-relato {
+        font-size: 13px;
+    }
+
+    .hrs-det-loading,
+    .hrs-det-empty {
+        font-size: 13px;
+    }
+}
+
+/* ===== MOBILE PEQUENO ===== */
+@media (max-width: 420px) {
+    .hrs-det-card {
+        padding: 18px;
+        border-radius: 16px;
+    }
+
+    .hrs-det-title {
+        font-size: 17px;
+    }
+
+    .hrs-det-horas {
+        font-size: 11px;
+        padding: 5px 12px;
+    }
+}

@@ -1,0 +1,375 @@
+/* =========================
+   PÁGINA
+========================= */
+.hrs-page {
+    min-height: 100vh;
+    padding: 56px 32px;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    background:
+        radial-gradient(900px 400px at 50% -10%, rgba(59, 130, 246, 0.18), transparent 60%),
+        linear-gradient(160deg, #020617, #020617 45%, #0f172a);
+}
+
+/* =========================
+   CARD PRINCIPAL
+========================= */
+.hrs-card {
+    width: 100%;
+    max-width: 1100px;
+    background: rgba(255, 255, 255, 0.96);
+    border-radius: 22px;
+    padding: 36px;
+    box-shadow:
+        0 40px 90px rgba(0, 0, 0, 0.35),
+        inset 0 1px 0 rgba(255, 255, 255, 0.65);
+    animation: hrsFadeUp 0.45s ease forwards;
+}
+
+/* =========================
+   ANIMAÇÃO ENTRADA
+========================= */
+@keyframes hrsFadeUp {
+    from {
+        opacity: 0;
+        transform: translateY(18px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* =========================
+   TÍTULO
+========================= */
+.hrs-title {
+    font-size: 30px;
+    font-weight: 900;
+    margin-bottom: 34px;
+    color: #020617;
+    letter-spacing: -0.6px;
+}
+
+/* =========================
+   SALDO
+========================= */
+.hrs-saldo-box {
+    background:
+        linear-gradient(135deg, #2563eb, #1e3a8a);
+    color: #ffffff;
+    border-radius: 20px;
+    padding: 26px;
+    margin-bottom: 36px;
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+    box-shadow:
+        0 24px 50px rgba(37, 99, 235, 0.45),
+        inset 0 1px 0 rgba(255, 255, 255, 0.25);
+}
+
+.hrs-saldo-label {
+    font-size: 12px;
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    opacity: 0.85;
+}
+
+.hrs-saldo-linhas {
+    display: flex;
+    gap: 26px;
+}
+
+.hrs-saldo-item {
+    background: rgba(255, 255, 255, 0.16);
+    border-radius: 16px;
+    padding: 18px 22px;
+    min-width: 240px;
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.25);
+}
+
+.hrs-saldo-titulo {
+    font-size: 13px;
+    font-weight: 700;
+    opacity: 0.9;
+}
+
+.hrs-saldo-valor {
+    font-size: 36px;
+    font-weight: 900;
+    line-height: 1;
+    letter-spacing: -0.5px;
+}
+
+/* =========================
+   TABELA
+========================= */
+.hrs-table-wrapper {
+    width: 100%;
+    overflow-x: auto;
+    margin-top: 6px;
+}
+
+.hrs-table {
+    width: 100%;
+    border-collapse: collapse;
+    background: #ffffff;
+    border-radius: 16px;
+    overflow: hidden;
+    box-shadow:
+        0 12px 30px rgba(0, 0, 0, 0.08);
+}
+
+.hrs-table-head {
+    background: linear-gradient(180deg, #020617, #020617);
+}
+
+.hrs-th {
+    padding: 18px;
+    font-size: 12px;
+    font-weight: 900;
+    color: #ffffff;
+    text-transform: uppercase;
+    letter-spacing: 0.8px;
+}
+
+.hrs-table-body .hrs-table-row {
+    border-bottom: 1px solid #e5e7eb;
+    transition: background 0.25s ease;
+    text-align: center;
+}
+
+.hrs-table-body .hrs-table-row:hover {
+    background: #f8fafc;
+}
+
+.hrs-table-body .hrs-table-row:last-child {
+    border-bottom: none;
+}
+
+.hrs-td {
+    padding: 18px;
+    font-size: 14px;
+    font-weight: 500;
+    color: #020617;
+    vertical-align: middle;
+}
+
+/* =========================
+   BOTÕES
+========================= */
+.hrs-btn {
+    border: none;
+    border-radius: 14px;
+    padding: 10px 22px;
+    font-size: 13px;
+    font-weight: 900;
+    cursor: pointer;
+    transition: transform 0.2s ease, box-shadow 0.2s ease, filter 0.2s ease;
+    white-space: nowrap;
+}
+
+.hrs-btn-detalhes {
+    background: linear-gradient(135deg, #2563eb, #1d4ed8);
+    color: #ffffff;
+    box-shadow: 0 6px 16px rgba(37, 99, 235, 0.35);
+}
+
+.hrs-btn-detalhes:hover {
+    transform: translateY(-2px);
+    filter: brightness(1.05);
+    box-shadow: 0 14px 28px rgba(37, 99, 235, 0.45);
+}
+
+.hrs-btn-detalhes:active {
+    transform: translateY(0);
+    box-shadow: 0 6px 14px rgba(37, 99, 235, 0.35);
+}
+
+/* =========================
+   FORMULÁRIO
+========================= */
+.hrs-form-wrapper {
+    margin-top: 42px;
+    padding-top: 36px;
+    border-top: 1px solid #e5e7eb;
+}
+
+/* =========================
+   DETALHES
+========================= */
+.hrs-detalhes-wrapper {
+    margin-top: 42px;
+    animation: hrsFadeUp 0.4s ease forwards;
+}
+
+/* =========================
+   RESPONSIVO AVANÇADO
+========================= */
+
+/* ===== NOTEBOOK / TELAS MÉDIAS ===== */
+@media (max-width: 1200px) {
+    .hrs-card {
+        padding: 32px;
+    }
+
+    .hrs-title {
+        font-size: 28px;
+    }
+
+    .hrs-saldo-valor {
+        font-size: 32px;
+    }
+}
+
+/* ===== TABLET GRANDE ===== */
+@media (max-width: 992px) {
+    .hrs-page {
+        padding: 40px 24px;
+    }
+
+    .hrs-card {
+        padding: 28px;
+    }
+
+    .hrs-saldo-linhas {
+        flex-wrap: wrap;
+        gap: 20px;
+    }
+
+    .hrs-saldo-item {
+        min-width: unset;
+        flex: 1;
+    }
+
+    .hrs-th,
+    .hrs-td {
+        padding: 16px;
+    }
+}
+
+/* ===== TABLET / MOBILE GRANDE ===== */
+@media (max-width: 768px) {
+    .hrs-page {
+        padding: 32px 18px;
+    }
+
+    .hrs-card {
+        padding: 24px;
+        border-radius: 18px;
+    }
+
+    .hrs-btn-detalhes {
+        font-size: 10px !important;
+    }
+
+    .hrs-title {
+        font-size: 24px;
+        margin-bottom: 26px;
+    }
+
+    .hrs-saldo-box {
+        padding: 22px;
+    }
+
+    .hrs-saldo-valor {
+        font-size: 28px;
+    }
+
+    .hrs-table {
+        font-size: 13px;
+    }
+
+    .hrs-btn {
+        padding: 9px 18px;
+        font-size: 12px;
+    }
+}
+
+/* ===== MOBILE ===== */
+@media (max-width: 576px) {
+    .hrs-page {
+        padding: 24px 14px;
+    }
+
+    .hrs-card {
+        padding: 20px;
+        border-radius: 16px;
+    }
+
+    .hrs-title {
+        font-size: 22px;
+        text-align: center;
+    }
+
+    .hrs-saldo-linhas {
+        flex-direction: column;
+        gap: 16px;
+    }
+
+    .hrs-saldo-item {
+        width: 100%;
+        padding: 16px 18px;
+    }
+
+    .hrs-saldo-valor {
+        font-size: 26px;
+    }
+
+    .hrs-table-wrapper {
+        overflow-x: auto;
+    }
+
+    .hrs-th,
+    .hrs-td {
+        padding: 14px;
+        font-size: 13px;
+        white-space: nowrap;
+    }
+
+    .hrs-btn {
+        width: 100%;
+        justify-content: center;
+        padding: 10px 0;
+    }
+
+    .hrs-form-wrapper,
+    .hrs-detalhes-wrapper {
+        margin-top: 36px;
+    }
+}
+
+/* ===== MOBILE PEQUENO ===== */
+@media (max-width: 420px) {
+    .hrs-page {
+        padding: 20px 10px;
+    }
+
+    .hrs-card {
+        padding: 16px;
+    }
+
+    .hrs-title {
+        font-size: 20px;
+    }
+
+    .hrs-saldo-label {
+        font-size: 11px;
+    }
+
+    .hrs-saldo-valor {
+        font-size: 24px;
+    }
+
+    .hrs-btn {
+        font-size: 11px;
+        padding: 9px 0;
+    }
+}

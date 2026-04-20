@@ -1,0 +1,141 @@
+/* =====================================================
+   BASE DO DASHBOARD
+===================================================== */
+.contagem-container {
+    display: flex;
+    height: 100vh;
+    background: linear-gradient(180deg, #f1f5f9, #e2e8f0);
+    font-family: "Segoe UI", Inter, Arial, sans-serif;
+    color: #020617;
+}
+
+/* =====================================================
+   MENU LATERAL
+===================================================== */
+.menu-lateral {
+    width: 260px;
+    background: linear-gradient(180deg, #020617, #0f172a);
+    padding: 26px 16px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    box-shadow:
+        6px 0 20px rgba(2, 6, 23, 0.35),
+        inset -1px 0 0 rgba(255, 255, 255, 0.04);
+}
+
+/* =====================================================
+   ITENS DO MENU
+===================================================== */
+.menu-item {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    padding: 14px 16px;
+    border-radius: 12px;
+    cursor: pointer;
+    color: #c7d2fe;
+    transition:
+        background 0.18s ease,
+        transform 0.12s ease,
+        box-shadow 0.18s ease;
+}
+
+.menu-item:hover {
+    background: rgba(99, 102, 241, 0.12);
+    transform: translateX(4px);
+}
+
+/* ITEM ATIVO */
+.menu-item.ativo {
+    background: linear-gradient(90deg, #2563eb, #1d4ed8);
+    color: #ffffff;
+    box-shadow:
+        0 6px 18px rgba(37, 99, 235, 0.45);
+}
+
+/* ITENS BLOQUEADOS */
+.menu-item.bloqueado {
+    opacity: 0.35;
+    cursor: not-allowed;
+}
+
+.menu-item.bloqueado:hover {
+    background: transparent;
+    transform: none;
+    box-shadow: none;
+}
+
+/* ÍCONE */
+.menu-icone {
+    font-size: 20px;
+    width: 24px;
+    text-align: center;
+}
+
+/* TEXTO */
+.menu-texto {
+    font-size: 14px;
+    font-weight: 600;
+    letter-spacing: 0.3px;
+}
+
+/* =====================================================
+   ÁREA DE CONTEÚDO
+===================================================== */
+.conteudo {
+    flex: 1;
+    padding: 36px 40px;
+    overflow-y: auto;
+}
+
+/* =====================================================
+   TELA INICIAL
+===================================================== */
+.conteudo-vazio {
+    background: #ffffff;
+    padding: 44px 48px;
+    max-width: 680px;
+    border-radius: 20px;
+    border: 1px solid #e5e7eb;
+    box-shadow:
+        0 25px 50px rgba(15, 23, 42, 0.12),
+        0 10px 20px rgba(15, 23, 42, 0.08);
+}
+
+.conteudo-vazio h1 {
+    font-size: 30px;
+    font-weight: 700;
+    margin-bottom: 10px;
+    color: #020617;
+}
+
+.conteudo-vazio p {
+    font-size: 15px;
+    color: #475569;
+    line-height: 1.6;
+}
+
+/* =====================================================
+   SCROLLBAR PREMIUM
+===================================================== */
+.conteudo::-webkit-scrollbar {
+    width: 10px;
+}
+
+.conteudo::-webkit-scrollbar-track {
+    background: #e2e8f0;
+}
+
+.conteudo::-webkit-scrollbar-thumb {
+    background: linear-gradient(180deg, #6366f1, #2563eb);
+    border-radius: 10px;
+}
+
+/* =====================================================
+   SOMBRAS GERAIS
+===================================================== */
+.menu-lateral,
+.conteudo-vazio {
+    will-change: transform;
+}

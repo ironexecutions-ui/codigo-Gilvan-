@@ -1,0 +1,243 @@
+/* Container geral */
+.novo-contrato-container {
+    width: 100%;
+    background: rgba(255, 255, 255, 0.08);
+    padding: 28px;
+    border-radius: 14px;
+    box-shadow: 0 0 18px rgba(0, 0, 0, 0.25);
+    color: white;
+    max-height: 100vh;
+    overflow-y: auto;
+    animation: aparecer 0.25s ease-out;
+    margin-bottom: 40px;
+}
+
+/* Animação suave ao abrir */
+@keyframes aparecer {
+    from {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Título principal */
+.novo-contrato-container h2 {
+    font-size: 24px;
+    text-align: center;
+    margin-bottom: 25px;
+    color: #e3eaff;
+    letter-spacing: 1px;
+}
+
+/* Área do formulário */
+.formulario {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    padding-bottom: 30px;
+}
+
+/* Títulos das seções */
+.formulario h3 {
+    margin-top: 20px;
+    margin-bottom: 6px;
+    font-size: 18px;
+    font-weight: 600;
+    color: #ffffff;
+    letter-spacing: 0.5px;
+}
+
+/* Inputs */
+.formulario input {
+    padding: 12px;
+    background: rgba(0, 0, 0, 0.35);
+    border-radius: 10px;
+    border: 1px solid rgba(255, 255, 255, 0.10);
+    color: white;
+    outline: none;
+    transition: all 0.25s;
+    font-size: 15px;
+}
+
+/* Foco */
+.formulario input:focus {
+    border-color: #4ea3ff;
+    background: rgba(10, 30, 60, 0.45);
+}
+
+/* Placeholder suave */
+.formulario input::placeholder {
+    color: rgba(255, 255, 255, 0.55);
+}
+
+/* Botão salvar */
+.salvar {
+    margin-top: 25px;
+    padding: 13px;
+    background: linear-gradient(135deg, #1d6df7, #0b49b8);
+    border: none;
+    border-radius: 10px;
+    color: white;
+    font-size: 16px;
+    cursor: pointer;
+    transition: transform 0.25s, opacity 0.25s;
+}
+
+.salvar:hover {
+    opacity: 0.9;
+    transform: scale(1.03);
+}
+
+/* Botão cancelar */
+.cancelar {
+    margin-top: 10px;
+    padding: 13px;
+    background: #ff4a4a;
+    border: none;
+    border-radius: 10px;
+    color: white;
+    font-size: 16px;
+    cursor: pointer;
+    transition: transform 0.25s, opacity 0.25s;
+}
+
+.cancelar:hover {
+    opacity: 0.9;
+    transform: scale(1.03);
+}
+
+/* Scroll bonito */
+.novo-contrato-container::-webkit-scrollbar {
+    width: 8px;
+}
+
+.novo-contrato-container::-webkit-scrollbar-thumb {
+    background: rgba(255, 255, 255, 0.25);
+    border-radius: 8px;
+}
+
+.novo-contrato-container::-webkit-scrollbar-thumb:hover {
+    background: rgba(255, 255, 255, 0.35);
+}
+
+/* linha do input + botão */
+.integracao-linha {
+    display: flex;
+    gap: 10px;
+    width: fit-content;
+    min-width: 400px;
+    align-items: center;
+    margin: 12px 0;
+}
+
+/* input das integrações */
+.integracao-linha input {
+    flex: 1;
+    padding: 10px 14px;
+    background: rgba(255, 255, 255, 0.08);
+    border: 1px solid rgba(255, 255, 255, 0.18);
+    border-radius: 8px;
+    color: white;
+    font-size: 14px;
+    outline: none;
+    transition: all 0.25s;
+}
+
+.integracao-linha input:focus {
+    background: rgba(255, 255, 255, 0.13);
+    border-color: #4a90ff;
+}
+
+/* botão + */
+.botao-add {
+    width: 46px;
+    height: 42px;
+    border-radius: 8px;
+    background: linear-gradient(135deg, #2657d8, #1a3b8f);
+    border: none;
+    color: white;
+    font-size: 22px;
+    cursor: pointer;
+    transition: transform 0.25s, opacity 0.25s, background 0.3s;
+}
+
+.botao-add:hover {
+    transform: scale(1.08);
+    opacity: 0.9;
+}
+
+.botao-add:active {
+    transform: scale(1);
+}
+
+/* lista das integrações adicionadas */
+.integracoes-lista {
+    margin-top: 5px;
+    padding-left: 5px;
+    display: flex;
+    width: fit-content;
+    flex-direction: column;
+    gap: 6px;
+}
+
+/* item de integração */
+.integracao-item {
+    padding: 8px 12px;
+    background: rgba(255, 255, 255, 0.07);
+    border-left: 4px solid #4a90ff;
+    border-radius: 6px;
+    color: white;
+    font-size: 14px;
+    animation: aparecer 0.3s ease;
+}
+
+/* animação suave */
+@keyframes aparecer {
+    from {
+        opacity: 0;
+        transform: translateY(4px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.select-contrato {
+    width: 100%;
+    padding: 12px 14px;
+    border-radius: 8px;
+    border: 1px solid #2c3e50;
+    background: #0f1d33;
+    color: white;
+    font-size: 14px;
+    outline: none;
+    transition: border 0.2s;
+    margin-bottom: 14px;
+}
+
+.select-contrato:focus {
+    border-color: #4e8cff;
+}
+
+.formulario h4 {
+    font-size: 15px;
+    font-weight: 600;
+    color: #cfd9ff;
+    margin-top: 10px;
+    margin-bottom: 4px;
+    letter-spacing: 0.5px;
+}
+
+.input-desabilitado {
+    background: rgba(255, 255, 255, 0.15) !important;
+    color: rgba(255, 255, 255, 0.45) !important;
+    border: 1px solid rgba(255, 255, 255, 0.15) !important;
+    pointer-events: none;
+}

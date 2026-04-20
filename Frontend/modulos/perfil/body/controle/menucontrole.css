@@ -1,0 +1,63 @@
+/* ===== CONTAINER PRINCIPAL ===== */
+.menu-controle-container {
+    display: flex;
+    flex-direction: column;
+    gap: 22px;
+    padding: 20px;
+    background-color: #020617;
+    min-height: 100%;
+}
+
+/* ===== ÁREA DOS BOTÕES ===== */
+.menu-controle-botoes {
+    display: flex;
+    gap: 12px;
+    background-color: #e5e7eb;
+    align-items: center;
+    padding: 30px;
+    border-radius: 20px;
+}
+
+/* ===== BOTÃO BASE ===== */
+.menu-controle-btn {
+    padding: 10px 20px;
+    border-radius: 10px;
+    border: 1px solid #1e293b;
+    background-color: #020617;
+    color: #e5e7eb;
+    font-size: 14px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: background-color 0.2s ease, border-color 0.2s ease;
+}
+
+/* ===== HOVER ===== */
+.menu-controle-btn:hover {
+    background-color: rgba(255, 255, 255, 0.06);
+    color: #020617;
+}
+
+/* ===== ATIVO ===== */
+.menu-controle-btn.ativo {
+    background-color: #2563eb;
+    border-color: #2563eb;
+}
+
+/* ===== CONTEÚDO ABAIXO ===== */
+.menu-controle-conteudo {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+}
+
+/* ===== RESPONSIVO ===== */
+@media (max-width: 768px) {
+    .menu-controle-botoes {
+        flex-wrap: wrap;
+    }
+
+    .menu-controle-btn {
+        width: 100%;
+        justify-content: center;
+    }
+}

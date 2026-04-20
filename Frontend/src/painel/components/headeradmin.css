@@ -1,0 +1,201 @@
+/* ===========================================================
+   HEADER ADMINISTRATIVO
+   =========================================================== */
+
+.ha-header {
+    display: flex;
+    align-items: center;
+    gap: 22px;
+    padding: 22px 26px;
+    background: linear-gradient(135deg, #13034e, #0306e7);
+    border-radius: 14px;
+    width: 99%;
+    border: 1px solid rgba(0, 0, 0, 0.06);
+    box-shadow: 0 8px 26px rgba(0, 0, 0, 0.06);
+    transition: transform 0.25s ease;
+}
+
+.ha-header:hover {
+    transform: translateY(-3px);
+}
+
+/* Foto */
+.ha-foto {
+    width: 125px;
+    height: 125px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 3px solid #e1e1e1;
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.15);
+    background: #ddd;
+}
+
+/* Nome */
+.ha-nome {
+    margin: 0;
+    font-size: 1.9rem;
+    font-weight: 700;
+    color: #f8f7f7;
+    font-family: "Poppins", sans-serif;
+}
+
+/* Função */
+.ha-funcao {
+    margin-top: 8px;
+    margin-bottom: 4px;
+    font-size: 1.2rem;
+    color: #fcfcfc;
+    text-decoration: underline;
+    cursor: pointer;
+    transition: color 0.2s ease;
+}
+
+.ha-funcao:hover {
+    color: #000;
+}
+
+/* ===========================================================
+   MODAL
+   =========================================================== */
+
+.ha-modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(10, 10, 10, 0.6);
+    backdrop-filter: blur(5px);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    animation: haFadeIn 0.25s ease;
+}
+
+/* Conteúdo */
+.ha-modal-content {
+    background: #ffffff;
+    padding: 28px;
+    border-radius: 14px;
+    width: 90%;
+    max-width: 420px;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.14);
+    animation: haSlide 0.25s ease;
+}
+
+/* Título */
+.ha-modal-titulo {
+    margin-bottom: 18px;
+    font-size: 21px;
+    font-weight: 700;
+    font-family: "Poppins", sans-serif;
+    color: #222;
+}
+
+/* Texto */
+.ha-modal-texto {
+    margin-bottom: 22px;
+    color: #444;
+    line-height: 1.5;
+    font-size: 15px;
+}
+
+/* Botão */
+.ha-modal-botao {
+    width: 100%;
+    padding: 12px;
+    background: #2c2c2c;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 15px;
+    transition: background 0.25s ease, transform 0.2s ease;
+}
+
+.ha-modal-botao:hover {
+    background: #000;
+    transform: scale(1.04);
+}
+
+/* ===========================================================
+   ANIMAÇÕES
+   =========================================================== */
+
+@keyframes haFadeIn {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes haSlide {
+    from {
+        opacity: 0;
+        transform: translateY(18px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0px);
+    }
+}
+
+/* ===========================================================
+   ÁREA DE INFORMAÇÕES
+   =========================================================== */
+
+.ha-info {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+}
+
+/* ===========================================================
+   BOTÕES DE MODO
+   =========================================================== */
+
+.ha-modos {
+    margin-top: 12px;
+    display: flex;
+    gap: 10px;
+}
+
+/* Botão padrão (cinza) */
+.ha-botao {
+    padding: 8px 14px;
+    border-radius: 8px;
+    border: none;
+    cursor: pointer;
+    background: #d1d1d1;
+    color: #222;
+    font-size: 13px;
+    font-weight: 600;
+    transition:
+        background 0.25s ease,
+        color 0.25s ease,
+        transform 0.2s ease,
+        box-shadow 0.2s ease;
+}
+
+/* Hover */
+.ha-botao:hover {
+    background: #bdbdbd;
+    transform: translateY(-1px);
+}
+
+/* Botão ativo */
+.ha-botao.ativo {
+    background: #000000;
+    color: #ffffff;
+    box-shadow: 0 4px 14px rgba(0, 0, 0, 0.35);
+}
+
+/* Hover do ativo */
+.ha-botao.ativo:hover {
+    background: #111111;
+}

@@ -1,0 +1,231 @@
+/* ================= CONTAINER ================= */
+
+.alunos_container {
+    display: flex;
+    gap: 25px;
+
+    padding: 30px;
+    min-height: 100vh;
+
+    background:
+        radial-gradient(circle at 20% 0%, rgba(59, 130, 246, 0.12), transparent 40%),
+        radial-gradient(circle at 80% 10%, rgba(37, 99, 235, 0.10), transparent 40%);
+}
+
+/* ================= LISTA ================= */
+
+.alunos_lista {
+    width: 35%;
+    max-height: 600px;
+    overflow-y: auto;
+
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+
+    padding: 15px;
+
+    border-radius: 16px;
+
+    background: #020617;
+    border: 1px solid rgba(255, 255, 255, 0.05);
+
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+}
+
+/* item da lista */
+.alunos_lista div {
+    padding: 14px;
+
+    border-radius: 10px;
+
+    background: rgba(15, 23, 42, 0.8);
+
+    cursor: pointer;
+
+    transition: all 0.2s ease;
+
+    font-size: 14px;
+    color: #e2e8f0;
+}
+
+/* hover */
+.alunos_lista div:hover {
+    background: #1e293b;
+    transform: translateX(4px);
+}
+
+/* ================= ÁREA EDITAR ================= */
+
+.alunos_editar {
+    width: 65%;
+
+    padding: 25px;
+
+    border-radius: 16px;
+
+    background: #020617;
+    border: 1px solid rgba(255, 255, 255, 0.05);
+
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.6);
+
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+/* título */
+.alunos_editar h3 {
+    margin-bottom: 10px;
+
+    font-size: 20px;
+    font-weight: 700;
+
+    background: linear-gradient(90deg, #60a5fa, #2563eb);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+/* ================= INPUTS ================= */
+
+.alunos_editar input {
+    width: 100%;
+
+    padding: 14px 16px;
+
+    border-radius: 12px;
+
+    border: 1px solid rgba(255, 255, 255, 0.06);
+
+    background: rgba(15, 23, 42, 0.8);
+
+    color: #f1f5f9;
+    font-size: 14px;
+
+    outline: none;
+
+    transition: all 0.25s ease;
+}
+
+/* placeholder */
+.alunos_editar input::placeholder {
+    color: #64748b;
+}
+
+/* hover */
+.alunos_editar input:hover {
+    border: 1px solid rgba(255, 255, 255, 0.12);
+}
+
+/* focus */
+.alunos_editar input:focus {
+    border: 1px solid #2563eb;
+
+    box-shadow:
+        0 0 0 2px rgba(37, 99, 235, 0.2),
+        0 4px 20px rgba(37, 99, 235, 0.15);
+}
+
+/* ================= BOTÃO ================= */
+
+.alunos_editar button {
+    margin-top: 10px;
+
+    padding: 14px;
+
+    border: none;
+    border-radius: 12px;
+
+    font-weight: 600;
+    font-size: 15px;
+
+    cursor: pointer;
+
+    background: linear-gradient(135deg, #2563eb, #1d4ed8);
+    color: white;
+
+    transition: all 0.25s ease;
+
+    box-shadow:
+        0 6px 20px rgba(37, 99, 235, 0.3);
+}
+
+/* hover */
+.alunos_editar button:hover {
+    transform: translateY(-2px);
+
+    box-shadow:
+        0 12px 30px rgba(37, 99, 235, 0.4);
+}
+
+/* click */
+.alunos_editar button:active {
+    transform: scale(0.98);
+}
+
+/* ================= SCROLL CUSTOM ================= */
+
+.alunos_lista::-webkit-scrollbar {
+    width: 6px;
+}
+
+.alunos_lista::-webkit-scrollbar-thumb {
+    background: #1e293b;
+    border-radius: 10px;
+}
+
+/* busca */
+.alunos_busca {
+    margin-bottom: 15px;
+    padding: 12px;
+    border-radius: 10px;
+    border: none;
+    background: #0f172a;
+    color: white;
+}
+
+/* grupo */
+.grupo_bloco {
+    margin-bottom: 20px;
+}
+
+.grupo_titulo {
+    font-size: 14px;
+    font-weight: 700;
+    color: #60a5fa;
+    margin-bottom: 8px;
+}
+
+/* aluno */
+.aluno_item {
+    padding: 12px;
+    border-radius: 10px;
+    background: #020617;
+    margin-bottom: 5px;
+    cursor: pointer;
+    transition: 0.2s;
+}
+
+.aluno_item:hover {
+    background: #1e293b;
+}
+
+/* ================= FORM EDIT ================= */
+
+.perfil_editBox {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    margin-top: 10px;
+}
+
+.perfil_formGroup {
+    display: flex;
+    flex-direction: column;
+}
+
+.perfil_labelField {
+    font-size: 13px;
+    color: #64748b;
+    margin-bottom: 4px;
+}

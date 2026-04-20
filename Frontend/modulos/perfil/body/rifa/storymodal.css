@@ -1,0 +1,117 @@
+/* OVERLAY */
+.story-overlay {
+    position: fixed;
+    inset: 0;
+    background: rgba(2, 6, 23, 0.85);
+    z-index: 99999;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* MODAL */
+.story-modal {
+    position: relative;
+    width: 390px;
+    max-height: 90vh;
+    background: #020617;
+    border-radius: 16px;
+    padding: 16px;
+    overflow-y: auto;
+    box-shadow: 0 30px 80px rgba(0, 0, 0, 0.6);
+}
+
+/* BOTÃO FECHAR */
+.story-close {
+    position: absolute;
+    top: 10px;
+    right: 12px;
+    background: transparent;
+    border: none;
+    color: #fff;
+    font-size: 26px;
+    cursor: pointer;
+}
+
+/* LOGO */
+.story-logo-wrap {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 10px;
+}
+
+.story-logo-wrap img {
+    max-height: 60px;
+    object-fit: contain;
+}
+
+/* LOJA */
+.story-loja {
+    text-align: center;
+    font-size: 18px;
+    font-weight: 700;
+    color: #f8fafc;
+    margin-bottom: 12px;
+}
+
+/* CARD */
+.story-card {
+    background: #020617;
+    border: 1px solid #1e293b;
+    border-radius: 12px;
+    padding: 12px;
+    margin-bottom: 14px;
+}
+
+/* FOTOS */
+.story-fotos {
+    display: flex;
+    gap: 8px;
+    justify-content: center;
+    margin-bottom: 10px;
+}
+
+.story-fotos img {
+    width: 100px;
+    height: 100px;
+    border-radius: 10px;
+    object-fit: cover;
+    border: 1px solid #1e293b;
+}
+
+/* TEXTO */
+.story-premio {
+    font-size: 14px;
+    font-weight: 600;
+    color: #e5e7eb;
+    text-align: center;
+}
+
+.story-data {
+    font-size: 12px;
+    color: #94a3b8;
+    text-align: center;
+}
+
+/* GRID */
+.story-grid {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 6px;
+}
+
+.story-numero {
+    padding: 6px 0;
+    font-size: 12px;
+    text-align: center;
+    border-radius: 6px;
+    background: #020617;
+    border: 1px solid #1e293b;
+    color: #cbd5f5;
+}
+
+.story-numero.vendido {
+    background: #7f1d1d;
+    border-color: #dc2626;
+    color: #fee2e2;
+}

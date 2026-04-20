@@ -1,0 +1,79 @@
+/* ===============================
+   CONTAINER PRINCIPAL
+=============================== */
+.registrar-fiscal {
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+    color: #e5e7eb;
+}
+
+/* ===============================
+   TÍTULO
+=============================== */
+.registrar-fiscal h4 {
+    font-size: 16px;
+    font-weight: 600;
+    letter-spacing: 0.3px;
+}
+
+/* ===============================
+   TOPO (SELECT + INPUT)
+=============================== */
+.registrar-fiscal-topo {
+    display: flex;
+    gap: 12px;
+    flex-wrap: wrap;
+}
+
+/* ===============================
+   SELECT E INPUT
+=============================== */
+.registrar-fiscal select,
+.registrar-fiscal input {
+    background: #020617;
+    border: 1px solid #1e293b;
+    border-radius: 14px;
+    padding: 10px 16px;
+    font-size: 13px;
+    color: #e5e7eb;
+    outline: none;
+    min-width: 220px;
+    transition:
+        border-color 0.2s ease,
+        box-shadow 0.2s ease;
+}
+
+.registrar-fiscal select:focus,
+.registrar-fiscal input:focus {
+    border-color: #38bdf8;
+    box-shadow: 0 0 0 3px rgba(56, 189, 248, 0.15);
+}
+
+/* ===============================
+   PLACEHOLDER
+=============================== */
+.registrar-fiscal input::placeholder {
+    color: #94a3b8;
+}
+
+/* ===============================
+   FORMULÁRIO ABAIXO
+=============================== */
+.registrar-fiscal-form {
+    margin-top: 10px;
+}
+
+/* ===============================
+   RESPONSIVO
+=============================== */
+@media (max-width: 600px) {
+    .registrar-fiscal-topo {
+        flex-direction: column;
+    }
+
+    .registrar-fiscal select,
+    .registrar-fiscal input {
+        width: 100%;
+    }
+}

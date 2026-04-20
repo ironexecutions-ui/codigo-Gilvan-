@@ -1,0 +1,126 @@
+/* ===============================
+   CONTAINER PRINCIPAL
+=============================== */
+.formulario-fiscal {
+    background: linear-gradient(180deg, #020617, #020617);
+    border: 1px solid #1e293b;
+    border-radius: 20px;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+    color: #e5e7eb;
+}
+
+/* ===============================
+   TÍTULO DO PRODUTO / SERVIÇO
+=============================== */
+.formulario-fiscal h5 {
+    font-size: 14px;
+    font-weight: 600;
+    color: #38bdf8;
+    letter-spacing: 0.3px;
+}
+
+/* ===============================
+   BLOCO DE CAMPOS
+=============================== */
+.formulario-fiscal-bloco {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(190px, 1fr));
+    gap: 14px;
+}
+
+/* ===============================
+   INPUTS E SELECT
+=============================== */
+.formulario-fiscal input,
+.formulario-fiscal select {
+    background: #020617;
+    border: 1px solid #1e293b;
+    border-radius: 14px;
+    padding: 11px 15px;
+    font-size: 13px;
+    color: #e5e7eb;
+    outline: none;
+    transition:
+        border-color 0.2s ease,
+        box-shadow 0.2s ease;
+}
+
+/* Placeholder */
+.formulario-fiscal input::placeholder {
+    color: #94a3b8;
+}
+
+/* Focus */
+.formulario-fiscal input:focus,
+.formulario-fiscal select:focus {
+    border-color: #22c55e;
+    box-shadow: 0 0 0 3px rgba(34, 197, 94, 0.18);
+}
+
+/* Select aparência consistente */
+.formulario-fiscal select {
+    appearance: none;
+    background-image:
+        linear-gradient(45deg, transparent 50%, #94a3b8 50%),
+        linear-gradient(135deg, #94a3b8 50%, transparent 50%);
+    background-position:
+        calc(100% - 20px) 50%,
+        calc(100% - 14px) 50%;
+    background-size: 6px 6px;
+    background-repeat: no-repeat;
+    padding-right: 36px;
+    cursor: pointer;
+}
+
+/* ===============================
+   BOTÃO SALVAR
+=============================== */
+.formulario-fiscal button {
+    margin-top: 6px;
+    align-self: flex-start;
+    background: linear-gradient(180deg, #020617, #020617);
+    border: 1px solid #22c55e;
+    color: #22c55e;
+    border-radius: 18px;
+    padding: 11px 26px;
+    font-size: 13px;
+    font-weight: 600;
+    cursor: pointer;
+    transition:
+        box-shadow 0.2s ease,
+        transform 0.1s ease,
+        background 0.2s ease;
+}
+
+/* Hover */
+.formulario-fiscal button:hover {
+    box-shadow: 0 10px 26px rgba(34, 197, 94, 0.28);
+    transform: translateY(-1px);
+}
+
+/* Active */
+.formulario-fiscal button:active {
+    transform: translateY(0);
+    box-shadow: none;
+}
+
+/* ===============================
+   RESPONSIVO
+=============================== */
+@media (max-width: 600px) {
+    .formulario-fiscal {
+        padding: 16px;
+    }
+
+    .formulario-fiscal-bloco {
+        grid-template-columns: 1fr;
+    }
+
+    .formulario-fiscal button {
+        width: 100%;
+        text-align: center;
+    }
+}

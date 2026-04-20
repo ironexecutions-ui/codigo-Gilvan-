@@ -1,0 +1,165 @@
+/* ===============================
+   CONTAINER PRINCIPAL
+=============================== */
+.bm-container {
+    background: #020617;
+    border: 1px solid #1e293b;
+    border-radius: 16px;
+    padding: 22px 24px;
+    color: #e5e7eb;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+/* ===============================
+   TÍTULO
+=============================== */
+.bm-titulo {
+    font-size: 15px;
+    font-weight: 600;
+    color: #f1f5f9;
+    letter-spacing: 0.3px;
+}
+
+/* ===============================
+   LISTA
+=============================== */
+.bm-lista {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+/* ===============================
+   ITEM DO MÓDULO
+=============================== */
+.bm-item {
+    background: linear-gradient(180deg, #020617, #020617);
+    border: 1px solid #1e293b;
+    border-radius: 14px;
+    padding: 14px 16px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 14px;
+    transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.bm-item:hover {
+    border-color: #334155;
+    box-shadow: 0 8px 22px rgba(0, 0, 0, 0.35);
+}
+
+/* ===============================
+   BLOCO TEXTO
+=============================== */
+.bm-clas {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+
+/* Nome técnico do módulo */
+.bm-nome {
+    font-size: 14px;
+    font-weight: 600;
+    color: #e5e7eb;
+}
+
+/* Descrição do módulo */
+.bm-descricao {
+    font-size: 12px;
+    color: #94a3b8;
+}
+
+/* ===============================
+   AÇÕES
+=============================== */
+.bm-acao {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+/* ===============================
+   BOTÃO SOLICITAR
+=============================== */
+.bm-btn {
+    border-radius: 12px;
+    padding: 8px 14px;
+    font-size: 12px;
+    font-weight: 600;
+    cursor: pointer;
+    transition:
+        background 0.2s ease,
+        color 0.2s ease,
+        box-shadow 0.2s ease,
+        transform 0.1s ease;
+}
+
+.bm-btn-solicitar {
+    background: linear-gradient(180deg, #16a34a, #15803d);
+    border: 1px solid #22c55e;
+    color: #ecfdf5;
+}
+
+.bm-btn-solicitar:hover {
+    box-shadow: 0 6px 18px rgba(34, 197, 94, 0.35);
+    transform: translateY(-1px);
+}
+
+.bm-btn-solicitar:active {
+    transform: translateY(0);
+    box-shadow: none;
+}
+
+/* ===============================
+   STATUS
+=============================== */
+.bm-status {
+    padding: 6px 12px;
+    border-radius: 999px;
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 0.4px;
+    text-transform: uppercase;
+    border: 1px solid transparent;
+}
+
+/* Inativo */
+.bm-inativo {
+    color: #94a3b8;
+    background: rgba(148, 163, 184, 0.08);
+    border-color: rgba(148, 163, 184, 0.25);
+}
+
+/* Solicitado */
+.bm-solicitado {
+    color: #facc15;
+    background: rgba(250, 204, 21, 0.08);
+    border-color: rgba(250, 204, 21, 0.35);
+}
+
+/* Ativo */
+.bm-ativo {
+    color: #22c55e;
+    background: rgba(34, 197, 94, 0.08);
+    border-color: rgba(34, 197, 94, 0.35);
+}
+
+/* ===============================
+   RESPONSIVO
+=============================== */
+@media (max-width: 520px) {
+    .bm-item {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 12px;
+    }
+
+    .bm-acao {
+        width: 100%;
+        justify-content: flex-start;
+    }
+}

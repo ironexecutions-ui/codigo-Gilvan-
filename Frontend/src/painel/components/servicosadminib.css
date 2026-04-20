@@ -1,0 +1,208 @@
+/* =========================
+   CONTAINER PRINCIPAL
+========================= */
+.sib-container {
+    background: #0b1f3d;
+    border-radius: 12px;
+    padding: 20px;
+    height: 100%;
+    overflow: auto;
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+    box-shadow: 0 0 16px rgba(0, 0, 0, 0.2);
+    color: white;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+}
+
+/* =========================
+   SCROLLBAR PERSONALIZADA
+========================= */
+
+/* Chrome, Edge, Safari */
+.sib-container::-webkit-scrollbar {
+    width: 10px;
+}
+
+.sib-container::-webkit-scrollbar-track {
+    background: #081a33;
+    border-radius: 10px;
+}
+
+.sib-container::-webkit-scrollbar-thumb {
+    background: linear-gradient(180deg,
+            #1d447c,
+            #14325f);
+    border-radius: 10px;
+    border: 2px solid #081a33;
+}
+
+.sib-container::-webkit-scrollbar-thumb:hover {
+    background: linear-gradient(180deg,
+            #2a5aa0,
+            #1d447c);
+}
+
+/* Firefox */
+.sib-container {
+    scrollbar-width: thin;
+    scrollbar-color: #1d447c #081a33;
+}
+
+/* =========================
+   TOPO COM BOTÕES
+========================= */
+.sib-topo {
+    display: flex;
+    gap: 10px;
+}
+
+.sib-topo button {
+    flex: 1;
+    padding: 14px;
+    border: none;
+    border-radius: 8px;
+    background: #14325f;
+    color: white;
+    font-size: 15px;
+    cursor: pointer;
+    transition: background 0.2s, transform 0.2s;
+}
+
+.sib-topo button:hover {
+    background: #1d447c;
+    transform: scale(1.03);
+}
+
+.sib-topo button.ativo {
+    background: #1d447c;
+    box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.15);
+}
+
+/* =========================
+   TABELA
+========================= */
+.sib-tabela {
+    width: 100%;
+    border-collapse: collapse;
+    background: #081a33;
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+.sib-tabela thead {
+    background: #0b1f3d;
+}
+
+.sib-tabela th {
+    padding: 12px;
+    font-size: 13px;
+    font-weight: 600;
+    text-align: left;
+    color: #cbd6ee;
+    border-bottom: 1px solid #14325f;
+}
+
+.sib-tabela td {
+    padding: 12px;
+    font-size: 14px;
+    border-bottom: 1px solid #14325f;
+    color: white;
+}
+
+.sib-tabela tbody tr:hover {
+    background: rgba(255, 255, 255, 0.04);
+}
+
+/* =========================
+   CORES POR ORIGEM
+========================= */
+.linha-ib {
+    border-left: 5px solid #3b82f6;
+}
+
+.linha-sistemas {
+    border-left: 5px solid #22c55e;
+}
+
+.linha-pagamentos {
+    border-left: 5px solid #f59e0b;
+}
+
+/* =========================
+   VALORES
+========================= */
+.sib-tabela td:last-child {
+    font-weight: 600;
+}
+
+/* =========================
+   TEXTO DE CARREGAMENTO
+========================= */
+.sib-container p {
+    text-align: center;
+    font-size: 14px;
+    opacity: 0.85;
+}
+
+/* =========================
+   RESPONSIVO
+========================= */
+@media (max-width: 900px) {
+
+    .sib-tabela thead {
+        display: none;
+    }
+
+    .sib-tabela,
+    .sib-tabela tbody,
+    .sib-tabela tr,
+    .sib-tabela td {
+        display: block;
+        width: 100%;
+    }
+
+    .sib-tabela tr {
+        margin-bottom: 12px;
+        background: #081a33;
+        border-radius: 10px;
+        padding: 6px 0;
+    }
+
+    .sib-tabela td {
+        display: flex;
+        justify-content: space-between;
+        padding: 10px 14px;
+        border-bottom: none;
+    }
+}
+
+/* =========================
+   LINHAS COM FUNDO POR ORIGEM
+========================= */
+
+.linha-ib {
+    background: linear-gradient(90deg,
+            rgba(59, 130, 246, 0.22),
+            rgba(59, 130, 246, 0.08));
+}
+
+.linha-sistemas {
+    background: linear-gradient(90deg,
+            rgba(34, 197, 94, 0.22),
+            rgba(34, 197, 94, 0.08));
+}
+
+.linha-pagamentos {
+    background: linear-gradient(90deg,
+            rgba(245, 158, 11, 0.22),
+            rgba(245, 158, 11, 0.08));
+}
+
+/* =========================
+   HOVER (refina, não polui)
+========================= */
+
+.sib-tabela tbody tr:hover {
+    filter: brightness(1.08);
+}

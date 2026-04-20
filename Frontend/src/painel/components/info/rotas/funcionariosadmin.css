@@ -1,0 +1,193 @@
+/* Contêiner principal */
+.fa-container {
+    width: 100%;
+    height: 100%;
+    padding: 26px;
+    background: #0e1625;
+    color: #fff;
+    border-radius: 12px;
+    box-shadow: 0 0 22px rgba(0, 0, 0, 0.35);
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    overflow-y: auto;
+}
+
+/* Título */
+.fa-titulo {
+    font-size: 28px;
+    font-weight: 600;
+    text-align: left;
+    margin-bottom: 12px;
+    padding-bottom: 6px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.12);
+}
+
+/* Formulário */
+.fa-form {
+    width: 100%;
+    background: #111b2f;
+    padding: 22px;
+    border-radius: 12px;
+    box-shadow: inset 0 0 14px rgba(0, 0, 0, 0.25);
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 16px;
+}
+
+/* Inputs */
+.fa-input {
+    width: 100%;
+    padding: 12px 14px;
+    border-radius: 8px;
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    background: rgba(255, 255, 255, 0.06);
+    color: #fff;
+    font-size: 15px;
+    outline: none;
+    transition: border 0.25s;
+}
+
+.fa-input:focus {
+    border-color: #4da3ff;
+    background: rgba(255, 255, 255, 0.10);
+}
+
+/* Botões */
+.fa-botao {
+    padding: 12px 18px;
+    font-size: 15px;
+    font-weight: 600;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: transform 0.2s, background 0.25s;
+}
+
+/* Botão salvar */
+.fa-botao-salvar {
+    background: #4da3ff;
+    color: #0e1625;
+    grid-column: span 2;
+}
+
+.fa-botao-salvar:hover {
+    transform: scale(1.05);
+    background: #6ab4ff;
+}
+
+/* Botão cancelar */
+.fa-botao-cancelar {
+    background: #c0392b;
+    color: #fff;
+    grid-column: span 2;
+}
+
+.fa-botao-cancelar:hover {
+    transform: scale(1.05);
+    background: #e74c3c;
+}
+
+/* Tabela */
+.fa-tabela {
+    width: 100%;
+    border-collapse: collapse;
+    background: #111b2f;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 0 18px rgba(0, 0, 0, 0.28);
+}
+
+/* Cabeçalho */
+.fa-tabela-header th {
+    padding: 14px;
+    font-size: 14px;
+    text-align: left;
+    background: #0f1829;
+    color: #cfd7e3;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.07);
+}
+
+/* Linhas */
+.fa-linha {
+    transition: background 0.25s;
+}
+
+.fa-linha:hover {
+    background: rgba(255, 255, 255, 0.06);
+}
+
+/* Células */
+.fa-celula {
+    padding: 12px 14px;
+    font-size: 14px;
+}
+
+.fa-col-celular {
+    width: 140px;
+}
+
+.fa-celular {
+    text-align: center;
+    color: #ddd;
+}
+
+/* Foto */
+.fa-foto-celula {
+    text-align: center;
+}
+
+.fa-foto {
+    width: 46px;
+    height: 46px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 2px solid rgba(255, 255, 255, 0.15);
+}
+
+/* Ações */
+.fa-acoes {
+    display: flex;
+    gap: 10px;
+}
+
+/* Botões pequenos */
+.fa-botao-editar,
+.fa-botao-apagar {
+    padding: 8px 14px;
+    border-radius: 6px;
+    font-size: 14px;
+    border: none;
+    cursor: pointer;
+    transition: background 0.25s, transform 0.2s;
+}
+
+/* Editar */
+.fa-botao-editar {
+    background: #2980b9;
+    color: #fff;
+}
+
+.fa-botao-editar:hover {
+    transform: scale(1.05);
+    background: #3498db;
+}
+
+/* Apagar */
+.fa-botao-apagar {
+    background: #c0392b;
+    color: #fff;
+}
+
+.fa-botao-apagar:hover {
+    transform: scale(1.05);
+    background: #e74c3c;
+}
+
+/* Loading */
+.fa-loading {
+    font-size: 16px;
+    padding: 14px;
+    text-align: center;
+    color: #fff;
+}

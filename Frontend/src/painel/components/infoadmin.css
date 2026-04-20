@@ -1,0 +1,71 @@
+.ia-box {
+    background: #0b1f3d;
+    border-radius: 12px;
+    padding: 20px;
+    height: 100%;
+    overflow: auto;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    box-shadow: 0 0 16px rgba(0, 0, 0, 0.2);
+    color: white;
+}
+
+/* =========================
+   SCROLLBAR PERSONALIZADA
+   IA BOX
+========================= */
+
+/* Chrome, Edge, Safari */
+.ia-box::-webkit-scrollbar {
+    width: 10px;
+}
+
+.ia-box::-webkit-scrollbar-track {
+    background: #081a33;
+    border-radius: 10px;
+}
+
+.ia-box::-webkit-scrollbar-thumb {
+    background: linear-gradient(180deg,
+            #1d447c,
+            #14325f);
+    border-radius: 10px;
+    border: 2px solid #081a33;
+}
+
+.ia-box::-webkit-scrollbar-thumb:hover {
+    background: linear-gradient(180deg,
+            #2a5aa0,
+            #1d447c);
+}
+
+/* Firefox */
+.ia-box {
+    scrollbar-width: thin;
+    scrollbar-color: #1d447c #081a33;
+}
+
+.ia-titulo {
+    text-align: center;
+    font-size: 20px;
+    margin-bottom: 10px;
+    font-weight: 600;
+}
+
+.ia-botao {
+    width: 100%;
+    padding: 14px;
+    border: none;
+    border-radius: 8px;
+    background: #14325f;
+    color: white;
+    font-size: 15px;
+    cursor: pointer;
+    transition: background 0.2s, transform 0.2s;
+}
+
+.ia-botao:hover {
+    background: #1d447c;
+    transform: scale(1.03);
+}

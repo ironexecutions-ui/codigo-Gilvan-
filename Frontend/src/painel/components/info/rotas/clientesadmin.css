@@ -1,0 +1,323 @@
+/* Container geral */
+.cli-container {
+    background: #0b1f3d;
+    border-radius: 14px;
+    padding: 20px;
+    width: 100%;
+    height: 100%;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    overflow-y: auto;
+    box-shadow: 0 0 18px rgba(0, 0, 0, 0.25);
+}
+
+/* Topo com título e botão voltar */
+.cli-top {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 18px;
+}
+
+.cli-titulo {
+    font-size: 22px;
+    font-weight: 600;
+}
+
+.cli-voltar {
+    padding: 10px 18px;
+    background: #14325f;
+    border: none;
+    border-radius: 8px;
+    color: white;
+    font-size: 14px;
+    cursor: pointer;
+    transition: background 0.25s, transform 0.2s;
+}
+
+.cli-voltar:hover {
+    background: #1d447c;
+    transform: scale(1.04);
+}
+
+/* Tabela */
+.cli-tabela {
+    width: 100%;
+    border-collapse: collapse;
+    background: rgba(255, 255, 255, 0.03);
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+/* Cabeçalho */
+.cli-tabela th {
+    text-align: left;
+    padding: 12px;
+    background: #10274b;
+    font-weight: 600;
+    font-size: 14px;
+}
+
+/* Linhas */
+.cli-tabela td {
+    padding: 12px;
+    font-size: 14px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+/* Hover de linha */
+.cli-tabela tr:hover td {
+    background: rgba(255, 255, 255, 0.06);
+}
+
+/* Link do serviço */
+.cli-link {
+    color: #7ebeff;
+    font-weight: 600;
+    text-decoration: none;
+}
+
+.cli-link:hover {
+    text-decoration: underline;
+}
+
+/* Botões de ação */
+.cli-editar,
+.cli-apagar {
+    padding: 7px 12px;
+    border: none;
+    border-radius: 6px;
+    font-size: 13px;
+    cursor: pointer;
+    transition: transform 0.2s ease, opacity 0.2s ease;
+}
+
+/* Editar */
+.cli-editar {
+    background: #1d7ae3;
+    color: white;
+    margin-right: 6px;
+}
+
+.cli-editar:hover {
+    opacity: 0.85;
+    transform: scale(1.05);
+}
+
+/* Apagar */
+.cli-apagar {
+    background: #d63c3c;
+    color: white;
+}
+
+.cli-apagar:hover {
+    opacity: 0.85;
+    transform: scale(1.05);
+}
+
+/* Ajustar tabela em telas pequenas */
+@media (max-width: 900px) {
+
+    .cli-tabela th,
+    .cli-tabela td {
+        padding: 8px;
+        font-size: 12px;
+    }
+
+    .cli-editar,
+    .cli-apagar {
+        padding: 5px 8px;
+        font-size: 12px;
+    }
+}
+
+/* Scroll bonito */
+.cli-container::-webkit-scrollbar {
+    width: 10px;
+}
+
+.cli-container::-webkit-scrollbar-thumb {
+    background: #14325f;
+    border-radius: 10px;
+}
+
+.cli-container::-webkit-scrollbar-track {
+    background: rgba(255, 255, 255, 0.06);
+}
+
+/* Botão adicionar */
+.cli-adicionar {
+    padding: 10px 18px;
+    background: #28a745;
+    border: none;
+    border-radius: 8px;
+    color: white;
+    font-weight: 600;
+    cursor: pointer;
+    transition: 0.2s;
+}
+
+.cli-adicionar:hover {
+    transform: scale(1.05);
+    background: #2fbd52;
+}
+
+/* Overlay do modal */
+.cli-modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.65);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Caixa do modal */
+.cli-modal {
+    width: 420px;
+    background: #0d2347;
+    padding: 25px;
+    border-radius: 12px;
+    color: white;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.4);
+    animation: aparecer 0.25s ease;
+}
+
+@keyframes aparecer {
+    from {
+        transform: scale(0.7);
+        opacity: 0;
+    }
+
+    to {
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+
+.cli-modal-titulo {
+    margin-bottom: 14px;
+    font-size: 20px;
+    font-weight: 600;
+}
+
+/* Formulário */
+.cli-form {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.cli-form input {
+    padding: 12px;
+    border: none;
+    border-radius: 8px;
+    font-size: 14px;
+}
+
+.cli-salvar {
+    padding: 12px;
+    border: none;
+    border-radius: 8px;
+    background: #1d7ae3;
+    color: white;
+    font-size: 16px;
+    cursor: pointer;
+    transition: 0.25s;
+}
+
+.cli-salvar:hover {
+    background: #2a8bff;
+}
+
+/* ====================== CONTADORES ====================== */
+.cli-stats {
+    display: flex;
+    gap: 14px;
+    margin-bottom: 18px;
+    background: rgba(255, 255, 255, 0.06);
+    padding: 12px 14px;
+    border-radius: 10px;
+    border: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.cli-stats span {
+    padding: 8px 14px;
+    background: rgba(255, 255, 255, 0.10);
+    border-radius: 6px;
+    font-size: 14px;
+    font-weight: 600;
+    cursor: pointer;
+    color: white;
+}
+
+/* ====================== PROCESSOS (NOVO) ====================== */
+.proc {
+    padding: 6px 12px;
+    border-radius: 6px;
+    font-weight: 600;
+    font-size: 13px;
+    text-align: center;
+    text-transform: capitalize;
+}
+
+/* Em andamento */
+.proc-andamento {
+    background: #ffcc00;
+    color: #3d3200;
+}
+
+/* Contratação */
+.proc-contratacao {
+    background: #36d27e;
+    color: #0f2a18;
+}
+
+/* Finalizado */
+.proc-finalizado {
+    background: #2a91ff;
+    color: #06203a;
+}
+
+/* ====================== SELECT NO MODAL ====================== */
+.cli-form select {
+    padding: 12px;
+    border-radius: 8px;
+    border: none;
+    font-size: 14px;
+    background: rgba(255, 255, 255, 0.15);
+    color: white;
+    cursor: pointer;
+}
+
+.cli-form select option {
+    background: #0b1f3d;
+    color: white;
+}
+
+/* ====================== CONTADOR ATIVO (FILTRO) ====================== */
+.stat-ativo {
+    background: #1d7ae3 !important;
+    color: white !important;
+    transform: scale(1.06);
+    box-shadow: 0 0 10px rgba(29, 122, 227, 0.6);
+    cursor: pointer;
+}
+
+.cli-titulo-click {
+    cursor: pointer;
+    transition:
+        color 0.25s ease,
+        transform 0.2s ease,
+        letter-spacing 0.2s ease;
+}
+
+.cli-titulo-click:hover {
+    color: #c9dbf0;
+    transform: scale(1.02);
+    letter-spacing: 0.5px;
+}

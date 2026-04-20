@@ -1,0 +1,190 @@
+/* ===============================
+   CONTAINER PRINCIPAL
+=============================== */
+.registrados-fiscal {
+    background: #020617;
+    border: 1px solid #1e293b;
+    border-radius: 18px;
+    padding: 22px;
+    color: #e5e7eb;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.35);
+}
+
+/* ===============================
+   TÍTULO
+=============================== */
+.registrados-fiscal h4 {
+    margin-bottom: 16px;
+    font-size: 18px;
+    font-weight: 600;
+    color: #f8fafc;
+}
+
+/* ===============================
+   ÁREA DE FILTROS
+=============================== */
+.registrados-fiscal-filtros {
+    display: flex;
+    gap: 12px;
+    flex-wrap: wrap;
+    margin-bottom: 18px;
+}
+
+/* SELECT E INPUTS */
+.registrados-fiscal-filtros select,
+.registrados-fiscal-filtros input {
+    background: #020617;
+    border: 1px solid #1e293b;
+    border-radius: 14px;
+    padding: 10px 14px;
+    color: #e5e7eb;
+    font-size: 13px;
+    font-weight: 500;
+    outline: none;
+    transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+/* PLACEHOLDER */
+.registrados-fiscal-filtros input::placeholder {
+    color: #64748b;
+}
+
+/* HOVER / FOCUS */
+.registrados-fiscal-filtros select:hover,
+.registrados-fiscal-filtros input:hover,
+.registrados-fiscal-filtros select:focus,
+.registrados-fiscal-filtros input:focus {
+    border-color: #22c55e;
+    box-shadow: 0 0 0 2px rgba(34, 197, 94, 0.15);
+}
+
+/* ===============================
+   TABELA
+=============================== */
+.registrados-fiscal table {
+    width: 100%;
+    border-collapse: collapse;
+    background: #020617;
+    border-radius: 14px;
+    overflow: hidden;
+}
+
+.registrados-fiscal thead {
+    background: #020617;
+}
+
+.registrados-fiscal th {
+    text-align: left;
+    padding: 12px 14px;
+    font-size: 12px;
+    font-weight: 600;
+    color: #94a3b8;
+    border-bottom: 1px solid #1e293b;
+}
+
+.registrados-fiscal td {
+    padding: 12px 14px;
+    font-size: 13px;
+    color: #e5e7eb;
+    border-bottom: 1px solid #020617;
+}
+
+.registrados-fiscal tbody tr {
+    transition: background 0.2s ease;
+}
+
+.registrados-fiscal tbody tr:hover {
+    background: rgba(34, 197, 94, 0.06);
+}
+
+/* LINHA VAZIA */
+.registrados-fiscal tbody td[colspan] {
+    text-align: center;
+    padding: 20px;
+    color: #64748b;
+}
+
+/* ===============================
+   BOTÃO EDITAR
+=============================== */
+.registrados-fiscal button {
+    background: transparent;
+    border: 1px solid #1e293b;
+    color: #e5e7eb;
+    border-radius: 12px;
+    padding: 6px 12px;
+    font-size: 12px;
+    font-weight: 600;
+    cursor: pointer;
+    transition:
+        border-color 0.2s ease,
+        color 0.2s ease,
+        box-shadow 0.2s ease,
+        transform 0.1s ease;
+}
+
+.registrados-fiscal button:hover {
+    border-color: #22c55e;
+    color: #22c55e;
+    box-shadow: 0 6px 18px rgba(34, 197, 94, 0.25);
+    transform: translateY(-1px);
+}
+
+.registrados-fiscal button:active {
+    transform: translateY(0);
+    box-shadow: none;
+}
+
+/* ===============================
+   FORMULÁRIO DE EDIÇÃO
+=============================== */
+.registrados-fiscal .formulario-fiscal {
+    margin-top: 24px;
+    padding-top: 22px;
+    border-top: 1px solid #1e293b;
+}
+
+/* ===============================
+   RESPONSIVO
+=============================== */
+@media (max-width: 768px) {
+
+    .registrados-fiscal-filtros {
+        flex-direction: column;
+    }
+
+    .registrados-fiscal table,
+    .registrados-fiscal thead,
+    .registrados-fiscal tbody,
+    .registrados-fiscal th,
+    .registrados-fiscal td,
+    .registrados-fiscal tr {
+        display: block;
+    }
+
+    .registrados-fiscal thead {
+        display: none;
+    }
+
+    .registrados-fiscal tbody tr {
+        border: 1px solid #1e293b;
+        border-radius: 14px;
+        margin-bottom: 14px;
+        padding: 12px;
+    }
+
+    .registrados-fiscal td {
+        border: none;
+        padding: 6px 0;
+        font-size: 13px;
+    }
+
+    .registrados-fiscal td::before {
+        content: attr(data-label);
+        display: block;
+        font-size: 11px;
+        font-weight: 600;
+        color: #94a3b8;
+        margin-bottom: 2px;
+    }
+}

@@ -1,0 +1,151 @@
+.infos-container {
+    background: linear-gradient(180deg, #01225f, #000000);
+    border: 1px solid rgba(59, 130, 246, 0.25);
+    border-radius: 14px;
+    padding: 16px 18px;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    color: #e5e7eb;
+    font-size: 14px;
+    box-shadow:
+        inset 0 1px 0 rgba(255, 255, 255, 0.03),
+        0 10px 25px rgba(0, 0, 0, 0.35);
+}
+
+/* Linha do funcionário */
+.infos-linha {
+    display: flex;
+    flex-direction: column;
+    gap: 3px;
+    font-size: 20px;
+}
+
+.infos-linha {
+    text-align: center;
+}
+
+.infos-label {
+    font-size: 11px;
+    display: none;
+    letter-spacing: 0.6px;
+    text-transform: uppercase;
+    color: #93a4c8;
+}
+
+/* Data + hora */
+.infos-datahora {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding-top: 6px;
+    margin-top: 6px;
+    border-top: 1px solid #f5f3f3;
+}
+
+.infos-separador {
+    display: none;
+}
+
+/* Data */
+.infos-data {
+    font-weight: 500;
+    font-size: 13px;
+    color: #c7d2fe;
+    opacity: 0.85;
+}
+
+/* Hora */
+.infos-hora {
+    font-weight: 700;
+    font-size: 18px;
+    letter-spacing: 1px;
+    color: #facc15;
+}
+
+/* ===============================
+   DESKTOP MENOR
+=============================== */
+@media (max-width: 1024px) {
+    .infos-container {
+        padding: 14px 16px;
+        gap: 10px;
+    }
+
+    .infos-hora {
+        font-size: 17px;
+    }
+}
+
+/* ===============================
+   TABLET
+=============================== */
+@media (max-width: 768px) {
+    .infos-container {
+        padding: 12px 14px;
+        border-radius: 12px;
+    }
+
+    .infos-label {
+        font-size: 10.5px;
+    }
+
+    .infos-data {
+        font-size: 12.5px;
+    }
+
+    .infos-hora {
+        font-size: 16px;
+        letter-spacing: 0.8px;
+    }
+}
+
+/* ===============================
+   CELULAR
+=============================== */
+@media (max-width: 600px) {
+    .infos-container {
+        padding: 10px 12px;
+        gap: 8px;
+    }
+
+    .infos-linha {
+        gap: 2px;
+    }
+
+    .infos-datahora {
+        padding-top: 4px;
+        margin-top: 4px;
+    }
+
+    .infos-data {
+        font-size: 12px;
+    }
+
+    .infos-hora {
+        font-size: 15px;
+        letter-spacing: 0.6px;
+    }
+}
+
+/* ===============================
+   CELULARES MUITO PEQUENOS
+=============================== */
+@media (max-width: 360px) {
+    .infos-container {
+        padding: 8px 10px;
+    }
+
+    .infos-label {
+        font-size: 10px;
+    }
+
+    .infos-data {
+        font-size: 11.5px;
+    }
+
+    .infos-hora {
+        font-size: 14px;
+        letter-spacing: 0.4px;
+    }
+}

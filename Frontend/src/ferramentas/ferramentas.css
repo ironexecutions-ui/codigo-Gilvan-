@@ -1,0 +1,70 @@
+/* Estilo geral da página */
+.ferr-main {
+    background-color: #0e0e0e;
+    /* Fundo preto */
+    color: white;
+    font-family: 'Montserrat', sans-serif;
+    padding: 20px;
+}
+
+/* Estilo dos botões */
+.ferr-botao {
+    background-color: transparent;
+    color: #d4af37;
+    /* Dourado */
+    border: 2px solid #d4af37;
+    /* Borda dourada */
+    padding: 10px 20px;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: all 0.3s ease;
+}
+
+.ferr-botao:hover {
+    background-color: #d4af37;
+    /* Fundo dourado ao passar o mouse */
+    color: #0e0e0e;
+    /* Texto preto */
+    transform: scale(1.05);
+    /* Leve aumento no botão */
+}
+
+.ferr-botao:focus {
+    outline: none;
+    /* Remove o contorno padrão */
+}
+
+/* Estilo da área de conteúdo */
+.ferr-conteudo {
+    background-color: #1a1a1a;
+    /* Fundo mais suave */
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+/* Opacidade da mensagem */
+.ferr-mensagem {
+    opacity: 0.6;
+    font-size: 18px;
+}
+
+/* Estilo da ferramenta ativa */
+.ferr-paleta {
+    padding: 20px;
+    border-radius: 8px;
+    border: 2px solid #d4af37;
+    margin-top: 20px;
+    background-color: #121212;
+    /* Fundo escuro para a paleta */
+    color: #d4af37;
+    /* Texto dourado */
+}
+
+/* Estilo dos botões de ferramentas */
+.ferr-botoes {
+    display: flex;
+    gap: 12px;
+    margin-bottom: 20px;
+}

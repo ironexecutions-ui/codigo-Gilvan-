@@ -1,0 +1,261 @@
+/* ======================================
+   TOTAL VENDA - COBRANÇA PDV
+====================================== */
+
+.cob-box {
+    width: 90%;
+    height: 90%;
+    border-radius: 16px;
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    gap: 20px;
+    border: #d4af37 solid 3px;
+    border-radius: 25px;
+    box-sizing: border-box;
+    transition: background-color 0.35s ease, box-shadow 0.35s ease;
+}
+
+/* ======================================
+   TEMAS
+====================================== */
+
+.cob-tema-escuro {
+    background: linear-gradient(180deg, #dddee0, #e7e7e7);
+    box-shadow:
+        inset 0 0 0 1px rgba(255, 255, 255, 0.05),
+        0 12px 30px rgba(0, 0, 0, 0.55);
+}
+
+.cob-tema-claro {
+    background: linear-gradient(180deg, #f3f6fb, #e7ecf4);
+    box-shadow:
+        inset 0 0 0 1px rgba(0, 0, 0, 0.06),
+        0 10px 26px rgba(0, 0, 0, 0.18);
+}
+
+/* ======================================
+   VALOR TOTAL
+====================================== */
+
+.cob-valor {
+    width: 100%;
+    text-align: center;
+    font-size: 2rem;
+    font-weight: 800;
+    letter-spacing: 1px;
+    padding: 18px;
+    border-radius: 14px;
+    user-select: none;
+}
+
+.cob-tema-escuro .cob-valor {
+    color: #ffffff;
+    background: linear-gradient(135deg, #18263b, #1d2f4a);
+    box-shadow:
+        inset 0 0 0 1px rgba(212, 175, 55, 0.35),
+        0 8px 22px rgba(0, 0, 0, 0.45);
+}
+
+.cob-tema-claro .cob-valor {
+    color: #162030;
+    background: linear-gradient(135deg, #ffffff, #eef2f8);
+    box-shadow:
+        inset 0 0 0 1px rgba(0, 0, 0, 0.08),
+        0 6px 18px rgba(0, 0, 0, 0.18);
+}
+
+/* ======================================
+   BOTÃO COBRAR
+====================================== */
+
+.cob-botao {
+    width: 100%;
+    padding: 16px;
+    font-size: 1.4rem;
+    font-weight: 700;
+    border-radius: 12px;
+    border: none;
+    cursor: pointer;
+    transition:
+        transform 0.25s ease,
+        box-shadow 0.25s ease,
+        background-color 0.25s ease,
+        opacity 0.25s ease;
+}
+
+/* Botão ativo */
+.cob-tema-escuro .cob-botao {
+    color: #000000;
+    font-weight: 10000000;
+    background: linear-gradient(135deg, #2bca03, #16b301);
+    box-shadow:
+        0 8px 22px rgba(0, 0, 0, 0.55),
+        inset 0 1px 0 rgba(255, 255, 255, 0.45);
+}
+
+.cob-tema-claro .cob-botao {
+    color: #ffffff;
+    background: linear-gradient(135deg, #1e88e5, #1565c0);
+    box-shadow:
+        0 6px 18px rgba(0, 0, 0, 0.35),
+        inset 0 1px 0 rgba(255, 255, 255, 0.35);
+}
+
+.cob-botao:hover:not(.cob-botao-desabilitado) {
+    transform: translateY(-1px);
+}
+
+.cob-botao:active:not(.cob-botao-desabilitado) {
+    transform: scale(0.98);
+}
+
+/* ======================================
+   BOTÃO DESABILITADO
+====================================== */
+
+.cob-botao-desabilitado {
+    opacity: 0.45;
+    cursor: not-allowed;
+    filter: grayscale(60%);
+    box-shadow: none;
+}
+
+/* ======================================
+   RESPONSIVO
+====================================== */
+.cob-acoes {
+    display: flex;
+    gap: 10px;
+    width: 100%;
+}
+
+.cob-botao-cancelar {
+    flex: 1;
+    padding: 12px;
+    border-radius: 13px;
+    font-size: 1rem;
+    background: linear-gradient(180deg, #ee0707, #dd0606);
+    color: #0a0a0a !important;
+
+    border: 1px solid rgba(3, 3, 3, 0.4);
+
+    font-weight: bolder;
+    cursor: pointer;
+
+    transition:
+        background 0.2s ease,
+        transform 0.15s ease,
+        box-shadow 0.2s ease;
+}
+
+.cob-valor.clicavel {
+    cursor: pointer;
+    user-select: none;
+}
+
+.cob-valor.clicavel:hover {
+    opacity: 0.75;
+}
+
+.cob-botao-cancelar:hover:not(.desabilitado) {
+    background: linear-gradient(180deg, #4a1d1d, #321212);
+    transform: translateY(-1px);
+    box-shadow: 0 6px 14px rgba(0, 0, 0, 0.4);
+}
+
+.cob-botao-cancelar.desabilitado {
+    opacity: 0.45;
+    cursor: not-allowed;
+}
+
+/* ===============================
+   DESKTOP MENOR
+=============================== */
+@media (max-width: 1024px) {
+    .cob-box {
+        width: 95%;
+        height: auto;
+        padding: 12px;
+        gap: 18px;
+    }
+
+    .cob-valor {
+        font-size: 1.4rem;
+        padding: 16px;
+    }
+}
+
+/* ===============================
+   TABLET
+=============================== */
+@media (max-width: 768px) {
+    .cob-box {
+        width: 100%;
+        padding: 12px;
+        gap: 16px;
+    }
+
+    .cob-valor {
+        font-size: 1.3rem;
+        padding: 14px;
+    }
+
+    .cob-botao,
+    .cob-botao-cancelar {
+        font-size: 0.95rem;
+        padding: 14px;
+    }
+}
+
+/* ===============================
+   CELULAR
+=============================== */
+@media (max-width: 600px) {
+    .cob-box {
+        width: 100%;
+        padding: 10px;
+        gap: 14px;
+        border-radius: 18px;
+    }
+
+    .cob-valor {
+        font-size: 1.2rem;
+        padding: 12px;
+        letter-spacing: 0.5px;
+    }
+
+    .cob-acoes {
+        flex-direction: column;
+        gap: 8px;
+    }
+
+    .cob-botao,
+    .cob-botao-cancelar {
+        width: 100%;
+        font-size: 0.95rem;
+        padding: 14px;
+    }
+}
+
+/* ===============================
+   CELULARES MUITO PEQUENOS
+=============================== */
+@media (max-width: 360px) {
+    .cob-box {
+        padding: 8px;
+        gap: 12px;
+    }
+
+    .cob-valor {
+        font-size: 1.1rem;
+        padding: 10px;
+    }
+
+    .cob-botao,
+    .cob-botao-cancelar {
+        font-size: 0.9rem;
+        padding: 12px;
+    }
+}

@@ -1,0 +1,344 @@
+/* Estilos gerais para a paleta */
+.paleta-container {
+    font-family: 'Montserrat', sans-serif;
+    padding: 20px;
+    color: white;
+    background-color: #1e1e1e;
+    /* Fundo escuro para a paleta */
+}
+
+/* Estilos para os quadros */
+.paleta-quadro-item {
+    margin-bottom: 10px;
+    background-color: #333;
+    padding: 12px;
+    border-radius: 8px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border: 2px solid #d4af37;
+}
+
+.paleta-quadro-item button {
+    background-color: #d4af37;
+    border: none;
+    padding: 5px 10px;
+    border-radius: 5px;
+    cursor: pointer;
+    color: #0e0e0e;
+    transition: background-color 0.3s;
+}
+
+.paleta-quadro-item button:hover {
+    background-color: #b38a2e;
+}
+
+/* Estilos para o formulário de nome do quadro */
+.paleta-fase {
+    margin-top: 20px;
+    background-color: #282828;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+}
+
+.paleta-fase input {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    background-color: #333;
+    color: white;
+    border: 2px solid #d4af37;
+    border-radius: 5px;
+}
+
+.paleta-fase button {
+    padding: 10px 20px;
+    background-color: #d4af37;
+    color: #0e0e0e;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.paleta-fase button:hover {
+    background-color: #b38a2e;
+}
+
+/* Estilos para a troca de fases */
+.paleta-fases {
+    margin-top: 20px;
+    display: flex;
+    gap: 15px;
+}
+
+.paleta-fases button {
+    padding: 10px 20px;
+    background-color: #d4af37;
+    color: #0e0e0e;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.paleta-fases button:hover {
+    background-color: #b38a2e;
+}
+
+/* Estilos para o canvas */
+canvas {
+    border: 2px solid #d4af37;
+    display: block;
+    margin-top: 20px;
+    background-color: #333;
+    border-radius: 8px;
+    cursor: crosshair;
+}
+
+/* Estilos para o preview de formas enquanto desenha */
+.paleta-preview {
+    stroke: #d4af37;
+    stroke-width: 2;
+}
+
+/* Estilos para a paleta de cores */
+.paleta-fase label {
+    display: block;
+    margin-bottom: 5px;
+    color: #d4af37;
+}
+
+.paleta-fase input[type="color"] {
+    width: 100%;
+    height: 35px;
+    border: none;
+    cursor: pointer;
+    margin-bottom: 20px;
+}
+
+.paleta-fase input[type="number"] {
+    width: 50px;
+    padding: 5px;
+    border-radius: 5px;
+    border: 2px solid #d4af37;
+    margin-bottom: 10px;
+    color: white;
+    background-color: #333;
+}
+
+/* Estilos para as formas ativas */
+.paleta-forma-ativa {
+    border: 2px solid white;
+    background-color: rgba(255, 255, 255, 0.2);
+}
+
+/* Estilos de transições de hover */
+button:focus,
+button:hover {
+    outline: none;
+    transform: scale(1.05);
+}
+
+/* Estilos para o botão de apagar a forma */
+.paleta-fase button.apagar {
+    background-color: #e74c3c;
+    color: white;
+}
+
+.paleta-fase button.apagar:hover {
+    background-color: #c0392b;
+}
+
+/* Estilos para a área de edição de texto e cor das formas */
+.paleta-fase input[type="text"],
+.paleta-fase input[type="color"] {
+    margin-top: 10px;
+    width: 100%;
+    padding: 10px;
+    border-radius: 5px;
+    border: 2px solid #d4af37;
+    background-color: #333;
+    color: white;
+}
+
+.paleta-fase input[type="color"]:focus,
+.paleta-fase input[type="text"]:focus {
+    outline: none;
+    border-color: #f1c40f;
+}
+
+.btn-enviar-paleta {
+    padding: 10px 20px;
+    background: #d4af37;
+    border: none;
+    color: black;
+    font-weight: 600;
+    cursor: pointer;
+    border-radius: 6px;
+    display: block;
+}
+
+.paleta-container .adicionar-linha {
+    margin-top: 16px;
+    padding: 12px 22px;
+    background: linear-gradient(135deg, #d4af37, #b8962e) !important;
+    color: #0e0e0e !important;
+    border: none !important;
+    border-radius: 8px;
+    font-family: "Montserrat", sans-serif;
+    font-size: 15px;
+    font-weight: 600;
+    cursor: pointer;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.35);
+    transition: transform 0.15s ease, box-shadow 0.15s ease, filter 0.15s ease;
+}
+
+.paleta-container .adicionar-linha:hover {
+    transform: translateY(-1px);
+    filter: brightness(1.05);
+    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.45);
+}
+
+.painel-flutuante-wrapper {
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    z-index: 20;
+}
+
+.painel-letras-flutuante {
+    background: rgba(15, 15, 20, 0.96);
+    border: 1px solid #d4af37;
+    padding: 12px;
+    border-radius: 8px;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.btn-enviar-paleta {
+    align-self: flex-start;
+    padding: 10px 18px;
+    background: #d4af37;
+    color: #000;
+    border: none;
+    border-radius: 6px;
+    font-weight: 600;
+    cursor: pointer;
+}
+
+.status-envio {
+    font-size: 14px;
+    margin-bottom: 6px;
+    color: #d4af37;
+    font-weight: 500;
+    text-shadow: 0 0 4px rgba(0, 0, 0, 0.4);
+}
+
+.painel-letras-flutuante {
+    position: absolute;
+    background: rgba(15, 15, 20, 0.171);
+    padding: 12px;
+    border: 1px solid #d4af37;
+    border-radius: 8px;
+    display: flex;
+    flex-direction: column;
+}
+
+.painel-letras-flutuante input {
+    padding: 6px;
+    background: #0e0e0e;
+    border: 1px solid #d4af37;
+    color: white;
+    border-radius: 4px;
+}
+
+/* =========================
+   BOTÃO VOLTAR
+========================= */
+
+.btn-voltar-paleta {
+    background: transparent;
+    color: #d4af37;
+    border: 1px solid #d4af37;
+    padding: 6px 14px;
+    border-radius: 6px;
+    cursor: pointer;
+    margin-bottom: 12px;
+    font-weight: 600;
+}
+
+.btn-voltar-paleta:hover {
+    background: #d4af37;
+    color: #0e0e0e;
+}
+
+/* =========================
+   CONTAINER DO CANVAS
+========================= */
+
+.paleta-container canvas {
+    margin-top: 15px;
+}
+
+/* =========================
+   FORMA ATIVA (DESTAQUE)
+========================= */
+
+.paleta-forma-ativa {
+    outline: 2px solid #ffffff;
+}
+
+/* =========================
+   PAINEL FLUTUANTE MELHORADO
+========================= */
+
+.painel-letras-flutuante {
+    z-index: 1000;
+    min-width: 220px;
+    backdrop-filter: blur(6px);
+}
+
+/* =========================
+   LABELS DO PAINEL
+========================= */
+
+.painel-letras-flutuante label {
+    font-size: 13px;
+    margin-top: 6px;
+    margin-bottom: 4px;
+    color: #d4af37;
+}
+
+/* =========================
+   INPUTS DO PAINEL
+========================= */
+
+.painel-letras-flutuante input {
+    margin-bottom: 8px;
+}
+
+/* =========================
+   BOTÃO APAGAR MAIS VISÍVEL
+========================= */
+
+.paleta-fases button:last-child {
+    background: #e74c3c;
+    color: white;
+}
+
+.paleta-fases button:last-child:hover {
+    background: #c0392b;
+}
+
+/* =========================
+   LISTA DE QUADROS
+========================= */
+
+.paleta-quadro-item span {
+    font-weight: 600;
+    font-size: 15px;
+}

@@ -1,0 +1,313 @@
+/* ============================================================
+   RESPONSIVIDADE GERAL DO PROJETO IRON EXECUTIONS
+   ============================================================ */
+
+/* Telas até 1200px */
+@media (max-width: 1200px) {
+
+    .hero-titulo {
+        font-size: 44px;
+    }
+
+    .hero-texto {
+        font-size: 20px;
+    }
+
+    .servicos-cards,
+    .tipossites-grid,
+    .sites-grid {
+        gap: 30px;
+    }
+
+    .oferecemos-conteudo {
+        padding: 40px;
+    }
+
+    .topo-container {
+        padding: 14px 30px;
+    }
+}
+
+/* Telas até 992px */
+@media (max-width: 992px) {
+
+    .hero-container {
+        padding: 0 28px;
+        height: auto;
+        padding-top: 120px;
+        padding-bottom: 80px;
+    }
+
+    .hero-titulo {
+        font-size: 38px;
+    }
+
+    .hero-texto {
+        font-size: 19px;
+    }
+
+    .servicos-container,
+    .tipossites-container,
+    .oferecemos-container,
+    .sites-criados {
+        padding: 80px 30px;
+    }
+
+    .topo-nav {
+        display: none;
+    }
+
+    .topo-logo-text {
+        font-size: 24px;
+    }
+
+    .topo-img {
+        height: 44px;
+    }
+
+    .servicos-card {
+        padding: 26px;
+    }
+
+    .oferecemos-titulo {
+        font-size: 36px;
+    }
+
+    .tipossites-titulo {
+        font-size: 38px;
+    }
+}
+
+/* Telas até 768px */
+@media (max-width: 768px) {
+
+    .hero-container {
+        height: auto;
+        padding-top: 135px;
+        padding-bottom: 85px;
+    }
+
+    .hero-titulo {
+        font-size: 32px;
+        text-align: center;
+    }
+
+    .hero-texto {
+        font-size: 18px;
+        text-align: center;
+    }
+
+    .hero-conteudo {
+        max-width: 500px;
+        margin: 0 auto;
+        text-align: center;
+    }
+
+    .hero-botao {
+        font-size: 17px;
+        padding: 12px 26px;
+    }
+
+    .oferecemos-conteudo {
+        padding: 30px;
+        font-size: 17px;
+    }
+
+    .oferecemos-titulo {
+        font-size: 34px;
+    }
+
+    .oferecemos-texto {
+        margin-bottom: 22px;
+        font-size: 17px;
+    }
+
+    .servicos-titulo {
+        font-size: 34px;
+    }
+
+    .tipossites-titulo {
+        font-size: 34px;
+    }
+
+    .site-logo {
+        width: 85px;
+        height: 85px;
+    }
+
+    .site-nome {
+        font-size: 20px;
+    }
+
+    .topo-logo-text {
+        font-size: 22px;
+    }
+
+    .topo-botao-contato {
+        padding: 8px 18px;
+        font-size: 14px;
+    }
+}
+
+/* Telas até 600px */
+@media (max-width: 600px) {
+
+    .hero-container {
+        padding-top: 140px;
+        padding-bottom: 85px;
+    }
+
+    .hero-titulo {
+        font-size: 28px;
+    }
+
+    .hero-texto {
+        font-size: 17px;
+    }
+
+    .hero-botao {
+        font-size: 16px;
+        padding: 10px 22px;
+    }
+
+    .servicos-card {
+        padding: 22px;
+    }
+
+    .servicos-card-titulo {
+        font-size: 22px;
+    }
+
+    .tipossites-card {
+        padding: 26px;
+    }
+
+    .tipossites-card-titulo {
+        font-size: 22px;
+    }
+
+    .oferecemos-conteudo {
+        padding: 26px;
+    }
+
+    .topo-container {
+        padding: 14px 22px;
+    }
+
+    .topo-logo-text {
+        font-size: 20px;
+    }
+
+    .topo-img {
+        height: 42px;
+    }
+
+    .sites-criados {
+        padding: 70px 24px;
+    }
+}
+
+/* Telas até 480px */
+@media (max-width: 480px) {
+
+    .hero-container {
+        padding-top: 150px;
+        padding-bottom: 95px;
+        padding-left: 18px;
+        padding-right: 18px;
+    }
+
+    .hero-titulo {
+        font-size: 24px;
+    }
+
+    .hero-texto {
+        font-size: 16px;
+        line-height: 1.5;
+    }
+
+    .hero-botao {
+        font-size: 15px;
+        padding: 10px 20px;
+    }
+
+    .servicos-container,
+    .tipossites-container,
+    .oferecemos-container,
+    .sites-criados {
+        padding: 60px 18px;
+    }
+
+    .oferecemos-conteudo {
+        padding: 20px;
+        font-size: 16px;
+    }
+
+    .oferecemos-titulo {
+        font-size: 28px;
+    }
+
+    .servicos-titulo {
+        font-size: 30px;
+    }
+
+    .tipossites-titulo {
+        font-size: 30px;
+    }
+
+    .site-card {
+        padding: 22px 18px;
+    }
+
+    .site-logo {
+        width: 75px;
+        height: 75px;
+    }
+
+    .site-descricao {
+        font-size: 14px;
+    }
+
+    .topo-container {
+        padding: 12px 18px;
+    }
+
+    .topo-logo-text {
+        font-size: 18px;
+    }
+
+    .rodape-container {
+        padding: 22px;
+        font-size: 14px;
+    }
+}
+
+/* Telas até 380px */
+@media (max-width: 380px) {
+
+    .hero-titulo {
+        font-size: 22px;
+    }
+
+    .hero-texto {
+        font-size: 15px;
+    }
+
+    .oferecemos-titulo,
+    .servicos-titulo,
+    .tipossites-titulo {
+        font-size: 26px;
+    }
+
+    .topo-logo-text {
+        font-size: 17px;
+    }
+
+    .topo-img {
+        height: 38px;
+    }
+
+    .hero-botao {
+        padding: 9px 18px;
+    }
+}

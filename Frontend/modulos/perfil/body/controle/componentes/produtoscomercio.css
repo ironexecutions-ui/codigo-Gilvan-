@@ -1,0 +1,187 @@
+/* ===========================
+   CONTAINER PRINCIPAL
+=========================== */
+.produtos-comercio-container {
+    padding: 32px;
+    min-height: 100vh;
+    background: radial-gradient(1200px 600px at top center,
+            #020b2a,
+            #020617 60%);
+    color: #e5e7eb;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    font-family: "Montserrat", sans-serif;
+}
+
+/* ===========================
+   FILTROS
+=========================== */
+.produtos-filtros {
+    display: flex;
+    gap: 14px;
+}
+
+.produtos-filtros input {
+    flex: 1;
+    padding: 13px 15px;
+    border-radius: 12px;
+    border: 1px solid #1e293b;
+    background: #f5f5f5;
+    color: #070707;
+    font-size: 14px;
+    outline: none;
+    transition: all 0.25s ease;
+}
+
+.produtos-filtros input::placeholder {
+    color: #64748b;
+}
+
+.produtos-filtros input:focus {
+    border-color: #2563eb;
+    box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.25);
+}
+
+/* ===========================
+   BOTÃO ADICIONAR
+=========================== */
+.btn-adicionar-produto {
+    align-self: flex-end;
+    padding: 12px 20px;
+    border-radius: 12px;
+    border: none;
+    background: linear-gradient(135deg, #2563eb, #1d4ed8);
+    color: #ffffff;
+    font-size: 14px;
+    font-weight: 600;
+    cursor: pointer;
+    box-shadow: 0 10px 30px rgba(37, 99, 235, 0.4);
+    transition: all 0.25s ease;
+}
+
+.btn-adicionar-produto:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 16px 40px rgba(37, 99, 235, 0.6);
+}
+
+/* ===========================
+   GRID PRINCIPAL
+=========================== */
+.produtos-grid {
+    border-radius: 16px;
+    overflow: hidden;
+    border: 1px solid #1e293b;
+    background: #020617;
+}
+
+/* ===========================
+   HEADER
+=========================== */
+.produtos-grid-header {
+    display: grid;
+    grid-template-columns: 90px 2fr 1fr 1fr 1.5fr;
+    padding: 16px;
+    background: linear-gradient(180deg, #020b2a, #020617);
+    border-bottom: 1px solid #1e293b;
+    font-size: 13px;
+    font-weight: 600;
+    color: #94a3b8;
+    letter-spacing: 0.4px;
+}
+
+/* ===========================
+   LINHAS
+=========================== */
+.produtos-grid-row {
+    display: grid;
+    grid-template-columns: 90px 2fr 1fr 1fr 1.5fr;
+    align-items: center;
+    gap: 14px;
+    padding: 16px;
+    background: #020617;
+    border-bottom: 1px solid #1e293b;
+    cursor: pointer;
+    transition: background 0.25s ease, box-shadow 0.25s ease;
+}
+
+.produtos-grid-row:hover {
+    background: rgba(37, 99, 235, 0.12);
+    box-shadow: inset 0 0 0 1px rgba(37, 99, 235, 0.25);
+}
+
+.produtos-grid-row:last-child {
+    border-bottom: none;
+}
+
+/* ===========================
+   TEXTO DAS CÉLULAS
+=========================== */
+.produtos-grid-row div {
+    font-size: 14px;
+    color: #e5e7eb;
+    display: flex;
+    align-items: center;
+}
+
+/* ===========================
+   IMAGEM
+=========================== */
+.produto-img {
+    width: 60px;
+    height: 60px;
+    object-fit: cover;
+    border-radius: 12px;
+    border: 1px solid #1e293b;
+    background: #020617;
+}
+
+.produto-img-vazia {
+    width: 60px;
+    height: 60px;
+    border-radius: 12px;
+    border: 1px dashed #334155;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 11px;
+    color: #64748b;
+    text-align: center;
+}
+
+/* ===========================
+   PREÇO
+=========================== */
+.preco {
+    font-weight: 700;
+    color: #22c55e;
+    letter-spacing: 0.3px;
+}
+
+/* ===========================
+   CATEGORIA + AÇÕES
+=========================== */
+.categoria-acoes {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 10px;
+}
+
+/* ===========================
+   BOTÃO APAGAR
+=========================== */
+.btn-apagar-produto {
+    background: none;
+    border: none;
+    color: #ef4444;
+    font-size: 16px;
+    cursor: pointer;
+    opacity: 0.65;
+    transition: opacity 0.2s ease, transform 0.2s ease;
+}
+
+.btn-apagar-produto:hover {
+    opacity: 1;
+    transform: scale(1.15);
+}

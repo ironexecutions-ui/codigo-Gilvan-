@@ -1,0 +1,172 @@
+/* ===============================
+   CONTAINER GERAL
+=============================== */
+
+.dados-comercio {
+    width: 100%;
+    max-width: 980px;
+    margin: 0 auto;
+    padding: 28px 32px;
+    background: linear-gradient(180deg, #020617, #020617);
+    border: 1px solid #1e293b;
+    border-radius: 18px;
+    color: #e5e7eb;
+    font-family: "Inter", system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+}
+
+/* ===============================
+   TÍTULOS
+=============================== */
+
+.dados-comercio h4 {
+    margin: 32px 0 18px;
+    font-size: 15px;
+    font-weight: 700;
+    letter-spacing: 0.4px;
+    color: #f8fafc;
+    padding-bottom: 10px;
+    border-bottom: 1px solid #1e293b;
+}
+
+.dados-comercio h4:first-of-type {
+    margin-top: 0;
+}
+
+/* ===============================
+   CAMPOS INLINE
+=============================== */
+
+.campo-inline {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    margin-bottom: 18px;
+}
+
+/* ===============================
+   LABEL
+=============================== */
+
+.campo-inline label {
+    font-size: 12px;
+    font-weight: 600;
+    color: #94a3b8;
+    letter-spacing: 0.3px;
+}
+
+/* ===============================
+   VISUALIZAÇÃO (P)
+=============================== */
+
+.campo-visual {
+    background: #020617;
+    border: 1px dashed #1e293b;
+    border-radius: 12px;
+    padding: 12px 14px;
+    font-size: 14px;
+    color: #e5e7eb;
+    cursor: pointer;
+    transition:
+        border-color 0.2s ease,
+        background 0.2s ease,
+        color 0.2s ease;
+}
+
+.campo-visual:hover {
+    border-color: #22c55e;
+    background: rgba(34, 197, 94, 0.05);
+    color: #22c55e;
+}
+
+/* ===============================
+   INPUT
+=============================== */
+
+.campo-inline input {
+    background: #020617;
+    border: 1px solid #1e293b;
+    border-radius: 12px;
+    padding: 12px 14px;
+    font-size: 14px;
+    color: #f1f5f9;
+    outline: none;
+    transition:
+        border-color 0.2s ease,
+        box-shadow 0.2s ease,
+        background 0.2s ease;
+}
+
+.campo-inline input::placeholder {
+    color: #64748b;
+}
+
+.campo-inline input:focus {
+    border-color: #22c55e;
+    box-shadow: 0 0 0 2px rgba(34, 197, 94, 0.18);
+    background: #020617;
+}
+
+/* ===============================
+   INPUT NUMBER
+=============================== */
+
+.campo-inline input[type="number"]::-webkit-inner-spin-button,
+.campo-inline input[type="number"]::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+.campo-inline input[type="number"] {
+    appearance: textfield;
+}
+
+/* ===============================
+   DATALIST
+=============================== */
+
+input[list] {
+    cursor: text;
+}
+
+/* ===============================
+   UPLOAD CERTIFICADO
+=============================== */
+
+.upload-certificado,
+.upload-certificado-a1 {
+    margin-top: 16px;
+    padding: 18px;
+    border: 1px solid #1e293b;
+    border-radius: 14px;
+    background: linear-gradient(180deg, #020617, #020617);
+}
+
+/* ===============================
+   TEXTO DE CARREGAMENTO
+=============================== */
+
+.dados-comercio p {
+    font-size: 14px;
+    color: #94a3b8;
+}
+
+/* ===============================
+   RESPONSIVO
+=============================== */
+
+@media (max-width: 768px) {
+    .dados-comercio {
+        padding: 22px 20px;
+        border-radius: 14px;
+    }
+
+    .campo-visual,
+    .campo-inline input {
+        font-size: 13px;
+        padding: 10px 12px;
+    }
+
+    .dados-comercio h4 {
+        font-size: 14px;
+    }
+}

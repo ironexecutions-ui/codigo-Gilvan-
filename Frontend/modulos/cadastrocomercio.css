@@ -1,0 +1,157 @@
+/* ===============================
+   CONTAINER PRINCIPAL
+   =============================== */
+
+.cadastro-comercio-container {
+    max-width: 620px;
+    margin: auto;
+    padding: 28px;
+    border-radius: 14px;
+    font-family: "Montserrat", Arial, sans-serif;
+}
+
+/* ===============================
+   TÍTULO
+   =============================== */
+
+.cadastro-comercio-container h2 {
+    text-align: center;
+    margin-bottom: 28px;
+    font-size: 1.6rem;
+    font-weight: 600;
+    color: #1f2937;
+}
+
+/* ===============================
+   PASSOS
+   =============================== */
+
+.cadastro-passo {
+    animation: fadeIn 0.3s ease-in-out;
+}
+
+/* ===============================
+   BOTÕES GERAIS
+   =============================== */
+
+.cadastro-comercio-container button {
+    width: 100%;
+    padding: 14px;
+    border-radius: 10px;
+    border: none;
+    cursor: pointer;
+    font-size: 0.95rem;
+    font-weight: 600;
+    transition: all 0.2s ease;
+}
+
+/* Botão principal */
+.cadastro-btn-primary {
+    background-color: #2563eb;
+    color: #ffffff;
+}
+
+.cadastro-btn-primary:hover {
+    background-color: #1d4ed8;
+}
+
+/* Botão secundário */
+.cadastro-btn-secondary {
+    background-color: #f3f4f6;
+    color: #374151;
+}
+
+.cadastro-btn-secondary:hover {
+    background-color: #e5e7eb;
+}
+
+/* ===============================
+   INPUTS PADRÃO
+   =============================== */
+
+.cadastro-comercio-container input,
+.cadastro-comercio-container select {
+    width: 100%;
+    padding: 12px 14px;
+    border-radius: 10px;
+    border: 1px solid #d1d5db;
+    font-size: 0.95rem;
+    margin-bottom: 16px;
+    transition: border-color 0.2s ease;
+}
+
+.cadastro-comercio-container input:focus,
+.cadastro-comercio-container select:focus {
+    outline: none;
+    border-color: #2563eb;
+}
+
+/* ===============================
+   CHECKBOX / MÓDULOS
+   =============================== */
+
+.cadastro-modulos {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.cadastro-modulo-item {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    background-color: #f9fafb;
+    padding: 12px 14px;
+    border-radius: 10px;
+    border: 1px solid #e5e7eb;
+    cursor: pointer;
+}
+
+.cadastro-modulo-item input {
+    margin: 0;
+}
+
+/* ===============================
+   FOOTER DOS PASSOS
+   =============================== */
+
+.cadastro-footer {
+    margin-top: 24px;
+    display: flex;
+    gap: 12px;
+}
+
+.cadastro-footer button {
+    flex: 1;
+}
+
+/* ===============================
+   RESPONSIVO
+   =============================== */
+
+@media (max-width: 640px) {
+    .cadastro-comercio-container {
+        margin: 20px 12px;
+        padding: 22px;
+    }
+
+    .cadastro-comercio-container h2 {
+        font-size: 1.4rem;
+    }
+}
+
+/* ===============================
+   ANIMAÇÃO
+   =============================== */
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(8px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}

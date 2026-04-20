@@ -1,0 +1,662 @@
+/* ------------------------------------------------------ */
+/* CONTAINER PRINCIPAL */
+/* ------------------------------------------------------ */
+
+.da-box {
+    width: 100%;
+    background: #0b1f3d;
+    padding: 28px;
+    border-radius: 14px;
+    max-height: 137vh !important;
+    overflow-y: auto;
+    box-shadow: 0 0 22px rgba(0, 0, 0, 0.3);
+    color: white;
+    display: flex;
+    flex-direction: column;
+}
+
+.da-botoes-contratos .btn-voltar {
+    background: #ddd;
+    color: #333;
+    padding: 10px 18px;
+    border-radius: 6px;
+    font-size: 15px;
+    margin-bottom: 12px;
+}
+
+.btn-abrir {
+    background: #007bff;
+    color: white;
+    padding: 6px 12px;
+    border-radius: 6px;
+    border: none;
+    cursor: pointer;
+    transition: 0.2s;
+}
+
+.btn-abrir:hover {
+    background: #005fcc;
+}
+
+.da-titulo {
+    font-size: 28px;
+    font-weight: 700;
+    margin-bottom: 25px;
+    letter-spacing: 1px;
+}
+
+/* ------------------------------------------------------ */
+/* MENU PRINCIPAL */
+/* ------------------------------------------------------ */
+
+.da-botoes-contratos {
+    display: flex;
+    gap: 18px;
+}
+
+.da-botoes-contratos button {
+    padding: 12px 24px;
+    background: #14325f;
+    border: none;
+    border-radius: 10px;
+    color: white;
+    font-size: 15px;
+    cursor: pointer;
+    transition: 0.25s;
+}
+
+.da-botoes-contratos button:hover {
+    background: #1c4c8f;
+}
+
+/* ------------------------------------------------------ */
+/* LISTA DE CONTRATOS */
+/* ------------------------------------------------------ */
+
+.lista-simples {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    max-height: 40vh;
+    margin-top: 18px;
+    overflow-y: auto;
+    padding-right: 6px;
+}
+
+/* Scrollbar personalizada */
+.lista-simples::-webkit-scrollbar {
+    width: 10px;
+}
+
+.lista-simples::-webkit-scrollbar-track {
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 10px;
+}
+
+.lista-simples::-webkit-scrollbar-thumb {
+    background: linear-gradient(180deg, #1e3a8a, #3b82f6);
+    border-radius: 10px;
+    border: 2px solid rgba(0, 0, 0, 0.3);
+}
+
+.lista-simples::-webkit-scrollbar-thumb:hover {
+    background: linear-gradient(180deg, #3156c6, #60a5fa);
+}
+
+
+.linha-cliente {
+    background: rgba(255, 255, 255, 0.08);
+    padding: 14px 18px;
+    border-radius: 10px;
+    cursor: pointer;
+    display: flex;
+    justify-content: space-between;
+    transition: 0.25s;
+}
+
+.linha-cliente:hover {
+    background: rgba(255, 255, 255, 0.15);
+}
+
+.linha-cliente p {
+    font-size: 16px;
+}
+
+.linha-cliente span {
+    opacity: 0.8;
+}
+
+/* ------------------------------------------------------ */
+/* CONTRATO ESTILO DOCUMENTO */
+/* ------------------------------------------------------ */
+
+.contrato-documento {
+    width: 95%;
+    max-width: 1200px;
+    background: white;
+    color: #000;
+    padding: 60px 70px;
+    margin-top: 25px;
+    border-radius: 8px;
+    box-shadow: 0 0 18px rgba(0, 0, 0, 0.25);
+    line-height: 1.6;
+    font-size: 16px;
+    margin: auto auto;
+    /* efeito documento */
+    max-height: 84vh;
+    overflow-y: auto;
+}
+
+/* botão voltar */
+.voltar {
+    background: #4ce406;
+    width: fit-content;
+    color: white;
+    border: none;
+    padding: 10px 18px;
+    border-radius: 6px;
+    cursor: pointer;
+    margin-bottom: 18px;
+    transition: 0.25s;
+}
+
+.link-codigo {
+    color: #007bff;
+    text-decoration: none;
+    font-weight: 600;
+}
+
+.link-codigo:hover {
+    text-decoration: underline;
+    color: #0056cc;
+}
+
+.voltar:hover {
+    background: #14325f;
+}
+
+/* ------------------------------------------------------ */
+/* TIPOGRAFIA DO DOCUMENTO */
+/* ------------------------------------------------------ */
+
+.titulo-documento {
+    font-size: 26px;
+    font-weight: 700;
+    text-align: center;
+    margin-bottom: 28px;
+    color: #111;
+}
+
+.subtitulo {
+    font-size: 20px;
+    font-weight: 700;
+    margin-top: 30px;
+    margin-bottom: 10px;
+    color: #1e1e1e;
+}
+
+.linha {
+    margin-bottom: 10px;
+}
+
+.bloco-titulo {
+    font-weight: 700;
+    margin-top: 14px;
+}
+
+.obs {
+    background: rgba(0, 0, 0, 0.06);
+    padding: 14px;
+    margin-top: 10px;
+    border-left: 4px solid #1a4f91;
+    border-radius: 4px;
+    font-size: 15px;
+}
+
+/* ------------------------------------------------------ */
+/* ASSINATURAS */
+/* ------------------------------------------------------ */
+
+.assinaturas-bloco {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 35px;
+}
+
+.assinatura {
+    width: 45%;
+    border-top: 1px solid #000;
+    padding-top: 8px;
+    font-size: 15px;
+}
+
+.codigo-final {
+    margin-top: 35px;
+    text-align: center;
+    opacity: 0.7;
+    font-size: 14px;
+}
+
+/* ------------------------------------------------------ */
+/* SCROLLBAR DO DOCUMENTO */
+/* ------------------------------------------------------ */
+
+.contrato-documento::-webkit-scrollbar {
+    width: 10px;
+}
+
+.contrato-documento::-webkit-scrollbar-track {
+    background: #e6e6e6;
+    border-radius: 10px;
+}
+
+.contrato-documento::-webkit-scrollbar-thumb {
+    background: #b5b5b5;
+    border-radius: 10px;
+}
+
+.contrato-documento::-webkit-scrollbar-thumb:hover {
+    background: #8f8f8f;
+}
+
+.img-assinatura {
+    width: 180px;
+    height: auto;
+    margin-bottom: 10px;
+}
+
+.modal-assinatura-fundo {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background: rgba(0, 0, 0, 0.75);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 99999;
+}
+
+.modal-assinatura-box {
+    width: 90%;
+    height: 90%;
+    background: white;
+    border-radius: 12px;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    overflow: hidden;
+    position: relative;
+}
+
+.modal-assinatura-fechar {
+    position: absolute;
+    top: 12px;
+    right: 12px;
+    background: #b60000;
+    color: white;
+    border: none;
+    padding: 10px 18px;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+.btn-assinar,
+.btn-reassinar {
+    padding: 8px 18px;
+    background: #0b1f3d;
+    border: none;
+    color: white;
+    border-radius: 6px;
+    cursor: pointer;
+    margin-top: 10px;
+}
+
+/* botão voltar do modo novo ou editar */
+.btn-voltar {
+    background: #14325f;
+    color: white;
+    border: none;
+    padding: 10px 22px;
+    border-radius: 8px;
+    cursor: pointer;
+    margin-bottom: 18px;
+    font-size: 15px;
+    transition: 0.25s ease;
+    width: fit-content;
+}
+
+.btn-voltar:hover {
+    background: #1c4c8f;
+}
+
+
+/* bloco das ações na lista */
+.acoes-lista {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+}
+
+/* botões da lista */
+.btn-editar {
+    background: #0a7bd8;
+    color: white;
+    border: none;
+    padding: 8px 14px;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 14px;
+    transition: 0.25s ease;
+}
+
+.btn-editar:hover {
+    background: #0661ad;
+}
+
+.btn-apagar {
+    background: #b60000;
+    color: white;
+    border: none;
+    padding: 8px 14px;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 14px;
+    transition: 0.25s ease;
+}
+
+.btn-apagar:hover {
+    background: #8a0000;
+}
+
+/* =============================== */
+/*   RESPONSIVO CONTRATOS ADMIN   */
+/* =============================== */
+
+@media (max-width: 1300px) {
+    .contrato-documento {
+        padding: 40px 45px;
+        font-size: 15px;
+    }
+}
+
+@media (max-width: 1100px) {
+    .contrato-documento {
+        max-height: 80vh;
+
+    }
+
+    .assinaturas-bloco {
+        flex-direction: column;
+        gap: 25px;
+        max-height: 90vh;
+
+    }
+
+    .assinatura {
+        width: 100%;
+    }
+
+    .contrato-documento {
+        max-height: 70vh;
+    }
+}
+
+@media (max-width: 900px) {
+    .da-box {
+        padding: 20px;
+    }
+
+    .lista-simples {
+        max-height: 55vh;
+    }
+
+    .linha-cliente {
+        padding: 12px 14px;
+        flex-direction: column;
+        gap: 6px;
+        align-items: flex-start;
+    }
+
+    .acoes-lista {
+        justify-content: flex-start;
+        flex-wrap: wrap;
+    }
+}
+
+@media (max-width: 780px) {
+    .contrato-documento {
+        padding: 30px 28px;
+        font-size: 15px;
+        max-height: 85vh;
+    }
+
+    .titulo-documento {
+        font-size: 22px;
+    }
+
+    .subtitulo {
+        font-size: 18px;
+    }
+}
+
+@media (max-width: 650px) {
+    .da-botoes-contratos {
+        flex-direction: column;
+        gap: 14px;
+    }
+
+    .da-botoes-contratos button {
+        width: 100%;
+        padding: 14px;
+        font-size: 16px;
+    }
+
+    .lista-simples {
+        padding-right: 4px;
+    }
+
+    .contrato-documento {
+        padding: 25px 22px;
+        font-size: 14px;
+    }
+}
+
+@media (max-width: 520px) {
+    .da-titulo {
+        font-size: 23px;
+    }
+
+    .linha-cliente p {
+        font-size: 15px;
+    }
+
+    .linha-cliente span {
+        font-size: 14px;
+    }
+
+    .btn-abrir,
+    .btn-editar,
+    .btn-apagar {
+        width: 100%;
+        text-align: center;
+        padding: 10px;
+    }
+
+    .acoes-lista {
+        width: 100%;
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 8px;
+    }
+}
+
+@media (max-width: 460px) {
+    .contrato-documento {
+        padding: 22px 18px;
+        font-size: 14px;
+        border-radius: 6px;
+    }
+
+    .titulo-documento {
+        font-size: 20px;
+    }
+
+    .subtitulo {
+        font-size: 17px;
+    }
+
+    .obs {
+        font-size: 13px;
+        padding: 10px;
+    }
+
+    .assinatura p {
+        font-size: 13px;
+    }
+
+    .img-assinatura {
+        width: 150px;
+    }
+}
+
+@media (max-width: 400px) {
+    .da-box {
+        padding: 15px;
+    }
+
+    .contrato-documento {
+        padding: 18px 14px;
+        font-size: 13px;
+    }
+
+    .btn-voltar {
+        width: 100%;
+        text-align: center;
+    }
+
+    .btn-assinar,
+    .btn-reassinar {
+        width: 100%;
+        padding: 10px;
+        font-size: 14px;
+    }
+
+    .codigo-final {
+        font-size: 12px;
+    }
+}
+
+.btn-copiar-profissional {
+    margin-top: 10px;
+    padding: 10px 18px;
+    border: none;
+    border-radius: 8px;
+    background: #222;
+    color: white;
+    font-size: 15px;
+    cursor: pointer;
+    transition: 0.2s;
+}
+
+/* Container principal do comprovante */
+.comprovante-box {
+    background: #f7f7f7;
+    padding: 18px;
+    border-radius: 10px;
+    border: 1px solid #ddd;
+    margin: 20px 0;
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+}
+
+/* Título interno */
+.comprovante-box h4 {
+    font-size: 1.1rem;
+    margin: 0;
+    color: #222;
+}
+
+/* Botão: ver / baixar */
+.btn-ver-comprovante {
+    background: #0a4fff;
+    color: white;
+    border: none;
+    padding: 10px 16px;
+    border-radius: 6px;
+    font-size: 0.95rem;
+    cursor: pointer;
+    transition: 0.2s;
+}
+
+.btn-ver-comprovante:hover {
+    background: #003cc2;
+}
+
+/* Botão substituir */
+.btn-substituir-comprovante {
+    background: #b60000;
+    color: white;
+    border: none;
+    padding: 10px 16px;
+    border-radius: 6px;
+    font-size: 0.95rem;
+    cursor: pointer;
+    transition: 0.2s;
+}
+
+.btn-substituir-comprovante:hover {
+    background: #8a0000;
+}
+
+/* Botão enviar */
+.btn-enviar-comprovante {
+    background: #0b1f3d;
+    color: white;
+    border: none;
+    padding: 10px 16px;
+    border-radius: 6px;
+    font-size: 0.95rem;
+    cursor: pointer;
+    transition: 0.2s;
+}
+
+.btn-enviar-comprovante:hover {
+    background: #07203b;
+}
+
+/* Espaçamento do bloco quando já existe comprovante */
+.comprovante-acoes {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+/* Responsivo */
+@media (max-width: 480px) {
+    .comprovante-box {
+        padding: 14px;
+    }
+
+    .btn-ver-comprovante,
+    .btn-substituir-comprovante,
+    .btn-enviar-comprovante {
+        width: 100%;
+        text-align: center;
+    }
+}
+
+.lista-hospedagem {
+    padding-left: 20px;
+    margin-top: 5px;
+    margin-bottom: 15px;
+}
+
+.lista-hospedagem li {
+    margin-bottom: 4px;
+    font-size: 0.95rem;
+}

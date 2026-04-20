@@ -1,0 +1,442 @@
+/* ==============================
+   CONTAINER PRINCIPAL
+============================== */
+
+.anotacoes-container {
+    display: flex;
+    width: 100%;
+    height: 100%;
+    background: #0e121a;
+    color: #ffffff;
+    font-family: "Montserrat", sans-serif;
+}
+
+/* ==============================
+   LISTA LATERAL
+============================== */
+
+.anotacoes-lista {
+    width: 280px;
+    background: linear-gradient(180deg, #12182a, #0e121a);
+    border-right: 1px solid #2b3240;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+}
+
+.aviso-admin {
+    background: rgba(212, 175, 55, 0.2);
+    border: 1px solid #d4af37;
+    padding: 10px;
+    border-radius: 6px;
+    color: #d4af37;
+    font-size: 13px;
+    margin-bottom: 10px;
+    text-align: center;
+}
+
+.item-anotacao {
+    cursor: grab;
+}
+
+.item-anotacao.arrastando {
+    opacity: 0.5;
+    transform: scale(0.98);
+}
+
+.item-anotacao:hover {
+    border-left: 3px solid #d4af37;
+}
+
+/* ==============================
+   BOTÃO ARQUIVADOS
+============================== */
+
+.anotacoes-lista .btn-arquivados {
+    background: transparent;
+    border: 1px dashed #d4af37;
+    color: #d4af37;
+    padding: 9px 14px;
+    border-radius: 6px;
+    cursor: pointer;
+    font-weight: 500;
+    transition: 0.25s ease;
+}
+
+.anotacoes-lista .btn-arquivados:hover {
+    background: rgba(212, 175, 55, 0.08);
+    border-style: solid;
+}
+
+/* ==============================
+   SCROLL PERSONALIZADO
+============================== */
+
+.anotacoes-lista,
+.anotacoes-editor .editor-area {
+    scrollbar-width: thin;
+    scrollbar-color: #2b3240 transparent;
+}
+
+.anotacoes-lista::-webkit-scrollbar,
+.anotacoes-editor .editor-area::-webkit-scrollbar {
+    width: 8px;
+}
+
+.anotacoes-lista::-webkit-scrollbar-thumb,
+.anotacoes-editor .editor-area::-webkit-scrollbar-thumb {
+    background: #2b3240;
+    border-radius: 8px;
+}
+
+.anotacoes-lista::-webkit-scrollbar-thumb:hover,
+.anotacoes-editor .editor-area::-webkit-scrollbar-thumb:hover {
+    background: #3a4254;
+}
+
+/* ==============================
+   ANOTAÇÃO ATIVA
+============================== */
+
+.anotacoes-lista .item-anotacao.ativa>button {
+    background: linear-gradient(135deg, #d4af37, #e6c65c);
+    color: #1a1a1a;
+    border-color: #d4af37;
+    font-weight: 600;
+}
+
+.anotacoes-lista h3 {
+    font-size: 18px;
+    font-weight: 600;
+    color: #d4af37;
+    margin: 0 0 8px 0;
+}
+
+/* ==============================
+   BOTÃO NOVA ANOTAÇÃO
+============================== */
+
+.anotacoes-lista .btn-nova {
+    background: linear-gradient(135deg, #d4af37, #e6c65c);
+    color: #1a1a1a;
+    border: none;
+    padding: 10px 14px;
+    border-radius: 6px;
+    cursor: pointer;
+    font-weight: 600;
+    transition: 0.25s ease;
+}
+
+.anotacoes-lista .btn-nova:hover {
+    transform: translateY(-1px);
+    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.4);
+}
+
+/* ==============================
+   ITEM DA LISTA
+============================== */
+/* ==============================
+   DRAG FEEDBACK
+============================== */
+
+.item-anotacao {
+    transition: transform 0.15s ease, opacity 0.15s ease;
+}
+
+.item-anotacao.arrastando {
+    opacity: 0.4;
+    background: rgba(255, 255, 255, 0.04);
+}
+
+/* ==============================
+   EDITOR VAZIO
+============================== */
+
+.editor-area:empty::before {
+    content: "Comece a escrever sua anotação...";
+    color: #7d859c;
+    font-style: italic;
+}
+
+/* ==============================
+   BOTÃO VOLTAR
+============================== */
+
+.btn-voltar {
+    background: transparent;
+    border: 1px solid #2b3240;
+    color: #b9bfd1;
+    padding: 9px 14px;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 13px;
+    transition: 0.25s ease;
+}
+
+.btn-voltar:hover {
+    border-color: #d4af37;
+    color: #d4af37;
+    background: rgba(212, 175, 55, 0.06);
+}
+
+.anotacoes-lista .item-anotacao {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.anotacoes-lista .item-anotacao>button {
+    flex: 1;
+    background: #1b2232;
+    border: 1px solid #2b3240;
+    color: #ffffff;
+    padding: 10px 12px;
+    border-radius: 6px;
+    text-align: left;
+    cursor: pointer;
+    transition: 0.25s ease;
+}
+
+.anotacoes-lista .item-anotacao>button:hover {
+    background: #222a3d;
+    border-color: #3a4254;
+}
+
+/* ==============================
+   INPUT EDIÇÃO DE NOME
+============================== */
+
+.anotacoes-lista .item-anotacao input {
+    flex: 1;
+    background: #0e121a;
+    border: 1px solid #d4af37;
+    color: #ffffff;
+    padding: 9px 10px;
+    border-radius: 6px;
+    outline: none;
+}
+
+.anotacoes-lista .item-anotacao input:focus {
+    box-shadow: 0 0 0 2px rgba(212, 175, 55, 0.25);
+}
+
+.anotacoes-lista .item-anotacao input+button {
+    background: #d4af37;
+    border: none;
+    padding: 9px 12px;
+    border-radius: 6px;
+    cursor: pointer;
+    font-weight: 600;
+    color: #1a1a1a;
+}
+
+/* ==============================
+   AÇÕES
+============================== */
+
+.anotacoes-lista .acoes {
+    display: flex;
+    gap: 6px;
+}
+
+.anotacoes-lista .acoes span {
+    cursor: pointer;
+    font-size: 16px;
+    padding: 6px;
+    border-radius: 6px;
+    transition: 0.25s ease;
+}
+
+.anotacoes-lista .acoes span:hover {
+    background: rgba(255, 255, 255, 0.06);
+}
+
+.anotacoes-lista .acoes span:last-child:hover {
+    background: rgba(224, 90, 90, 0.15);
+    color: #e05a5a;
+}
+
+/* ==============================
+   ÁREA DO EDITOR
+============================== */
+
+.anotacoes-editor {
+    flex: 1;
+    padding: 24px;
+    position: relative;
+
+
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+}
+
+/* ==============================
+   BARRA DE FERRAMENTAS
+============================== */
+
+.anotacoes-editor .editor-botoes {
+    display: flex;
+    gap: 10px;
+}
+
+.anotacoes-editor .editor-botoes button {
+    background: #1b2232;
+    border: 1px solid #2b3240;
+    color: #ffffff;
+    padding: 8px 14px;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: 0.25s ease;
+}
+
+.anotacoes-editor .editor-botoes button:hover {
+    border-color: #d4af37;
+    color: #d4af37;
+}
+
+/* ==============================
+   EDITOR DE TEXTO
+============================== */
+
+.anotacoes-editor .editor-area {
+    flex: 1;
+    background: linear-gradient(180deg, #0f1525, #0b1020);
+    border: 1px solid #2b3240;
+    border-radius: 10px;
+    padding: 20px;
+    font-size: 15px;
+    line-height: 1.7;
+    outline: none;
+    overflow-y: auto;
+}
+
+/* Visualização */
+
+.anotacoes-editor .editor-area.visualizando {
+    color: #b9bfd1;
+    cursor: default;
+}
+
+/* Edição */
+
+.anotacoes-editor .editor-area.editando {
+    color: #ffffff;
+    border-color: #d4af37;
+    box-shadow: 0 0 0 2px rgba(212, 175, 55, 0.18);
+}
+
+/* ==============================
+   BOTÃO SALVAR
+============================== */
+
+.anotacoes-editor .btn-salvar {
+    align-self: flex-start;
+    background: linear-gradient(135deg, #d4af37, #e6c65c);
+    color: #1a1a1a;
+    border: none;
+    padding: 10px 22px;
+    border-radius: 6px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: 0.25s ease;
+}
+
+.anotacoes-editor .btn-salvar:hover {
+    transform: translateY(-1px);
+    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.4);
+}
+
+/* ==============================
+   TEXTO PADRÃO
+============================== */
+
+.anotacoes-editor p {
+    color: #7d859c;
+    font-size: 14px;
+}
+
+.anotacoes-editor .controle-fonte {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    margin-left: 12px;
+}
+
+.anotacoes-editor .controle-fonte button {
+    background: #1b2232;
+    border: 1px solid #2b3240;
+    color: #ffffff;
+    padding: 6px 10px;
+    border-radius: 6px;
+    cursor: pointer;
+}
+
+.anotacoes-editor .controle-fonte button:hover {
+    border-color: #d4af37;
+    color: #d4af37;
+}
+
+.anotacoes-editor .tamanho-fonte {
+    font-size: 13px;
+    color: #b9bfd1;
+    min-width: 40px;
+    text-align: center;
+}
+
+.anotacoes-editor .editor-botoes {
+    position: sticky;
+    top: 0;
+    z-index: 50;
+
+    display: flex;
+    gap: 10px;
+
+    background: #0e121a;
+    /* fundo sólido fixo */
+    padding: 10px 0;
+    border-bottom: 1px solid #2b3240;
+}
+
+.anotacoes-editor {
+    height: 100%;
+}
+
+/* ==============================
+   CHECKLIST
+============================== */
+
+.anotacoes-editor .linha-check {
+    display: flex;
+    align-items: flex-start;
+    gap: 10px;
+
+    padding: 10px 12px;
+    margin: 6px 0;
+
+    border: 1px solid #2b3240;
+    border-radius: 8px;
+
+    background: rgba(255, 255, 255, 0.02);
+}
+
+.anotacoes-editor .linha-check input[type="checkbox"] {
+    margin-top: 4px;
+    cursor: pointer;
+}
+
+.anotacoes-editor .linha-check .linha-texto {
+    flex: 1;
+    line-height: 1.8;
+}
+
+/* quando marcado */
+
+.anotacoes-editor .linha-check.feito {
+    opacity: 0.65;
+}
+
+.anotacoes-editor .linha-check.feito .linha-texto {
+    text-decoration: line-through;
+}

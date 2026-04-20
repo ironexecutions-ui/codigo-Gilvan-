@@ -1,0 +1,87 @@
+/* =====================================================
+   GRID PRINCIPAL DO PAINEL
+   ===================================================== */
+
+.pa-grid {
+    display: grid;
+    grid-template-rows: auto 1fr;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-areas:
+        "header header header"
+        "info serv outros";
+    height: 100vh;
+    gap: 20px;
+    padding: 20px;
+
+    background: #011529;
+    font-family: "Poppins", sans-serif;
+}
+
+/* =====================================================
+   ÁREAS DO GRID
+   ===================================================== */
+
+.pa-header {
+    grid-area: header;
+}
+
+.pa-info {
+    grid-area: info;
+}
+
+.pa-serv {
+    grid-area: serv;
+}
+
+.pa-outros {
+    grid-area: outros;
+}
+
+/* Garante que as colunas fiquem perfeitas no espaço */
+.pa-info,
+.pa-serv,
+.pa-outros {
+    height: 100%;
+    overflow: hidden;
+}
+
+/* =====================================================
+   RESPONSIVIDADE
+   ===================================================== */
+
+@media (max-width: 1100px) {
+    .pa-grid {
+        grid-template-columns: 1fr 1fr;
+        grid-template-areas:
+            "header header"
+            "info serv"
+            "outros outros";
+        height: auto;
+    }
+}
+
+@media (max-width: 750px) {
+    .pa-grid {
+        grid-template-columns: 1fr;
+        grid-template-areas:
+            "header"
+            "info"
+            "serv"
+            "outros";
+    }
+
+    .pa-info,
+    .pa-serv,
+    .pa-outros {
+        height: auto;
+    }
+}
+
+/* =====================================================
+   ESTILO GERAL (SUAVE E PROFISSIONAL)
+   ===================================================== */
+
+.pa-grid * {
+    user-select: none;
+    box-sizing: border-box;
+}

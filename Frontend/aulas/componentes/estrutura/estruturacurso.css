@@ -1,0 +1,265 @@
+/* ================= CONTAINER ================= */
+
+.estruturaCurso_container {
+    padding: 120px 20px;
+    text-align: center;
+
+    background:
+        radial-gradient(circle at 20% 0%, rgba(59, 130, 246, 0.15), transparent 40%),
+        radial-gradient(circle at 80% 10%, rgba(37, 99, 235, 0.12), transparent 40%);
+}
+
+/* ================= TÍTULOS ================= */
+
+.estruturaCurso_titulo {
+    font-size: 40px;
+    font-weight: 800;
+    color: #f8fafc;
+    margin-bottom: 10px;
+}
+
+.estruturaCurso_subtitulo {
+    color: #94a3b8;
+    margin-bottom: 60px;
+    font-size: 17px;
+}
+
+/* ================= LISTA ================= */
+
+.estruturaCurso_lista {
+    display: grid;
+    gap: 25px;
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+/* ================= CARD ================= */
+
+.estruturaCurso_card {
+    position: relative;
+    text-align: left;
+    padding: 32px;
+
+    border-radius: 20px;
+
+    background: rgba(15, 23, 42, 0.55);
+    backdrop-filter: blur(16px);
+
+    border: 1px solid rgba(255, 255, 255, 0.06);
+
+    box-shadow:
+        0 20px 60px rgba(0, 0, 0, 0.5),
+        inset 0 1px 0 rgba(255, 255, 255, 0.04);
+
+    transition: all 0.35s ease;
+}
+
+/* brilho premium */
+.estruturaCurso_card::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    border-radius: 20px;
+
+    background: linear-gradient(120deg,
+            transparent,
+            rgba(255, 255, 255, 0.08),
+            transparent);
+
+    opacity: 0;
+    transition: 0.4s;
+}
+
+.estruturaCurso_card:hover::before {
+    opacity: 1;
+}
+
+.estruturaCurso_card:hover {
+    transform: translateY(-8px) scale(1.01);
+}
+
+/* ================= MÊS ================= */
+
+.estruturaCurso_mes {
+    font-size: 20px;
+    font-weight: 700;
+    margin-bottom: 18px;
+
+    background: linear-gradient(135deg, #3b82f6, #60a5fa);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+/* ================= SEMANA ================= */
+
+.estruturaCurso_semana {
+    margin-top: 18px;
+    padding: 14px;
+    border-radius: 12px;
+
+    background: rgba(255, 255, 255, 0.02);
+    border: 1px solid rgba(255, 255, 255, 0.04);
+}
+
+.estruturaCurso_semanaTitulo {
+    font-size: 15px;
+    font-weight: 700;
+    color: #e2e8f0;
+    margin-bottom: 10px;
+}
+
+/* ================= AULA ================= */
+
+.estruturaCurso_aula {
+    margin-top: 10px;
+    padding: 12px;
+    border-radius: 10px;
+
+    background: rgba(255, 255, 255, 0.02);
+
+    transition: 0.25s;
+}
+
+.estruturaCurso_aula:hover {
+    background: rgba(255, 255, 255, 0.04);
+}
+
+/* header da aula */
+.estruturaCurso_aulaHeader {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 6px;
+}
+
+.estruturaCurso_nomeAula {
+    font-weight: 600;
+    color: #f1f5f9;
+}
+
+/* duração */
+.estruturaCurso_duracao {
+    font-size: 11px;
+    padding: 4px 8px;
+    border-radius: 6px;
+
+    background: rgba(59, 130, 246, 0.15);
+    color: #93c5fd;
+}
+
+/* ================= LISTA DA AULA ================= */
+
+.estruturaCurso_aula ul {
+    padding-left: 16px;
+    margin-top: 4px;
+}
+
+.estruturaCurso_aula li {
+    font-size: 13.5px;
+    color: #cbd5f5;
+    margin-bottom: 6px;
+}
+
+/* bullet customizado */
+.estruturaCurso_aula li::marker {
+    color: #3b82f6;
+}
+
+/* ================= BOTÃO ================= */
+
+.estruturaCurso_botao {
+    margin-top: 40px;
+
+    padding: 14px 30px;
+    border-radius: 999px;
+    border: none;
+
+    font-size: 14px;
+    font-weight: 700;
+
+    background: linear-gradient(135deg, #2563eb, #1d4ed8);
+    color: white;
+
+    cursor: pointer;
+
+    position: relative;
+    overflow: hidden;
+
+    transition: all 0.3s ease;
+}
+
+/* glow */
+.estruturaCurso_botao::after {
+    content: "";
+    position: absolute;
+
+    width: 150%;
+    height: 150%;
+
+    top: -25%;
+    left: -25%;
+
+    background: radial-gradient(circle,
+            rgba(255, 255, 255, 0.25),
+            transparent 60%);
+
+    opacity: 0;
+    transition: 0.3s;
+}
+
+.estruturaCurso_botao:hover::after {
+    opacity: 1;
+}
+
+.estruturaCurso_botao:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 12px 30px rgba(37, 99, 235, 0.4);
+}
+
+/* ================= RESPONSIVO ================= */
+
+@media (max-width: 768px) {
+
+    .estruturaCurso_container {
+        padding: 90px 16px;
+    }
+
+    .estruturaCurso_titulo {
+        font-size: 28px;
+    }
+
+    .estruturaCurso_subtitulo {
+        font-size: 15px;
+    }
+
+    .estruturaCurso_card {
+        padding: 22px;
+    }
+
+    .estruturaCurso_mes {
+        font-size: 17px;
+    }
+
+    .estruturaCurso_semanaTitulo {
+        font-size: 14px;
+    }
+}
+
+@media (max-width: 480px) {
+
+    .estruturaCurso_lista {
+        gap: 18px;
+    }
+
+    .estruturaCurso_card {
+        padding: 20px;
+    }
+
+    .estruturaCurso_aula li {
+        font-size: 13px;
+    }
+
+    .estruturaCurso_botao {
+        width: 100%;
+    }
+}

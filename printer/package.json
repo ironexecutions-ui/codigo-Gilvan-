@@ -1,0 +1,9 @@
+{
+  "name": "node-printer",
+  "version": "1.0.0",
+  "main": "index.cjs",
+  "type": "commonjs",
+  "scripts": {
+    "start": "node index.cjs"
+  }
+}

@@ -1,0 +1,204 @@
+/* ===== Base ===== */
+.autorizacao-container {
+    padding: 28px;
+    background: linear-gradient(180deg, #0c0f14, #0a0d12);
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    gap: 48px;
+    color: #eaeaea;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+}
+
+/* ===== Loading ===== */
+.aut-loading {
+    padding: 40px;
+    font-size: 0.95rem;
+    color: #aaa;
+}
+
+/* ===== Blocos ===== */
+.aut-bloco {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+/* ===== Header ===== */
+.aut-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.aut-titulo {
+    font-size: 1.4rem;
+    font-weight: 600;
+}
+
+.aut-titulo.pendente {
+    color: #ffb020;
+}
+
+.aut-titulo.autorizado {
+    color: #4caf50;
+}
+
+.aut-count {
+    background: #1a1f2b;
+    padding: 4px 10px;
+    border-radius: 999px;
+    font-size: 0.75rem;
+    opacity: 0.85;
+}
+
+.aut-vazio {
+    font-size: 0.9rem;
+    opacity: 0.6;
+}
+
+/* ===== Card ===== */
+.aut-card {
+    display: grid;
+    grid-template-columns: 80px 1fr auto;
+    gap: 18px;
+    padding: 16px 18px;
+    background: #141821;
+    border-radius: 14px;
+    align-items: center;
+    position: relative;
+    transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.aut-card:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 14px 36px rgba(0, 0, 0, 0.5);
+}
+
+.aut-card.pendente {
+    border-left: 4px solid #ffb020;
+}
+
+.aut-card.autorizado {
+    border-left: 4px solid #4caf50;
+}
+
+/* ===== Imagem + Badge ===== */
+.aut-card-imagem {
+    position: relative;
+}
+
+.aut-card-imagem img {
+    width: 64px;
+    height: 64px;
+    border-radius: 12px;
+    object-fit: cover;
+    background: #000;
+}
+
+.aut-badge {
+    position: absolute;
+    bottom: -6px;
+    right: -6px;
+    font-size: 0.65rem;
+    padding: 2px 8px;
+    border-radius: 999px;
+    text-transform: uppercase;
+    font-weight: 600;
+}
+
+.aut-badge.pendente {
+    background: #ffb020;
+    color: #000;
+}
+
+.aut-badge.autorizado {
+    background: #4caf50;
+    color: #000;
+}
+
+/* ===== Infos ===== */
+.aut-card-info {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+}
+
+.aut-loja {
+    font-size: 1.05rem;
+    font-weight: 600;
+}
+
+.aut-modulos {
+    font-size: 0.9rem;
+    opacity: 0.85;
+}
+
+.aut-data {
+    font-size: 0.75rem;
+    opacity: 0.55;
+}
+
+/* ===== Ações ===== */
+.aut-card-acoes {
+    display: flex;
+    gap: 10px;
+}
+
+/* ===== Botões ===== */
+.aut-btn {
+    padding: 7px 14px;
+    border-radius: 10px;
+    border: none;
+    cursor: pointer;
+    font-size: 0.8rem;
+    font-weight: 500;
+    transition: all 0.2s ease;
+}
+
+.aut-btn:hover {
+    transform: scale(1.06);
+}
+
+/* WhatsApp */
+.aut-btn.zap {
+    background: #1db954;
+    color: #fff;
+}
+
+.aut-btn.zap:hover {
+    background: #169c46;
+}
+
+/* Autorizar */
+.aut-btn.ok {
+    background: #2e7d32;
+    color: #fff;
+}
+
+.aut-btn.ok:hover {
+    background: #256628;
+}
+
+/* Negar */
+.aut-btn.no {
+    background: #b71c1c;
+    color: #fff;
+}
+
+.aut-btn.no:hover {
+    background: #8f1515;
+}
+
+/* ===== Responsivo ===== */
+@media (max-width: 768px) {
+    .aut-card {
+        grid-template-columns: 1fr;
+        gap: 14px;
+    }
+
+    .aut-card-acoes {
+        justify-content: flex-start;
+        flex-wrap: wrap;
+    }
+}

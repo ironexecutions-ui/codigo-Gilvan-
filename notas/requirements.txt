@@ -1,0 +1,17 @@
+fastapi
+uvicorn[standard]
+
+mysql-connector-python==9.0.0
+
+lxml==4.9.3
+signxml==3.2.0
+cryptography==41.0.7
+pyOpenSSL==23.2.0
+
+requests==2.31.0
+
+supabase==2.3.4
+httpx==0.24.1
+gotrue==2.4.2
+postgrest==0.10.8
+realtime==1.0.0

@@ -1,0 +1,742 @@
+/* ======================================================
+   BASE GLOBAL
+====================================================== */
+.sorteioRifa-container {
+    max-width: 860px;
+    margin: 56px auto;
+    padding: 42px 36px;
+    background:
+        linear-gradient(180deg,
+            rgba(15, 23, 42, 0.92),
+            rgba(2, 6, 23, 0.98)),
+        radial-gradient(circle at top,
+            rgba(56, 189, 248, 0.14),
+            transparent 60%);
+    border-radius: 26px;
+    border: 1px solid rgba(148, 163, 184, 0.22);
+    box-shadow:
+        0 60px 160px rgba(0, 0, 0, 0.85),
+        inset 0 1px 0 rgba(255, 255, 255, 0.04);
+    color: #e5e7eb;
+    font-family: Inter, system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+    position: relative;
+    overflow: hidden;
+}
+
+/* ======================================================
+   GLOW SUPERIOR SUTIL
+====================================================== */
+.sorteioRifa-container::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background:
+        radial-gradient(circle at top,
+            rgba(56, 189, 248, 0.18),
+            transparent 55%);
+    pointer-events: none;
+}
+
+/* ======================================================
+   ALERTAS E TEXTOS
+====================================================== */
+.sorteioRifa-alertaDefinitivo {
+    padding: 18px 22px;
+    border-radius: 16px;
+    background:
+        linear-gradient(180deg,
+            rgba(234, 179, 8, 0.18),
+            rgba(234, 179, 8, 0.08));
+    border: 1px solid rgba(234, 179, 8, 0.45);
+    color: #fde68a;
+    font-size: 14px;
+    font-weight: 500;
+    line-height: 1.6;
+    text-align: center;
+    box-shadow:
+        0 12px 30px rgba(0, 0, 0, 0.35);
+}
+
+/* ======================================================
+   ETAPA INICIAL
+====================================================== */
+.sorteioRifa-etapaInicial {
+    display: flex;
+    flex-direction: column;
+    gap: 32px;
+}
+
+/* ======================================================
+   CONTROLE DE TEMPO
+====================================================== */
+.sorteioRifa-controleTempo {
+    display: flex;
+    gap: 18px;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    padding: 8px 0;
+}
+
+/* ======================================================
+   INPUT DE TEMPO
+====================================================== */
+.sorteioRifa-inputTempo {
+    width: 260px;
+    padding: 16px 18px;
+    border-radius: 16px;
+    background:
+        linear-gradient(180deg,
+            rgba(2, 6, 23, 0.98),
+            rgba(2, 6, 23, 0.9));
+    border: 1px solid rgba(148, 163, 184, 0.25);
+    color: #f8fafc;
+    font-size: 15px;
+    font-weight: 500;
+    outline: none;
+    transition:
+        border-color 0.25s ease,
+        box-shadow 0.25s ease,
+        background 0.25s ease,
+        transform 0.15s ease;
+}
+
+.sorteioRifa-inputTempo::placeholder {
+    color: #94a3b8;
+    font-weight: 400;
+}
+
+/* ======================================================
+   FOCO
+====================================================== */
+.sorteioRifa-inputTempo:focus {
+    border-color: #38bdf8;
+    background:
+        linear-gradient(180deg,
+            rgba(2, 6, 23, 1),
+            rgba(2, 6, 23, 0.92));
+    box-shadow:
+        0 0 0 3px rgba(56, 189, 248, 0.25),
+        0 10px 28px rgba(56, 189, 248, 0.35);
+    transform: translateY(-1px);
+}
+
+/* ======================================================
+   BOTÃO INICIAR
+====================================================== */
+.sorteioRifa-botaoIniciar {
+    padding: 16px 30px;
+    border-radius: 16px;
+    border: none;
+    background:
+        linear-gradient(135deg, #38bdf8, #2563eb),
+        radial-gradient(circle at top, rgba(255, 255, 255, 0.25), transparent 60%);
+    color: #020617;
+    font-size: 15px;
+    font-weight: 900;
+    letter-spacing: 0.4px;
+    cursor: pointer;
+    box-shadow:
+        0 22px 55px rgba(37, 99, 235, 0.55),
+        inset 0 1px 0 rgba(255, 255, 255, 0.25);
+    transition:
+        transform 0.18s ease,
+        box-shadow 0.18s ease,
+        filter 0.18s ease,
+        opacity 0.18s ease;
+}
+
+.sorteioRifa-botaoIniciar:hover {
+    transform: translateY(-3px);
+    filter: brightness(1.1);
+    box-shadow:
+        0 34px 80px rgba(37, 99, 235, 0.75);
+}
+
+.sorteioRifa-botaoIniciar:active {
+    transform: translateY(0);
+    box-shadow:
+        0 20px 45px rgba(37, 99, 235, 0.55);
+    opacity: 0.95;
+}
+
+/* ======================================================
+   BOTÃO INATIVO
+====================================================== */
+.sorteioRifa-botaoInativo {
+    opacity: 0.55;
+    cursor: not-allowed;
+    box-shadow: none;
+    filter: grayscale(0.2);
+}
+
+/* ======================================================
+   ÁREA DA ANIMAÇÃO
+====================================================== */
+.sorteioRifa-animacaoNumero {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 20px;
+    min-height: 200px;
+}
+
+/* ======================================================
+   EMOJIS FLUTUANTES
+====================================================== */
+.sorteioRifa-emojis {
+    position: absolute;
+    inset: 0;
+    overflow: hidden;
+    pointer-events: none;
+}
+
+.sorteioRifa-emoji {
+    position: absolute;
+    bottom: -40px;
+    animation: emojiSubir 3.8s ease-in forwards;
+    opacity: 0.9;
+    filter: drop-shadow(0 6px 10px rgba(0, 0, 0, 0.45));
+}
+
+/* ======================================================
+   ANIMAÇÃO
+====================================================== */
+@keyframes emojiSubir {
+    from {
+        transform: translateY(0) scale(0.7) rotate(0deg);
+        opacity: 0;
+    }
+
+    20% {
+        opacity: 1;
+    }
+
+    to {
+        transform: translateY(-160%) scale(1.25) rotate(12deg);
+        opacity: 0;
+    }
+}
+
+/* ======================================================
+   NÚMERO CENTRAL
+====================================================== */
+.sorteioRifa-numeroAtual {
+    min-width: 200px;
+    padding: 26px 0;
+    text-align: center;
+    font-size: 56px;
+    font-weight: 900;
+    letter-spacing: 8px;
+    border-radius: 22px;
+    z-index: 2;
+    transition:
+        transform 0.25s ease,
+        box-shadow 0.25s ease,
+        filter 0.25s ease;
+}
+
+/* ======================================================
+   ESTADO RODANDO
+====================================================== */
+.sorteioRifa-numeroRodando {
+    color: #38bdf8;
+    background:
+        linear-gradient(#020617, #020617) padding-box,
+        linear-gradient(135deg, #38bdf8, #2563eb) border-box;
+    border: 2px solid transparent;
+    box-shadow:
+        inset 0 0 28px rgba(56, 189, 248, 0.45),
+        0 0 60px rgba(56, 189, 248, 0.65);
+    animation: pulsoNumero 1.1s infinite alternate;
+    filter: brightness(1.05);
+}
+
+/* ======================================================
+   ESTADO FINAL
+====================================================== */
+.sorteioRifa-numeroFinal {
+    color: #22c55e;
+    background:
+        linear-gradient(#020617, #020617) padding-box,
+        linear-gradient(135deg, #22c55e, #16a34a) border-box;
+    border: 2px solid transparent;
+    box-shadow:
+        inset 0 0 32px rgba(34, 197, 94, 0.55),
+        0 0 70px rgba(34, 197, 94, 0.75);
+    transform: scale(1.06);
+}
+
+/* ======================================================
+   ANIMAÇÃO DO PULSO
+====================================================== */
+@keyframes pulsoNumero {
+    from {
+        transform: scale(1);
+    }
+
+    to {
+        transform: scale(1.08);
+    }
+}
+
+/* ======================================================
+   RESULTADO FINAL
+====================================================== */
+.sorteioRifa-resultadoFinal {
+    display: flex;
+    flex-direction: column;
+    gap: 32px;
+    align-items: center;
+    text-align: center;
+    margin-top: 12px;
+}
+
+.sorteioRifa-numeroSorteado {
+    font-size: 30px;
+    font-weight: 900;
+    color: #f8fafc;
+    letter-spacing: -0.3px;
+}
+
+.sorteioRifa-numeroSorteado span {
+    color: #38bdf8;
+}
+
+/* ======================================================
+   SEM GANHADOR
+====================================================== */
+.sorteioRifa-blocoSemGanhador {
+    padding: 26px 28px;
+    border-radius: 18px;
+    background:
+        linear-gradient(180deg,
+            rgba(148, 163, 184, 0.12),
+            rgba(148, 163, 184, 0.06));
+    border: 1px solid rgba(148, 163, 184, 0.35);
+    box-shadow:
+        0 14px 40px rgba(0, 0, 0, 0.45);
+}
+
+/* ======================================================
+   TEXTO · SEM GANHADOR
+====================================================== */
+.sorteioRifa-textoSemGanhador {
+    font-size: 15px;
+    line-height: 1.6;
+    color: #f8fafc !important;
+    text-align: center;
+    max-width: 520px;
+}
+
+/* ======================================================
+   GANHADOR
+====================================================== */
+.sorteioRifa-blocoGanhador {
+    display: flex;
+    flex-direction: column;
+    gap: 22px;
+    align-items: center;
+    text-align: center;
+}
+
+/* ======================================================
+   NOME DO GANHADOR
+====================================================== */
+.sorteioRifa-nomeGanhador {
+    font-size: 26px;
+    font-weight: 900;
+    letter-spacing: -0.4px;
+    color: #22c55e !important;
+    text-shadow: 0 0 18px rgba(34, 197, 94, 0.45);
+}
+
+/* ======================================================
+   AÇÕES
+====================================================== */
+.sorteioRifa-acoesContato {
+    display: flex;
+    gap: 16px;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+/* ======================================================
+   WHATSAPP
+====================================================== */
+.sorteioRifa-linkWhatsapp {
+    padding: 14px 24px;
+    border-radius: 16px;
+    background:
+        linear-gradient(135deg, #22c55e, #16a34a),
+        radial-gradient(circle at top, rgba(255, 255, 255, 0.18), transparent 60%);
+    color: #052e16;
+    font-weight: 900;
+    letter-spacing: 0.3px;
+    text-decoration: none;
+    box-shadow:
+        0 20px 45px rgba(34, 197, 94, 0.55),
+        inset 0 1px 0 rgba(255, 255, 255, 0.25);
+    transition:
+        transform 0.18s ease,
+        box-shadow 0.18s ease,
+        filter 0.18s ease;
+}
+
+.sorteioRifa-linkWhatsapp:hover {
+    transform: translateY(-3px);
+    filter: brightness(1.08);
+    box-shadow:
+        0 30px 70px rgba(34, 197, 94, 0.75);
+}
+
+/* ======================================================
+   COPIAR EMAIL
+====================================================== */
+.sorteioRifa-botaoCopiarEmail {
+    padding: 14px 24px;
+    border-radius: 16px;
+    border: 1px solid rgba(148, 163, 184, 0.35);
+    background:
+        linear-gradient(180deg,
+            rgba(2, 6, 23, 0.98),
+            rgba(2, 6, 23, 0.9));
+    color: #e5e7eb;
+    font-weight: 800;
+    letter-spacing: 0.2px;
+    cursor: pointer;
+    box-shadow:
+        0 14px 30px rgba(0, 0, 0, 0.35);
+    transition:
+        background 0.18s ease,
+        transform 0.18s ease,
+        box-shadow 0.18s ease,
+        color 0.18s ease;
+}
+
+.sorteioRifa-botaoCopiarEmail:hover {
+    background:
+        linear-gradient(180deg,
+            rgba(15, 23, 42, 0.95),
+            rgba(2, 6, 23, 0.98));
+    transform: translateY(-2px);
+    box-shadow:
+        0 22px 48px rgba(0, 0, 0, 0.45);
+    color: #f9fafb;
+}
+
+/* ======================================================
+   ERRO
+====================================================== */
+.sorteioRifa-mensagemErro {
+    margin-top: 26px;
+    padding: 14px 18px;
+    max-width: 520px;
+    margin-left: auto;
+    margin-right: auto;
+
+    text-align: center;
+    font-size: 14px;
+    font-weight: 800;
+    line-height: 1.5;
+    letter-spacing: 0.2px;
+
+    color: #fecaca;
+
+    background:
+        linear-gradient(180deg,
+            rgba(239, 68, 68, 0.22),
+            rgba(239, 68, 68, 0.12));
+    border: 1px solid rgba(239, 68, 68, 0.45);
+    border-radius: 16px;
+
+    box-shadow:
+        0 14px 36px rgba(239, 68, 68, 0.35),
+        inset 0 1px 0 rgba(255, 255, 255, 0.08);
+}
+
+/* ======================================================
+   ESTADO COMEMORATIVO · RESULTADO FINAL
+====================================================== */
+
+.sorteioRifa-numeroFinal {
+    color: #22c55e;
+    background:
+        linear-gradient(#020617, #020617) padding-box,
+        linear-gradient(135deg, #22c55e, #16a34a) border-box;
+    border: 2px solid transparent;
+
+    box-shadow:
+        inset 0 0 40px rgba(34, 197, 94, 0.55),
+        0 0 90px rgba(34, 197, 94, 0.75),
+        0 0 140px rgba(34, 197, 94, 0.45);
+
+    transform: scale(1.08);
+    animation: numeroFinalEntrada 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+/* ======================================================
+   ANIMAÇÃO DE ENTRADA DO RESULTADO
+====================================================== */
+@keyframes numeroFinalEntrada {
+    0% {
+        transform: scale(0.85);
+        opacity: 0;
+        filter: blur(6px);
+    }
+
+    60% {
+        transform: scale(1.12);
+        opacity: 1;
+        filter: blur(0);
+    }
+
+    100% {
+        transform: scale(1.08);
+    }
+}
+
+/* ======================================================
+   FUNDO COMEMORATIVO QUANDO FINALIZA
+====================================================== */
+.sorteioRifa-container:has(.sorteioRifa-numeroFinal) {
+    background:
+        linear-gradient(180deg,
+            rgba(2, 6, 23, 0.96),
+            rgba(2, 6, 23, 1)),
+        radial-gradient(circle at top,
+            rgba(34, 197, 94, 0.18),
+            transparent 60%);
+}
+
+/* ===============================
+   COMEMORAÇÃO FINAL
+================================ */
+
+.sorteioRifa-comemoracao {
+    position: fixed;
+    inset: 0;
+    pointer-events: none;
+    z-index: 9999;
+    overflow: hidden;
+}
+
+.sorteioRifa-fogo {
+    position: absolute;
+    bottom: -40px;
+    animation: subirExplodir 3.5s ease-out forwards;
+    filter: drop-shadow(0 0 12px rgba(255, 255, 255, 0.6));
+}
+
+@keyframes subirExplodir {
+    0% {
+        transform: translateY(0) scale(0.6);
+        opacity: 0;
+    }
+
+    20% {
+        opacity: 1;
+    }
+
+    60% {
+        transform: translateY(-70vh) scale(1.2);
+        opacity: 1;
+    }
+
+    100% {
+        transform: translateY(-100vh) scale(1.6);
+        opacity: 0;
+    }
+}
+
+/* ===============================
+   FOGOS ARTIFICIAIS · REAL
+================================ */
+
+.sorteioRifa-fogo {
+    position: absolute;
+    bottom: -60px;
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background: transparent;
+    animation: fogueteSubir 1.6s ease-out forwards,
+        explosao 0.8s ease-out forwards;
+    animation-delay: 0s, 1.6s;
+}
+
+/* SUBIDA DO FOGUETE */
+@keyframes fogueteSubir {
+    0% {
+        transform: translateY(0);
+        opacity: 1;
+        box-shadow: 0 0 12px rgba(255, 255, 255, 0.9);
+    }
+
+    100% {
+        transform: translateY(-65vh);
+        opacity: 1;
+        box-shadow: 0 0 20px rgba(255, 255, 255, 1);
+    }
+}
+
+/* EXPLOSÃO */
+@keyframes explosao {
+    0% {
+        box-shadow: 0 0 0 transparent;
+        opacity: 1;
+    }
+
+    100% {
+        opacity: 0;
+        box-shadow:
+            0 0 0 0 #fff,
+            30px 0 0 #22c55e,
+            -30px 0 0 #38bdf8,
+            0 30px 0 #facc15,
+            0 -30px 0 #a855f7,
+            22px 22px 0 #fb7185,
+            -22px 22px 0 #4ade80,
+            22px -22px 0 #60a5fa,
+            -22px -22px 0 #f472b6;
+    }
+}
+
+/* ======================================================
+   RESPONSIVO · TABLET
+====================================================== */
+@media (max-width: 1024px) {
+    .sorteioRifa-container {
+        margin: 40px 16px;
+        padding: 36px 28px;
+    }
+
+    .sorteioRifa-numeroAtual {
+        min-width: 180px;
+        font-size: 48px;
+        letter-spacing: 6px;
+    }
+
+    .sorteioRifa-numeroSorteado {
+        font-size: 26px;
+    }
+}
+
+/* ======================================================
+   RESPONSIVO · MOBILE GRANDE
+====================================================== */
+@media (max-width: 768px) {
+    .sorteioRifa-container {
+        margin: 28px 14px;
+        padding: 28px 22px;
+        border-radius: 22px;
+    }
+
+    .sorteioRifa-controleTempo {
+        flex-direction: column;
+        gap: 14px;
+    }
+
+    .sorteioRifa-inputTempo {
+        width: 100%;
+        max-width: 100%;
+    }
+
+    .sorteioRifa-botaoIniciar {
+        width: 100%;
+        padding: 16px 0;
+    }
+
+    .sorteioRifa-animacaoNumero {
+        min-height: 170px;
+    }
+
+    .sorteioRifa-numeroAtual {
+        min-width: 160px;
+        font-size: 44px;
+        letter-spacing: 5px;
+    }
+
+    .sorteioRifa-acoesContato {
+        flex-direction: column;
+        width: 100%;
+    }
+
+    .sorteioRifa-linkWhatsapp,
+    .sorteioRifa-botaoCopiarEmail {
+        width: 100%;
+        text-align: center;
+    }
+}
+
+/* ======================================================
+   RESPONSIVO · MOBILE MÉDIO
+====================================================== */
+@media (max-width: 540px) {
+    .sorteioRifa-container {
+        padding: 24px 18px;
+        border-radius: 20px;
+    }
+
+    .sorteioRifa-alertaDefinitivo {
+        font-size: 13px;
+        padding: 14px 16px;
+    }
+
+    .sorteioRifa-numeroAtual {
+        font-size: 38px;
+        letter-spacing: 4px;
+        padding: 20px 0;
+    }
+
+    .sorteioRifa-numeroSorteado {
+        font-size: 22px;
+    }
+
+    .sorteioRifa-nomeGanhador {
+        font-size: 22px;
+    }
+}
+
+/* ======================================================
+   RESPONSIVO · MOBILE PEQUENO
+====================================================== */
+@media (max-width: 420px) {
+    .sorteioRifa-container {
+        margin: 20px 10px;
+        padding: 20px 14px;
+    }
+
+    .sorteioRifa-numeroAtual {
+        font-size: 32px;
+        letter-spacing: 3px;
+        min-width: 130px;
+    }
+
+    .sorteioRifa-botaoIniciar,
+    .sorteioRifa-linkWhatsapp,
+    .sorteioRifa-botaoCopiarEmail {
+        font-size: 14px;
+        padding: 14px 0;
+        border-radius: 14px;
+    }
+}
+
+/* ======================================================
+   RESPONSIVO · TELAS MUITO ESTREITAS
+====================================================== */
+@media (max-width: 360px) {
+    .sorteioRifa-numeroAtual {
+        font-size: 28px;
+        letter-spacing: 2px;
+    }
+
+    .sorteioRifa-numeroSorteado {
+        font-size: 20px;
+    }
+
+    .sorteioRifa-nomeGanhador {
+        font-size: 20px;
+    }
+}

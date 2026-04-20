@@ -1,0 +1,180 @@
+/* ===============================
+   CONTAINER PRINCIPAL
+=============================== */
+.emitir-nfce {
+    width: 100%;
+    padding: 20px;
+    background: #0f172a;
+    border-radius: 10px;
+    color: #e5e7eb;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.35);
+}
+
+/* ===============================
+   TÍTULO
+=============================== */
+.emitir-nfce h4 {
+    margin-bottom: 16px;
+    font-size: 18px;
+    font-weight: 600;
+    color: #38bdf8;
+}
+
+/* ===============================
+   TABELA
+=============================== */
+.emitir-nfce table {
+    width: 100%;
+    border-collapse: collapse;
+    background: #020617;
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+/* ===============================
+   CABEÇALHO
+=============================== */
+.emitir-nfce thead {
+    background: #020617;
+}
+
+.emitir-nfce thead th {
+    padding: 12px;
+    text-align: left;
+    font-size: 13px;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    color: #94a3b8;
+    border-bottom: 1px solid #1e293b;
+}
+
+/* ===============================
+   LINHAS
+=============================== */
+.emitir-nfce tbody tr {
+    transition: background 0.2s ease;
+}
+
+.emitir-nfce tbody tr:hover {
+    background: #020617;
+}
+
+.emitir-nfce tbody td {
+    padding: 12px;
+    font-size: 14px;
+    color: #e5e7eb;
+    border-bottom: 1px solid #1e293b;
+}
+
+/* ===============================
+   COLUNAS ESPECÍFICAS
+=============================== */
+.emitir-nfce tbody td:nth-child(1) {
+    font-weight: 600;
+    color: #f8fafc;
+}
+
+.emitir-nfce tbody td:nth-child(2) {
+    color: #22c55e;
+    font-weight: 600;
+}
+
+.emitir-nfce tbody td:nth-child(3) {
+    text-transform: capitalize;
+    color: #cbd5f5;
+}
+
+/* ===============================
+   BOTÃO
+=============================== */
+.emitir-nfce button {
+    padding: 8px 14px;
+    font-size: 13px;
+    font-weight: 600;
+    color: #020617;
+    background: #38bdf8;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.emitir-nfce button:hover {
+    background: #0ea5e9;
+    transform: translateY(-1px);
+}
+
+.emitir-nfce button:active {
+    transform: translateY(0);
+}
+
+/* ===============================
+   MENSAGENS DE ESTADO
+=============================== */
+.emitir-nfce p {
+    padding: 20px;
+    text-align: center;
+    color: #94a3b8;
+    font-size: 14px;
+}
+
+.btn-comanda {
+    padding: 6px 12px;
+    font-size: 12px;
+    font-weight: 600;
+    background: #22c55e;
+    color: #020617;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: background 0.2s ease;
+}
+
+.btn-comanda:hover {
+    background: #16a34a;
+}
+
+.sem-comanda {
+    color: #64748b;
+    font-size: 12px;
+}
+
+.filtros-nfce {
+    display: flex;
+    gap: 16px;
+    align-items: flex-end;
+    margin-bottom: 16px;
+    flex-wrap: wrap;
+}
+
+.filtros-nfce div {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+
+.filtros-nfce label {
+    font-size: 12px;
+    color: #94a3b8;
+}
+
+.filtros-nfce input {
+    padding: 6px 10px;
+    background: #020617;
+    border: 1px solid #1e293b;
+    border-radius: 6px;
+    color: #e5e7eb;
+}
+
+.btn-limpar {
+    padding: 8px 14px;
+    background: #475569;
+    color: #e5e7eb;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+}
+
+.btn-limpar:hover {
+    background: #64748b;
+}

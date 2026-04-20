@@ -1,0 +1,114 @@
+/* ===== CONTAINER PRINCIPAL ===== */
+.funcionarios-container {
+    padding: 24px;
+    max-height: 300px;
+    overflow-y: auto;
+    border-radius: 16px;
+}
+
+/* ===== NOME DA LOJA ===== */
+.nome-loja {
+    text-align: center;
+    margin-bottom: 32px;
+    font-size: 24px;
+    font-weight: 600;
+    color: #e5e7eb;
+    letter-spacing: 0.5px;
+}
+
+/* ===== COLUNAS ===== */
+.colunas {
+    display: flex;
+    gap: 20px;
+}
+
+/* ===== CADA COLUNA ===== */
+.coluna {
+    flex: 1;
+    background: #000e41e7;
+    border-radius: 14px;
+    color: #ffffff;
+    height: fit-content;
+    padding: 18px 16px 22px;
+    box-shadow: 0 10px 26px rgba(0, 0, 0, 0.45);
+    transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+/* ===== TÍTULO DA FUNÇÃO ===== */
+.coluna h2 {
+    margin-bottom: 20px;
+    padding-bottom: 10px;
+    font-size: 17px;
+    font-weight: 600;
+    text-align: center;
+    color: #ffffff;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.12);
+}
+
+/* ===== CARD DA PESSOA ===== */
+.pessoa {
+    background: rgba(255, 255, 255, 0.04);
+    border: 1px solid rgba(255, 255, 255, 0.12);
+    border-radius: 12px;
+    padding: 12px 14px;
+    margin-bottom: 12px;
+    text-align: center;
+    transition: transform 0.2s ease, box-shadow 0.2s ease, background 0.2s ease;
+}
+
+/* ===== HOVER PROFISSIONAL ===== */
+.pessoa:hover {
+    transform: translateY(-3px);
+    background: rgba(255, 255, 255, 0.08);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.55);
+}
+
+/* ===== NOME ===== */
+.pessoa strong {
+    display: block;
+    font-size: 15.5px;
+    font-weight: 600;
+    color: #f9fafb;
+}
+
+/* ===== CARGO ===== */
+.pessoa span {
+    display: block;
+    margin-top: 4px;
+    font-size: 13.5px;
+    color: #cbd5f5;
+}
+
+/* ===== DESTAQUE PROFISSIONAL (USUÁRIO ATUAL) ===== */
+.pessoa.destaque {
+    border: 1.5px solid #60a5fa;
+    background: linear-gradient(180deg,
+            rgba(96, 165, 250, 0.18),
+            rgba(255, 255, 255, 0.04));
+    box-shadow: 0 12px 26px rgba(96, 165, 250, 0.35);
+}
+
+.pessoa.destaque strong {
+    color: #dbeafe;
+}
+
+/* ===== SCROLL PROFISSIONAL ===== */
+.funcionarios-container::-webkit-scrollbar {
+    width: 6px;
+}
+
+.funcionarios-container::-webkit-scrollbar-track {
+    background: transparent;
+}
+
+.funcionarios-container::-webkit-scrollbar-thumb {
+    background: rgba(255, 255, 255, 0.25);
+    border-radius: 4px;
+}
+
+/* ===== RESPONSIVO ===== */
+@media (max-width: 900px) {
+    .colunas {
+        flex-direction: column;
+    }
+}

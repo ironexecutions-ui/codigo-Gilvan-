@@ -1,0 +1,66 @@
+/* ===============================
+   RODAPÉ
+=============================== */
+
+.rodape-container {
+    margin-top: 120px;
+    padding: 28px 20px;
+    border-radius: 30px;
+    background:
+        linear-gradient(180deg,
+            #020617 0%,
+            #01030a 100%);
+
+    border-top: 1px solid #1e293b;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 6px;
+
+    color: #94a3b8;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+    position: relative;
+}
+
+
+/* ===============================
+   TEXTO DO RODAPÉ
+=============================== */
+
+.rodape-container p {
+    margin: 0;
+    font-size: 13.5px;
+    line-height: 1.5;
+    text-align: center;
+    letter-spacing: 0.2px;
+}
+
+
+/* ===============================
+   DESTAQUE DO NOME
+=============================== */
+
+.rodape-container p:first-child {
+    color: #e5e7eb;
+    font-weight: 500;
+}
+
+
+/* ===============================
+   DETALHE SUPERIOR SUTIL
+=============================== */
+
+.rodape-container::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 20%;
+    right: 20%;
+    height: 1px;
+
+    background: linear-gradient(90deg,
+            transparent,
+            rgba(96, 165, 250, 0.4),
+            transparent);
+}

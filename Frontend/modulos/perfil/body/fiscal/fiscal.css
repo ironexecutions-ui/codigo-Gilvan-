@@ -1,0 +1,123 @@
+/* ===============================
+   CONTAINER PRINCIPAL
+=============================== */
+.fiscal-container {
+    background: #f3f3f3;
+    border: 1px solid #1e293b;
+    border-radius: 18px;
+    padding: 22px;
+    color: #e5e7eb;
+}
+
+/* ===============================
+   TÍTULO
+=============================== */
+.fiscal-container h3 {
+    font-size: 28px;
+    font-weight: 600;
+    color: #020617;
+    margin-bottom: 18px;
+    letter-spacing: 0.3px;
+}
+
+/* ===============================
+   BOTÕES DE ABA
+=============================== */
+.fiscal-botoes {
+    display: flex;
+    gap: 12px;
+    margin-bottom: 20px;
+}
+
+.fiscal-botoes button {
+    background: linear-gradient(180deg, #020617, #020617);
+    border: 1px solid #1e293b;
+    color: #e5e7eb;
+    border-radius: 14px;
+    padding: 10px 22px;
+    font-size: 13px;
+    font-weight: 600;
+    cursor: pointer;
+    transition:
+        border-color 0.2s ease,
+        color 0.2s ease,
+        box-shadow 0.2s ease,
+        transform 0.1s ease;
+}
+
+.fiscal-botoes button:hover {
+    border-color: #38bdf8;
+    color: #38bdf8;
+    box-shadow: 0 8px 22px rgba(56, 189, 248, 0.25);
+    transform: translateY(-1px);
+}
+
+/* ===============================
+   BOTÃO ATIVO
+=============================== */
+.fiscal-botoes button.ativo {
+    background: linear-gradient(180deg, #020617, #020617);
+    border-color: #38bdf8;
+    color: #38bdf8;
+    box-shadow: 0 8px 26px rgba(56, 189, 248, 0.35);
+}
+
+/* ===============================
+   CONTEÚDO
+=============================== */
+.fiscal-conteudo {
+    background: #000e4b;
+    border: 1px solid #1e293b;
+    border-radius: 16px;
+    padding: 20px;
+    min-height: 220px;
+}
+
+
+/* ===============================
+   CARREGAMENTO
+=============================== */
+.fiscal-carregando {
+    height: 100%;
+    min-height: 300px;
+    display: flex;
+    border-radius: 30px;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background: #ffffff;
+    color: #e5e7eb;
+    gap: 10px;
+    text-align: center;
+}
+
+.fiscal-carregando p {
+    font-size: 35px;
+    font-weight: 600;
+    color: #020617;
+    margin: 0;
+}
+
+.fiscal-carregando span {
+    font-size: 22px;
+    color: #080808;
+}
+
+/* ===============================
+   LOADER
+=============================== */
+.fiscal-loader {
+    width: 42px;
+    height: 42px;
+    border-radius: 50%;
+    border: 4px solid #1e293b;
+    border-top-color: #38bdf8;
+    animation: fiscalSpin 0.9s linear infinite;
+    margin-bottom: 6px;
+}
+
+@keyframes fiscalSpin {
+    to {
+        transform: rotate(360deg);
+    }
+}

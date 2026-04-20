@@ -1,0 +1,14 @@
+.funcionarios-page {
+    display: grid;
+    grid-template-rows: auto 1fr;
+    height: 100vh;
+    background: #0b1f3d;
+    overflow: hidden;
+}
+
+.funcionarios-content {
+    padding: 20px;
+    overflow-y: auto;
+    display: grid;
+    place-items: center;
+}

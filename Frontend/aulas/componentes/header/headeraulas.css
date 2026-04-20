@@ -1,0 +1,158 @@
+/* ================= CONTAINER ================= */
+
+.headerAulas_container {
+    width: 100%;
+    padding: 16px 28px;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-radius: 0 0 40px 40px;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+
+    background: rgba(10, 15, 30, 0.75);
+    backdrop-filter: blur(14px);
+
+    border-bottom: 1px solid rgba(255, 255, 255, 0.04);
+}
+
+/* ================= LOGO AREA ================= */
+
+.headerAulas_logoArea {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.headerAulas_logoImagem {
+    width: 44px;
+    height: 44px;
+    object-fit: contain;
+
+    border-radius: 8px;
+
+    background: rgba(255, 255, 255, 0.04);
+    padding: 6px;
+}
+
+/* ================= TEXTOS ================= */
+
+.headerAulas_textos {
+    display: flex;
+    flex-direction: column;
+    line-height: 1.1;
+}
+
+.headerAulas_titulo {
+    font-size: 15px;
+    font-weight: 700;
+    color: #f1f5f9;
+    letter-spacing: 0.3px;
+}
+
+.headerAulas_subtitulo {
+    font-size: 11px;
+    color: #64748b;
+}
+
+/* ================= BOTÃO ================= */
+
+.headerAulas_botao {
+    background: linear-gradient(135deg, #3b82f6, #2563eb);
+
+    padding: 9px 18px;
+    border-radius: 999px;
+
+    color: #ffffff;
+    font-weight: 600;
+    font-size: 13px;
+
+    text-decoration: none;
+
+    transition: all 0.25s ease;
+}
+
+/* hover */
+.headerAulas_botao:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(37, 99, 235, 0.35);
+}
+
+/* active */
+.headerAulas_botao:active {
+    transform: scale(0.96);
+}
+
+/* ================= RESPONSIVO ================= */
+
+/* 📱 tablets */
+@media (max-width: 768px) {
+
+    .headerAulas_container {
+        padding: 14px 18px;
+    }
+
+    .headerAulas_logoImagem {
+        width: 38px;
+        height: 38px;
+    }
+
+    .headerAulas_titulo {
+        font-size: 14px;
+    }
+
+    .headerAulas_subtitulo {
+        font-size: 10px;
+    }
+
+    .headerAulas_botao {
+        padding: 8px 14px;
+        font-size: 12px;
+    }
+}
+
+/* 📱 celulares */
+@media (max-width: 480px) {
+
+    .headerAulas_container {
+        padding: 12px 14px;
+    }
+
+    .headerAulas_logoArea {
+        gap: 8px;
+    }
+
+    .headerAulas_logoImagem {
+        width: 34px;
+        height: 34px;
+    }
+
+    /* 🔥 aqui melhora muito UX mobile */
+    .headerAulas_subtitulo {
+        display: none;
+    }
+
+    .headerAulas_titulo {
+        font-size: 13px;
+    }
+
+    .headerAulas_botao {
+        padding: 7px 12px;
+        font-size: 11px;
+    }
+}
+
+/* 📱 celulares muito pequenos */
+@media (max-width: 360px) {
+
+    .headerAulas_titulo {
+        font-size: 12px;
+    }
+
+    .headerAulas_botao {
+        padding: 6px 10px;
+        font-size: 10px;
+    }
+}
