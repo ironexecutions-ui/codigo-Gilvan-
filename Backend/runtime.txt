@@ -1,1 +1,1357 @@
 python-3.11.9
+
+
+-- phpMyAdmin SQL Dump
+-- version 4.7.1
+-- https://www.phpmyadmin.net/
+--
+-- Host: sql5.freesqldatabase.com
+-- Tempo de geração: 20/04/2026 às 20:23
+-- Versão do servidor: 5.5.62-0ubuntu0.14.04.1
+-- Versão do PHP: 7.0.33-0ubuntu0.16.04.16
+
+SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
+SET AUTOCOMMIT = 0;
+START TRANSACTION;
+SET time_zone = "+00:00";
+
+
+/*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
+/*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
+/*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
+/*!40101 SET NAMES utf8mb4 */;
+
+--
+-- Banco de dados: `sql5807683`
+--
+
+-- --------------------------------------------------------
+
+--
+-- Estrutura para tabela `auditoria_acesso`
+--
+
+CREATE TABLE `auditoria_acesso` (
+  `id` int(11) NOT NULL,
+  `ip` varchar(45) DEFAULT NULL,
+  `user_agent` text,
+  `origem` varchar(50) DEFAULT NULL,
+  `usuario_id` int(11) DEFAULT NULL,
+  `sucesso` tinyint(4) DEFAULT '0',
+  `criado_em` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+-- --------------------------------------------------------
+
+--
+-- Estrutura para tabela `aulas_aulas`
+--
+
+CREATE TABLE `aulas_aulas` (
+  `id` int(11) NOT NULL,
+  `aula` int(11) NOT NULL,
+  `matricula_id` int(11) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+-- --------------------------------------------------------
+
+--
+-- Estrutura para tabela `aulas_matricula`
+--
+
+CREATE TABLE `aulas_matricula` (
+  `id` int(11) NOT NULL,
+  `codigo` varchar(4) DEFAULT NULL,
+  `nome` varchar(100) NOT NULL,
+  `email` varchar(150) NOT NULL,
+  `senha` varchar(255) NOT NULL,
+  `idade` int(11) NOT NULL,
+  `grupo` varchar(55) DEFAULT NULL,
+  `data_inicio` date NOT NULL,
+  `diaum` varchar(50) DEFAULT NULL,
+  `diadois` varchar(50) DEFAULT NULL,
+  `telefone` varchar(20) DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+-- --------------------------------------------------------
+
+--
+-- Estrutura para tabela `aulas_pagos`
+--
+
+CREATE TABLE `aulas_pagos` (
+  `id` int(11) NOT NULL,
+  `representante_id` int(11) NOT NULL,
+  `pago` tinyint(1) DEFAULT '0',
+  `data_pagamento` date DEFAULT NULL,
+  `tipo_pagamento` varchar(50) DEFAULT NULL,
+  `quanto` decimal(10,2) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+-- --------------------------------------------------------
+
+--
+-- Estrutura para tabela `aulas_representantes`
+--
+
+CREATE TABLE `aulas_representantes` (
+  `id` int(11) NOT NULL,
+  `matricula_id` int(11) NOT NULL,
+  `nome_completo` varchar(150) NOT NULL,
+  `telefone` varchar(20) DEFAULT NULL,
+  `contrato` text
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+-- --------------------------------------------------------
+
+--
+-- Estrutura para tabela `clientes`
+--
+
+CREATE TABLE `clientes` (
+  `id` int(11) NOT NULL,
+  `email` varchar(255) NOT NULL,
+  `senha` varchar(255) NOT NULL,
+  `nome_completo` varchar(255) NOT NULL,
+  `codigo` varchar(255) NOT NULL,
+  `qrcode` varchar(255) NOT NULL,
+  `loja` varchar(255) NOT NULL,
+  `cargo` varchar(255) NOT NULL,
+  `funcao` varchar(255) NOT NULL,
+  `matricula` varchar(255) DEFAULT NULL,
+  `comercio_id` int(11) DEFAULT NULL,
+  `modo` int(11) NOT NULL DEFAULT '1'
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+-- --------------------------------------------------------
+
+--
+-- Estrutura para tabela `clientes_permissao`
+--
+
+CREATE TABLE `clientes_permissao` (
+  `id` int(11) NOT NULL,
+  `cliente_id` int(11) NOT NULL,
+  `modulo` varchar(100) NOT NULL,
+  `criado_em` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+-- --------------------------------------------------------
+
+--
+-- Estrutura para tabela `comercios_cadastradas`
+--
+
+CREATE TABLE `comercios_cadastradas` (
+  `id` int(11) NOT NULL,
+  `loja` varchar(255) NOT NULL,
+  `imagem` varchar(500) DEFAULT NULL,
+  `cnpj` varchar(18) DEFAULT NULL,
+  `cep` varchar(9) DEFAULT NULL,
+  `rua` varchar(255) DEFAULT NULL,
+  `bairro` varchar(150) DEFAULT NULL,
+  `numero` varchar(20) DEFAULT NULL,
+  `cidade` varchar(150) DEFAULT NULL,
+  `estado` varchar(2) DEFAULT NULL,
+  `email` varchar(255) DEFAULT NULL,
+  `celular` varchar(20) DEFAULT NULL,
+  `fundo` varchar(500) DEFAULT NULL,
+  `letra_tipo` varchar(255) DEFAULT NULL,
+  `letra_cor` varchar(50) DEFAULT NULL,
+  `produtividade` tinyint(1) DEFAULT '0',
+  `administracao` tinyint(1) DEFAULT '0',
+  `delivery_vendas` tinyint(1) DEFAULT '0',
+  `mesas_salao_cozinha` tinyint(1) DEFAULT '0',
+  `integracao_ifood` tinyint(1) DEFAULT '0',
+  `agendamentos` tinyint(1) DEFAULT '0',
+  `gerencial` tinyint(1) DEFAULT '0',
+  `fiscal` tinyint(1) DEFAULT '0',
+  `nota` decimal(3,1) DEFAULT NULL,
+  `editar_preco` int(11) NOT NULL,
+  `node` int(1) NOT NULL DEFAULT '0',
+  `api` int(11) NOT NULL DEFAULT '0',
+  `mercado` int(11) NOT NULL DEFAULT '0',
+  `converte` tinyint(1) NOT NULL DEFAULT '0',
+  `cambio` decimal(10,4) DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+-- --------------------------------------------------------
+
+--
+-- Estrutura para tabela `contratos`
+--
+
+CREATE TABLE `contratos` (
+  `id` int(11) NOT NULL,
+  `codigo` varchar(20) NOT NULL,
+  `criado_em` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
+  `atualizado_em` datetime DEFAULT NULL,
+  `representante_nome` varchar(255) DEFAULT NULL,
+  `documento_empresa` varchar(255) DEFAULT NULL,
+  `endereco_empresa` varchar(255) DEFAULT NULL,
+  `telefone_empresa` varchar(50) DEFAULT NULL,
+  `email_empresa` varchar(255) DEFAULT NULL,
+  `negocio_cliente` varchar(255) DEFAULT NULL,
+  `nome_cliente` varchar(255) DEFAULT NULL,
+  `documento_cliente` varchar(255) DEFAULT NULL,
+  `endereco_cliente` varchar(255) DEFAULT NULL,
+  `telefone_cliente` varchar(50) DEFAULT NULL,
+  `email_cliente` varchar(255) DEFAULT NULL,
+  `tipo_site` varchar(255) DEFAULT NULL,
+  `tecnologias` text,
+  `quantidade_paginas` int(11) DEFAULT NULL,
+  `integracoes` text,
+  `numero_revisoes` int(11) DEFAULT NULL,
+  `prazo_entrega` int(11) DEFAULT NULL,
+  `valor_total` decimal(10,2) DEFAULT NULL,
+  `forma_pagamento` varchar(255) DEFAULT NULL,
+  `valor_entrada` decimal(10,2) DEFAULT NULL,
+  `valor_final_entrega` decimal(10,2) DEFAULT NULL,
+  `valor_revisao_extra` decimal(10,2) DEFAULT NULL,
+  `hospedagem_inclusa` varchar(50) DEFAULT NULL,
+  `valor_hospedagem` text,
+  `dias_suporte` int(11) DEFAULT NULL,
+  `cidade_foro` varchar(255) DEFAULT NULL,
+  `data_assinatura_contratada` date DEFAULT NULL,
+  `data_assinatura_cliente` date DEFAULT NULL,
+  `LOGO_ASSINATURA_CONTRATADA` text,
+  `LOGO_ASSINATURA_CLIENTE` text,
+  `atualizacoes_inclusas` varchar(50) DEFAULT '0',
+  `comprovante` varchar(600) DEFAULT NULL,
+  `apagado` tinyint(1) NOT NULL DEFAULT '0',
+  `apagado_responsavel` int(11) DEFAULT NULL,
+  `apagado_datahora` datetime DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+-- --------------------------------------------------------
+
+--
+-- Estrutura para tabela `fiscal_dados_comercio`
+--
+
+CREATE TABLE `fiscal_dados_comercio` (
+  `id` int(11) NOT NULL,
+  `comercio_id` int(11) NOT NULL,
+  `razao_social` varchar(255) DEFAULT NULL,
+  `nome_fantasia` varchar(255) DEFAULT NULL,
+  `inscricao_estadual` varchar(50) DEFAULT NULL,
+  `cnae` varchar(20) DEFAULT NULL,
+  `regime_tributario` varchar(50) DEFAULT NULL,
+  `crt` varchar(5) DEFAULT NULL,
+  `certificado_path` text,
+  `certificado_senha_enc` text,
+  `csc_id` varchar(20) DEFAULT NULL,
+  `csc_token` varchar(100) DEFAULT NULL,
+  `ambiente_emissao` varchar(20) DEFAULT NULL,
+  `serie_nfce` varchar(10) DEFAULT NULL,
+  `numero_inicial_nfce` int(11) DEFAULT NULL,
+  `criado_em` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
+  `atualizado_em` datetime DEFAULT NULL,
+  `codigo_municipio` varchar(10) NOT NULL,
+  `inscricao_municipal` varchar(50) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+-- --------------------------------------------------------
+
+--
+-- Estrutura para tabela `fiscal_dados_cupons`
+--
+
+CREATE TABLE `fiscal_dados_cupons` (
+  `id` int(11) NOT NULL,
+  `tipo` enum('produto','servico') NOT NULL,
+  `comercio_id` int(11) NOT NULL,
+  `produto_id` int(11) NOT NULL,
+  `ncm` varchar(20) DEFAULT NULL,
+  `cfop` varchar(10) DEFAULT NULL,
+  `origem` varchar(10) DEFAULT NULL,
+  `cst_csosn` varchar(10) DEFAULT NULL,
+  `icms` decimal(5,2) DEFAULT NULL,
+  `pis` decimal(5,2) DEFAULT NULL,
+  `cofins` decimal(5,2) DEFAULT NULL,
+  `cest` varchar(20) DEFAULT NULL,
+  `codigo_servico` varchar(20) DEFAULT NULL,
+  `aliquota_iss` decimal(5,2) DEFAULT NULL,
+  `municipio` varchar(120) DEFAULT NULL,
+  `criado_em` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+-- --------------------------------------------------------
+
+--
+-- Estrutura para tabela `fiscal_numeracao_nfce`
+--
+
+CREATE TABLE `fiscal_numeracao_nfce` (
+  `id` int(11) NOT NULL,
+  `comercio_id` int(11) NOT NULL,
+  `serie` varchar(10) NOT NULL,
+  `ambiente` enum('homologacao','producao') NOT NULL,
+  `ultimo_numero` int(11) NOT NULL,
+  `atualizado_em` datetime NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+-- --------------------------------------------------------
+
+--
+-- Estrutura para tabela `historico_soma`
+--
+
+CREATE TABLE `historico_soma` (
+  `id` int(11) NOT NULL,
+  `soma_id` int(11) NOT NULL,
+  `quantos` int(11) NOT NULL,
+  `cliente_id` int(11) NOT NULL,
+  `data_hora` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+-- --------------------------------------------------------
+
+--
+-- Estrutura para tabela `horas`
+--
+
+CREATE TABLE `horas` (
+  `id` int(11) NOT NULL,
+  `semana_inicio` date NOT NULL,
+  `semana_fim` date NOT NULL,
+  `horas` decimal(5,2) NOT NULL,
+  `de_ate` varchar(50) NOT NULL,
+  `relato` text,
+  `criado_em` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+-- --------------------------------------------------------
+
+--
+-- Estrutura para tabela `jogos`
+--
+
+CREATE TABLE `jogos` (
+  `id` int(11) NOT NULL,
+  `codigo` varchar(4) NOT NULL,
+  `quantos` int(11) NOT NULL,
+  `pontos` int(11) DEFAULT '0'
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+-- --------------------------------------------------------
+
+--
+-- Estrutura para tabela `jogos_alerta`
+--
+
+CREATE TABLE `jogos_alerta` (
+  `id` int(11) NOT NULL,
+  `alerta` tinyint(1) NOT NULL DEFAULT '0'
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+-- --------------------------------------------------------
+
+--
+-- Estrutura para tabela `jogos_quiz`
+--
+
+CREATE TABLE `jogos_quiz` (
+  `id` int(11) NOT NULL,
+  `dificuldade` enum('facil','media','dificil') NOT NULL,
+  `pergunta` text CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci,
+  `a` text NOT NULL,
+  `b` text NOT NULL,
+  `c` text NOT NULL,
+  `d` text NOT NULL,
+  `resposta` char(1) NOT NULL,
+  `idioma` enum('espanhol','frances','ingles','portugues') NOT NULL DEFAULT 'portugues'
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+-- --------------------------------------------------------
+
+--
+-- Estrutura para tabela `maquininhas`
+--
+
+CREATE TABLE `maquininhas` (
+  `id` int(11) NOT NULL,
+  `comercio_id` int(11) NOT NULL,
+  `maquininha_numero` varchar(50) NOT NULL,
+  `apelido` varchar(100) DEFAULT NULL,
+  `operadora` varchar(50) NOT NULL,
+  `modelo` varchar(50) DEFAULT NULL,
+  `tipo_integracao` enum('nenhuma','api_nuvem','api_local') DEFAULT 'nenhuma',
+  `ip_local` varchar(50) DEFAULT NULL,
+  `porta` int(11) DEFAULT NULL,
+  `endpoint_pagamento` varchar(255) DEFAULT NULL,
+  `endpoint_cancelamento` varchar(255) DEFAULT NULL,
+  `client_id` varchar(255) DEFAULT NULL,
+  `client_secret` varchar(255) DEFAULT NULL,
+  `api_key` varchar(255) DEFAULT NULL,
+  `token_acesso` text,
+  `ativa` tinyint(1) DEFAULT '1',
+  `observacoes` text
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+-- --------------------------------------------------------
+
+--
+-- Estrutura para tabela `mensalidade`
+--
+
+CREATE TABLE `mensalidade` (
+  `id` int(11) NOT NULL,
+  `usuario_id` int(11) NOT NULL,
+  `mes` varchar(7) NOT NULL,
+  `valor` decimal(10,2) NOT NULL,
+  `data` date NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+-- --------------------------------------------------------
+
+--
+-- Estrutura para tabela `modulos`
+--
+
+CREATE TABLE `modulos` (
+  `id` int(11) NOT NULL,
+  `modulo` varchar(255) NOT NULL,
+  `descricao` varchar(255) DEFAULT NULL,
+  `ativo` tinyint(1) NOT NULL DEFAULT '1',
+  `preco` decimal(10,2) NOT NULL DEFAULT '0.00'
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+-- --------------------------------------------------------
+
+--
+-- Estrutura para tabela `modulos_comercio`
+--
+
+CREATE TABLE `modulos_comercio` (
+  `id` int(11) NOT NULL,
+  `comercio_cadastrado_id` int(11) NOT NULL,
+  `modulo` varchar(255) NOT NULL,
+  `criado_em` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
+  `ativo` tinyint(1) NOT NULL DEFAULT '0'
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+-- --------------------------------------------------------
+
+--
+-- Estrutura para tabela `modulos_componentes`
+--
+
+CREATE TABLE `modulos_componentes` (
+  `id` int(11) NOT NULL,
+  `modulo_id` int(11) NOT NULL,
+  `componente` varchar(255) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+-- --------------------------------------------------------
+
+--
+-- Estrutura para tabela `nfce_emitidas`
+--
+
+CREATE TABLE `nfce_emitidas` (
+  `id` int(11) NOT NULL,
+  `comercio_id` int(11) NOT NULL,
+  `venda_id` int(11) NOT NULL,
+  `numero_nfce` int(11) NOT NULL,
+  `serie` varchar(10) NOT NULL,
+  `chave_acesso` varchar(44) NOT NULL,
+  `xml_path` text NOT NULL,
+  `qr_code_url` text NOT NULL,
+  `protocolo_autorizacao` varchar(50) DEFAULT NULL,
+  `status` enum('autorizada','rejeitada','cancelada') NOT NULL DEFAULT 'rejeitada',
+  `ambiente` enum('homologacao','producao') NOT NULL,
+  `criado_em` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+-- --------------------------------------------------------
+
+--
+-- Estrutura para tabela `nfce_eventos`
+--
+
+CREATE TABLE `nfce_eventos` (
+  `id` int(11) NOT NULL,
+  `nfce_id` int(11) NOT NULL,
+  `tipo_evento` enum('autorizacao','cancelamento','inutilizacao') NOT NULL,
+  `protocolo` varchar(50) DEFAULT NULL,
+  `xml_evento_path` text,
+  `criado_em` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+-- --------------------------------------------------------
+
+--
+-- Estrutura para tabela `nfce_itens`
+--
+
+CREATE TABLE `nfce_itens` (
+  `id` int(11) NOT NULL,
+  `nfce_id` int(11) NOT NULL,
+  `produto_id` int(11) NOT NULL,
+  `descricao` varchar(255) NOT NULL,
+  `quantidade` decimal(10,3) NOT NULL,
+  `valor_unitario` decimal(10,2) NOT NULL,
+  `valor_total` decimal(10,2) NOT NULL,
+  `ncm` varchar(20) DEFAULT NULL,
+  `cfop` varchar(10) DEFAULT NULL,
+  `origem` varchar(10) DEFAULT NULL,
+  `cst_csosn` varchar(10) DEFAULT NULL,
+  `icms` decimal(5,2) DEFAULT NULL,
+  `pis` decimal(5,2) DEFAULT NULL,
+  `cofins` decimal(5,2) DEFAULT NULL,
+  `cest` varchar(20) DEFAULT NULL,
+  `criado_em` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+-- --------------------------------------------------------
+
+--
+-- Estrutura para tabela `nfce_pagamentos`
+--
+
+CREATE TABLE `nfce_pagamentos` (
+  `id` int(11) NOT NULL,
+  `nfce_id` int(11) NOT NULL,
+  `meio_pagamento` varchar(30) NOT NULL,
+  `valor` decimal(10,2) NOT NULL,
+  `troco` decimal(10,2) DEFAULT '0.00',
+  `criado_em` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+-- --------------------------------------------------------
+
+--
+-- Estrutura para tabela `paginas`
+--
+
+CREATE TABLE `paginas` (
+  `id` int(11) NOT NULL,
+  `contrato_id` int(11) NOT NULL,
+  `tipo` varchar(255) DEFAULT NULL,
+  `descricao` text
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+-- --------------------------------------------------------
+
+--
+-- Estrutura para tabela `paleta_quadros`
+--
+
+CREATE TABLE `paleta_quadros` (
+  `id` int(11) NOT NULL,
+  `nome` varchar(120) NOT NULL,
+  `criado_em` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
+  `atualizado_em` datetime DEFAULT NULL,
+  `fundo` varchar(7) DEFAULT '#0e0e0e'
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+-- --------------------------------------------------------
+
+--
+-- Estrutura para tabela `pix_caixa`
+--
+
+CREATE TABLE `pix_caixa` (
+  `id` int(11) NOT NULL,
+  `comercio_id` int(11) NOT NULL,
+  `public_key` varbinary(255) NOT NULL,
+  `access_token` varbinary(255) NOT NULL,
+  `criado_em` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+-- --------------------------------------------------------
+
+--
+-- Estrutura para tabela `produtos_servicos`
+--
+
+CREATE TABLE `produtos_servicos` (
+  `id` int(11) NOT NULL,
+  `nome` varchar(255) NOT NULL,
+  `unidade` varchar(100) DEFAULT NULL,
+  `codigo_barras` varchar(255) DEFAULT NULL,
+  `qrcode` varchar(255) DEFAULT NULL,
+  `preco` decimal(10,2) NOT NULL,
+  `preco_recebido` decimal(10,2) DEFAULT NULL,
+  `categoria` varchar(255) DEFAULT NULL,
+  `imagem_url` text,
+  `disponivel` tinyint(1) DEFAULT '1',
+  `comercio_id` int(11) NOT NULL,
+  `tempo_servico` varchar(100) DEFAULT NULL,
+  `produto_id` int(11) DEFAULT '0',
+  `unidades` int(11) DEFAULT '0',
+  `data_vencimento` date DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+-- --------------------------------------------------------
+
+--
+-- Estrutura para tabela `rifa_compras`
+--
+
+CREATE TABLE `rifa_compras` (
+  `id` int(10) UNSIGNED NOT NULL,
+  `rifa_id` int(10) UNSIGNED NOT NULL,
+  `numeros` varchar(255) NOT NULL,
+  `nome` varchar(120) NOT NULL,
+  `whatsapp` varchar(20) NOT NULL,
+  `email` varchar(120) NOT NULL,
+  `mensagem` text,
+  `pago` tinyint(1) NOT NULL DEFAULT '0',
+  `criado_em` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+-- --------------------------------------------------------
+
+--
+-- Estrutura para tabela `rifa_registro`
+--
+
+CREATE TABLE `rifa_registro` (
+  `id` int(11) NOT NULL,
+  `comercio_id` int(11) NOT NULL,
+  `nome` varchar(120) NOT NULL,
+  `premio` varchar(255) DEFAULT NULL,
+  `fotos` text,
+  `numeros` varchar(20) NOT NULL,
+  `preco` decimal(10,2) NOT NULL,
+  `criado_em` datetime NOT NULL,
+  `data_fim` datetime NOT NULL,
+  `ganhador` int(4) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+-- --------------------------------------------------------
+
+--
+-- Estrutura para tabela `servicos`
+--
+
+CREATE TABLE `servicos` (
+  `id` int(11) NOT NULL,
+  `cliente` varchar(150) NOT NULL,
+  `loja` varchar(150) NOT NULL,
+  `data` date NOT NULL,
+  `valor` decimal(10,2) NOT NULL,
+  `dias` int(11) NOT NULL,
+  `link` varchar(500) DEFAULT NULL,
+  `processo` varchar(20) DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+-- --------------------------------------------------------
+
+--
+-- Estrutura para tabela `servicos_ib`
+--
+
+CREATE TABLE `servicos_ib` (
+  `id` int(11) NOT NULL,
+  `servico_ib_id` int(11) NOT NULL,
+  `servico` text NOT NULL,
+  `valor` decimal(10,2) NOT NULL,
+  `data` date NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+-- --------------------------------------------------------
+
+--
+-- Estrutura para tabela `servicos_ib_aluguel`
+--
+
+CREATE TABLE `servicos_ib_aluguel` (
+  `id` int(11) NOT NULL,
+  `comercio_id` int(11) NOT NULL,
+  `data_inicio` date NOT NULL,
+  `valor` decimal(10,2) NOT NULL,
+  `situacao` varchar(255) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+-- --------------------------------------------------------
+
+--
+-- Estrutura para tabela `servico_ib_pagamentos`
+--
+
+CREATE TABLE `servico_ib_pagamentos` (
+  `id` int(11) NOT NULL,
+  `comercio_id` int(11) NOT NULL,
+  `mes` varchar(255) NOT NULL,
+  `situacao` varchar(50) NOT NULL,
+  `valor` int(11) DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+-- --------------------------------------------------------
+
+--
+-- Estrutura para tabela `soma_produtos`
+--
+
+CREATE TABLE `soma_produtos` (
+  `id` int(11) NOT NULL,
+  `comercio_id` int(11) NOT NULL,
+  `produto_id` int(11) NOT NULL,
+  `quantos` int(11) NOT NULL,
+  `cliente_id` int(11) NOT NULL,
+  `data_hora` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+-- --------------------------------------------------------
+
+--
+-- Estrutura para tabela `usuarios`
+--
+
+CREATE TABLE `usuarios` (
+  `id` int(11) NOT NULL,
+  `nome` varchar(255) DEFAULT NULL,
+  `sobrenome` varchar(255) DEFAULT NULL,
+  `email` varchar(255) DEFAULT NULL,
+  `senha` varchar(255) DEFAULT NULL,
+  `funcao` varchar(255) DEFAULT NULL,
+  `porcentagem` int(11) DEFAULT NULL,
+  `responsabilidade` varchar(255) DEFAULT NULL,
+  `foto` varchar(500) DEFAULT NULL,
+  `celular` varchar(30) DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+-- --------------------------------------------------------
+
+--
+-- Estrutura para tabela `vendas_ib`
+--
+
+CREATE TABLE `vendas_ib` (
+  `id` int(11) NOT NULL,
+  `codigo` varchar(30) NOT NULL,
+  `comanda` text NOT NULL,
+  `pagamento` enum('debito','credito','pix','dinheiro') NOT NULL,
+  `realizada` int(11) NOT NULL,
+  `empresa` int(11) NOT NULL,
+  `valor_pago` decimal(10,2) NOT NULL,
+  `data` date NOT NULL,
+  `hora` time NOT NULL,
+  `dispositivo` varchar(100) NOT NULL,
+  `produtos` text NOT NULL,
+  `created_at` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
+  `modulo` tinyint(4) NOT NULL DEFAULT '0',
+  `status` enum('nfce_pendente','nfce_emitida','pago','cancelado') NOT NULL DEFAULT 'nfce_pendente',
+  `maquininha` varchar(100) DEFAULT NULL,
+  `cpf_consumidor` varchar(11) DEFAULT NULL,
+  `mp_payment_id` bigint(20) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+-- --------------------------------------------------------
+
+--
+-- Estrutura para tabela `vendas_produtos`
+--
+
+CREATE TABLE `vendas_produtos` (
+  `id` int(11) NOT NULL,
+  `venda_id` int(11) NOT NULL,
+  `produto_id` int(11) NOT NULL,
+  `quantidade` decimal(10,3) NOT NULL,
+  `valor_unitario` decimal(10,2) NOT NULL,
+  `valor_total` decimal(10,2) NOT NULL,
+  `criado_em` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+-- --------------------------------------------------------
+
+--
+-- Estrutura para tabela `vendas_registro`
+--
+
+CREATE TABLE `vendas_registro` (
+  `id` int(11) NOT NULL,
+  `usuario_id` int(11) NOT NULL,
+  `vendas_id` varchar(255) NOT NULL,
+  `link` text,
+  `total` decimal(20,2) NOT NULL,
+  `data` date NOT NULL,
+  `hora` time NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Índices de tabelas apagadas
+--
+
+--
+-- Índices de tabela `auditoria_acesso`
+--
+ALTER TABLE `auditoria_acesso`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Índices de tabela `aulas_aulas`
+--
+ALTER TABLE `aulas_aulas`
+  ADD PRIMARY KEY (`id`),
+  ADD KEY `matricula_id` (`matricula_id`);
+
+--
+-- Índices de tabela `aulas_matricula`
+--
+ALTER TABLE `aulas_matricula`
+  ADD PRIMARY KEY (`id`),
+  ADD UNIQUE KEY `email` (`email`),
+  ADD UNIQUE KEY `codigo` (`codigo`);
+
+--
+-- Índices de tabela `aulas_pagos`
+--
+ALTER TABLE `aulas_pagos`
+  ADD PRIMARY KEY (`id`),
+  ADD KEY `representante_id` (`representante_id`);
+
+--
+-- Índices de tabela `aulas_representantes`
+--
+ALTER TABLE `aulas_representantes`
+  ADD PRIMARY KEY (`id`),
+  ADD KEY `matricula_id` (`matricula_id`);
+
+--
+-- Índices de tabela `clientes`
+--
+ALTER TABLE `clientes`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Índices de tabela `clientes_permissao`
+--
+ALTER TABLE `clientes_permissao`
+  ADD PRIMARY KEY (`id`),
+  ADD KEY `fk_cliente_permissao` (`cliente_id`);
+
+--
+-- Índices de tabela `comercios_cadastradas`
+--
+ALTER TABLE `comercios_cadastradas`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Índices de tabela `contratos`
+--
+ALTER TABLE `contratos`
+  ADD PRIMARY KEY (`id`),
+  ADD UNIQUE KEY `codigo` (`codigo`);
+
+--
+-- Índices de tabela `fiscal_dados_comercio`
+--
+ALTER TABLE `fiscal_dados_comercio`
+  ADD PRIMARY KEY (`id`),
+  ADD UNIQUE KEY `uq_comercio` (`comercio_id`);
+
+--
+-- Índices de tabela `fiscal_dados_cupons`
+--
+ALTER TABLE `fiscal_dados_cupons`
+  ADD PRIMARY KEY (`id`),
+  ADD KEY `produto_id` (`produto_id`);
+
+--
+-- Índices de tabela `fiscal_numeracao_nfce`
+--
+ALTER TABLE `fiscal_numeracao_nfce`
+  ADD PRIMARY KEY (`id`),
+  ADD UNIQUE KEY `uniq_num_nfce` (`comercio_id`,`serie`,`ambiente`);
+
+--
+-- Índices de tabela `historico_soma`
+--
+ALTER TABLE `historico_soma`
+  ADD PRIMARY KEY (`id`),
+  ADD KEY `idx_soma` (`soma_id`),
+  ADD KEY `idx_cliente` (`cliente_id`),
+  ADD KEY `idx_data` (`data_hora`);
+
+--
+-- Índices de tabela `horas`
+--
+ALTER TABLE `horas`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Índices de tabela `jogos`
+--
+ALTER TABLE `jogos`
+  ADD PRIMARY KEY (`id`),
+  ADD UNIQUE KEY `codigo` (`codigo`);
+
+--
+-- Índices de tabela `jogos_alerta`
+--
+ALTER TABLE `jogos_alerta`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Índices de tabela `jogos_quiz`
+--
+ALTER TABLE `jogos_quiz`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Índices de tabela `maquininhas`
+--
+ALTER TABLE `maquininhas`
+  ADD PRIMARY KEY (`id`),
+  ADD KEY `comercio_id` (`comercio_id`);
+
+--
+-- Índices de tabela `mensalidade`
+--
+ALTER TABLE `mensalidade`
+  ADD PRIMARY KEY (`id`),
+  ADD UNIQUE KEY `usuario_id` (`usuario_id`,`mes`);
+
+--
+-- Índices de tabela `modulos`
+--
+ALTER TABLE `modulos`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Índices de tabela `modulos_comercio`
+--
+ALTER TABLE `modulos_comercio`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Índices de tabela `modulos_componentes`
+--
+ALTER TABLE `modulos_componentes`
+  ADD PRIMARY KEY (`id`),
+  ADD KEY `modulo_id` (`modulo_id`);
+
+--
+-- Índices de tabela `nfce_emitidas`
+--
+ALTER TABLE `nfce_emitidas`
+  ADD PRIMARY KEY (`id`),
+  ADD UNIQUE KEY `uk_chave_acesso` (`chave_acesso`),
+  ADD UNIQUE KEY `uk_numero_serie_ambiente` (`comercio_id`,`numero_nfce`,`serie`,`ambiente`),
+  ADD KEY `idx_comercio` (`comercio_id`),
+  ADD KEY `idx_venda` (`venda_id`);
+
+--
+-- Índices de tabela `nfce_eventos`
+--
+ALTER TABLE `nfce_eventos`
+  ADD PRIMARY KEY (`id`),
+  ADD KEY `nfce_id` (`nfce_id`);
+
+--
+-- Índices de tabela `nfce_itens`
+--
+ALTER TABLE `nfce_itens`
+  ADD PRIMARY KEY (`id`),
+  ADD KEY `nfce_id` (`nfce_id`);
+
+--
+-- Índices de tabela `nfce_pagamentos`
+--
+ALTER TABLE `nfce_pagamentos`
+  ADD PRIMARY KEY (`id`),
+  ADD KEY `nfce_id` (`nfce_id`);
+
+--
+-- Índices de tabela `paginas`
+--
+ALTER TABLE `paginas`
+  ADD PRIMARY KEY (`id`),
+  ADD KEY `contrato_id` (`contrato_id`);
+
+--
+-- Índices de tabela `paleta_quadros`
+--
+ALTER TABLE `paleta_quadros`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Índices de tabela `pix_caixa`
+--
+ALTER TABLE `pix_caixa`
+  ADD PRIMARY KEY (`id`),
+  ADD UNIQUE KEY `uk_pix_comercio` (`comercio_id`);
+
+--
+-- Índices de tabela `produtos_servicos`
+--
+ALTER TABLE `produtos_servicos`
+  ADD PRIMARY KEY (`id`),
+  ADD KEY `comercio_id` (`comercio_id`);
+
+--
+-- Índices de tabela `rifa_compras`
+--
+ALTER TABLE `rifa_compras`
+  ADD PRIMARY KEY (`id`),
+  ADD KEY `idx_rifa` (`rifa_id`);
+
+--
+-- Índices de tabela `rifa_registro`
+--
+ALTER TABLE `rifa_registro`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Índices de tabela `servicos`
+--
+ALTER TABLE `servicos`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Índices de tabela `servicos_ib`
+--
+ALTER TABLE `servicos_ib`
+  ADD PRIMARY KEY (`id`),
+  ADD KEY `fk_servico_ib_aluguel` (`servico_ib_id`);
+
+--
+-- Índices de tabela `servicos_ib_aluguel`
+--
+ALTER TABLE `servicos_ib_aluguel`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Índices de tabela `servico_ib_pagamentos`
+--
+ALTER TABLE `servico_ib_pagamentos`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Índices de tabela `soma_produtos`
+--
+ALTER TABLE `soma_produtos`
+  ADD PRIMARY KEY (`id`),
+  ADD UNIQUE KEY `unico_comercio_produto` (`comercio_id`,`produto_id`);
+
+--
+-- Índices de tabela `usuarios`
+--
+ALTER TABLE `usuarios`
+  ADD PRIMARY KEY (`id`),
+  ADD UNIQUE KEY `email` (`email`),
+  ADD KEY `id` (`id`,`nome`,`sobrenome`,`email`,`senha`,`funcao`,`porcentagem`,`responsabilidade`);
+
+--
+-- Índices de tabela `vendas_ib`
+--
+ALTER TABLE `vendas_ib`
+  ADD PRIMARY KEY (`id`),
+  ADD UNIQUE KEY `codigo` (`codigo`);
+
+--
+-- Índices de tabela `vendas_produtos`
+--
+ALTER TABLE `vendas_produtos`
+  ADD PRIMARY KEY (`id`),
+  ADD KEY `idx_venda` (`venda_id`),
+  ADD KEY `idx_produto` (`produto_id`);
+
+--
+-- Índices de tabela `vendas_registro`
+--
+ALTER TABLE `vendas_registro`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- AUTO_INCREMENT de tabelas apagadas
+--
+
+--
+-- AUTO_INCREMENT de tabela `auditoria_acesso`
+--
+ALTER TABLE `auditoria_acesso`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=692;
+--
+-- AUTO_INCREMENT de tabela `aulas_aulas`
+--
+ALTER TABLE `aulas_aulas`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+--
+-- AUTO_INCREMENT de tabela `aulas_matricula`
+--
+ALTER TABLE `aulas_matricula`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
+--
+-- AUTO_INCREMENT de tabela `aulas_pagos`
+--
+ALTER TABLE `aulas_pagos`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+--
+-- AUTO_INCREMENT de tabela `aulas_representantes`
+--
+ALTER TABLE `aulas_representantes`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+--
+-- AUTO_INCREMENT de tabela `clientes`
+--
+ALTER TABLE `clientes`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=33;
+--
+-- AUTO_INCREMENT de tabela `clientes_permissao`
+--
+ALTER TABLE `clientes_permissao`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+--
+-- AUTO_INCREMENT de tabela `comercios_cadastradas`
+--
+ALTER TABLE `comercios_cadastradas`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=30;
+--
+-- AUTO_INCREMENT de tabela `contratos`
+--
+ALTER TABLE `contratos`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=32;
+--
+-- AUTO_INCREMENT de tabela `fiscal_dados_comercio`
+--
+ALTER TABLE `fiscal_dados_comercio`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=31;
+--
+-- AUTO_INCREMENT de tabela `fiscal_dados_cupons`
+--
+ALTER TABLE `fiscal_dados_cupons`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+--
+-- AUTO_INCREMENT de tabela `fiscal_numeracao_nfce`
+--
+ALTER TABLE `fiscal_numeracao_nfce`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+--
+-- AUTO_INCREMENT de tabela `historico_soma`
+--
+ALTER TABLE `historico_soma`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=295;
+--
+-- AUTO_INCREMENT de tabela `horas`
+--
+ALTER TABLE `horas`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=63;
+--
+-- AUTO_INCREMENT de tabela `jogos`
+--
+ALTER TABLE `jogos`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=34;
+--
+-- AUTO_INCREMENT de tabela `jogos_quiz`
+--
+ALTER TABLE `jogos_quiz`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=325;
+--
+-- AUTO_INCREMENT de tabela `maquininhas`
+--
+ALTER TABLE `maquininhas`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+--
+-- AUTO_INCREMENT de tabela `mensalidade`
+--
+ALTER TABLE `mensalidade`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
+--
+-- AUTO_INCREMENT de tabela `modulos`
+--
+ALTER TABLE `modulos`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
+--
+-- AUTO_INCREMENT de tabela `modulos_comercio`
+--
+ALTER TABLE `modulos_comercio`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=82;
+--
+-- AUTO_INCREMENT de tabela `modulos_componentes`
+--
+ALTER TABLE `modulos_componentes`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=44;
+--
+-- AUTO_INCREMENT de tabela `nfce_emitidas`
+--
+ALTER TABLE `nfce_emitidas`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+--
+-- AUTO_INCREMENT de tabela `nfce_eventos`
+--
+ALTER TABLE `nfce_eventos`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+--
+-- AUTO_INCREMENT de tabela `nfce_itens`
+--
+ALTER TABLE `nfce_itens`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+--
+-- AUTO_INCREMENT de tabela `nfce_pagamentos`
+--
+ALTER TABLE `nfce_pagamentos`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+--
+-- AUTO_INCREMENT de tabela `paginas`
+--
+ALTER TABLE `paginas`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=15;
+--
+-- AUTO_INCREMENT de tabela `paleta_quadros`
+--
+ALTER TABLE `paleta_quadros`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
+--
+-- AUTO_INCREMENT de tabela `pix_caixa`
+--
+ALTER TABLE `pix_caixa`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
+--
+-- AUTO_INCREMENT de tabela `produtos_servicos`
+--
+ALTER TABLE `produtos_servicos`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=1568;
+--
+-- AUTO_INCREMENT de tabela `rifa_compras`
+--
+ALTER TABLE `rifa_compras`
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=42;
+--
+-- AUTO_INCREMENT de tabela `rifa_registro`
+--
+ALTER TABLE `rifa_registro`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
+--
+-- AUTO_INCREMENT de tabela `servicos`
+--
+ALTER TABLE `servicos`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=16;
+--
+-- AUTO_INCREMENT de tabela `servicos_ib`
+--
+ALTER TABLE `servicos_ib`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+--
+-- AUTO_INCREMENT de tabela `servicos_ib_aluguel`
+--
+ALTER TABLE `servicos_ib_aluguel`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+--
+-- AUTO_INCREMENT de tabela `servico_ib_pagamentos`
+--
+ALTER TABLE `servico_ib_pagamentos`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=16;
+--
+-- AUTO_INCREMENT de tabela `soma_produtos`
+--
+ALTER TABLE `soma_produtos`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=330;
+--
+-- AUTO_INCREMENT de tabela `usuarios`
+--
+ALTER TABLE `usuarios`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+--
+-- AUTO_INCREMENT de tabela `vendas_ib`
+--
+ALTER TABLE `vendas_ib`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2468;
+--
+-- AUTO_INCREMENT de tabela `vendas_produtos`
+--
+ALTER TABLE `vendas_produtos`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+--
+-- AUTO_INCREMENT de tabela `vendas_registro`
+--
+ALTER TABLE `vendas_registro`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=231;
+--
+-- Restrições para dumps de tabelas
+--
+
+--
+-- Restrições para tabelas `aulas_aulas`
+--
+ALTER TABLE `aulas_aulas`
+  ADD CONSTRAINT `aulas_aulas_ibfk_1` FOREIGN KEY (`matricula_id`) REFERENCES `aulas_matricula` (`id`) ON DELETE CASCADE;
+
+--
+-- Restrições para tabelas `aulas_pagos`
+--
+ALTER TABLE `aulas_pagos`
+  ADD CONSTRAINT `aulas_pagos_ibfk_1` FOREIGN KEY (`representante_id`) REFERENCES `aulas_representantes` (`id`) ON DELETE CASCADE;
+
+--
+-- Restrições para tabelas `aulas_representantes`
+--
+ALTER TABLE `aulas_representantes`
+  ADD CONSTRAINT `aulas_representantes_ibfk_1` FOREIGN KEY (`matricula_id`) REFERENCES `aulas_matricula` (`id`) ON DELETE CASCADE;
+
+--
+-- Restrições para tabelas `clientes_permissao`
+--
+ALTER TABLE `clientes_permissao`
+  ADD CONSTRAINT `fk_cliente_permissao` FOREIGN KEY (`cliente_id`) REFERENCES `clientes` (`id`) ON DELETE CASCADE;
+
+--
+-- Restrições para tabelas `fiscal_dados_cupons`
+--
+ALTER TABLE `fiscal_dados_cupons`
+  ADD CONSTRAINT `fiscal_dados_cupons_ibfk_1` FOREIGN KEY (`produto_id`) REFERENCES `produtos_servicos` (`id`);
+
+--
+-- Restrições para tabelas `historico_soma`
+--
+ALTER TABLE `historico_soma`
+  ADD CONSTRAINT `fk_historico_soma` FOREIGN KEY (`soma_id`) REFERENCES `soma_produtos` (`id`) ON DELETE CASCADE;
+
+--
+-- Restrições para tabelas `maquininhas`
+--
+ALTER TABLE `maquininhas`
+  ADD CONSTRAINT `maquininhas_ibfk_1` FOREIGN KEY (`comercio_id`) REFERENCES `comercios_cadastradas` (`id`);
+
+--
+-- Restrições para tabelas `modulos_componentes`
+--
+ALTER TABLE `modulos_componentes`
+  ADD CONSTRAINT `modulos_componentes_ibfk_1` FOREIGN KEY (`modulo_id`) REFERENCES `modulos` (`id`);
+
+--
+-- Restrições para tabelas `nfce_emitidas`
+--
+ALTER TABLE `nfce_emitidas`
+  ADD CONSTRAINT `fk_nfce_comercio` FOREIGN KEY (`comercio_id`) REFERENCES `comercios_cadastradas` (`id`) ON DELETE CASCADE,
+  ADD CONSTRAINT `fk_nfce_venda` FOREIGN KEY (`venda_id`) REFERENCES `vendas_ib` (`id`) ON DELETE CASCADE;
+
+--
+-- Restrições para tabelas `paginas`
+--
+ALTER TABLE `paginas`
+  ADD CONSTRAINT `paginas_ibfk_1` FOREIGN KEY (`contrato_id`) REFERENCES `contratos` (`id`) ON DELETE CASCADE;
+
+--
+-- Restrições para tabelas `pix_caixa`
+--
+ALTER TABLE `pix_caixa`
+  ADD CONSTRAINT `fk_pix_comercio` FOREIGN KEY (`comercio_id`) REFERENCES `comercios_cadastradas` (`id`) ON DELETE CASCADE;
+
+--
+-- Restrições para tabelas `produtos_servicos`
+--
+ALTER TABLE `produtos_servicos`
+  ADD CONSTRAINT `produtos_servicos_ibfk_1` FOREIGN KEY (`comercio_id`) REFERENCES `comercios_cadastradas` (`id`);
+
+--
+-- Restrições para tabelas `servicos_ib`
+--
+ALTER TABLE `servicos_ib`
+  ADD CONSTRAINT `fk_servico_ib_aluguel` FOREIGN KEY (`servico_ib_id`) REFERENCES `servicos_ib_aluguel` (`id`) ON DELETE CASCADE;
+
+--
+-- Restrições para tabelas `vendas_produtos`
+--
+ALTER TABLE `vendas_produtos`
+  ADD CONSTRAINT `fk_venda` FOREIGN KEY (`venda_id`) REFERENCES `vendas_ib` (`id`) ON DELETE CASCADE,
+  ADD CONSTRAINT `fk_produto` FOREIGN KEY (`produto_id`) REFERENCES `produtos_servicos` (`id`) ON DELETE CASCADE;
+COMMIT;
+
+/*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
+/*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
+/*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
